@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "noEmit": false,
+    "jsx": "react"
+  },
+  "include": [],
+  "exclude": ["**/*.test.*", "lib"],
+  "references": [{ "path": "./packages/bitsy-ui-hooks/tsconfig.json"}]
+}

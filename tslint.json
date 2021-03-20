@@ -1,0 +1,17 @@
+{
+  "extends": ["tslint:latest", "tslint-react", "tslint-plugin-prettier", "tslint-config-prettier"],
+  "linterOptions": {
+    "exclude": [
+      "**/*.d.ts", "node_modules/**", "packages/**/node_modules/**", "**/*.{test,story}.ts{,x}"
+    ]
+  },
+  "rules": {
+    "prettier": true,
+    "no-empty": false,
+    "jsx-no-lambda": [false, "**/*.test.*"],
+    "no-shadowed-variable": false,
+    "no-submodule-imports": false,
+    "no-implicit-dependencies": false,
+    "quotemark": [true, "single", "avoid-escape", "avoid-template", "jsx-double"]
+  }
+}

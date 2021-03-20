@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "module": "es2015",
+    "target": "es2015",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "declaration": true,
+    "rootDir": "./",
+    "baseUrl": "./",
+    "jsx": "react",
+    "paths": {
+      "*": ["node_modules", "packages"]
+    },
+    "types": [
+      "node",
+      "jest"
+    ]
+  },
+  "include": [
+    "packages", "jest-dom/extend-expect"],
+  "exclude": ["node_modules", "lib"]
+}
