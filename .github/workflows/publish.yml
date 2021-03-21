@@ -21,6 +21,7 @@ jobs:
         with:
           node-version: 12
           registry-url: 'https://registry.npmjs.org'
+          scope: "@bitsy-ui"
       - name: Git Identity
         run: |
           git config --global user.name 'github-actions[bot]'
