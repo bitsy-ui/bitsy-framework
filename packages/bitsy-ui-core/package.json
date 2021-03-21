@@ -1,6 +1,6 @@
 {
   "name": "@bitsy-ui/core",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "directories": {
@@ -13,6 +13,10 @@
   "dependencies": {
     "core-js": "^3.9.1",
     "regenerator-runtime": "^0.13.7"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   },
   "repository": {
     "type": "git",
