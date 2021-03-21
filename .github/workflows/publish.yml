@@ -29,9 +29,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install Dependencies
-      - run: yarn --frozen-lockfile
-      - run: yarn build
-      - run: yarn lerna run prepare
+        run: yarn --frozen-lockfile
+      - name: Publish
+        run: yarn build
+      - name: Publish
+        run: yarn lerna run prepare
       - name: Publish
         run: |
           yarn lerna publish from-package --yes
