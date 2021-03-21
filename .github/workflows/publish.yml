@@ -28,8 +28,12 @@ jobs:
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/$GITHUB_REPOSITORY
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Install
-        run: yarn install
+      - name: Install Dependencies
+        run: yarn --frozen-lockfile
+      - name: Build Libraries
+        run: yarn build
+      - name: Prepare
+        run: yarn lerna run prepare
       - name: Publish
         run: |
           yarn lerna publish from-package --yes
