@@ -46,7 +46,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           scope: "@bitsy-ui"
       - name: Publish
-        run: yarn lerna publish --yes
+        run: yarn lerna publish --yes --no-verify-access
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
