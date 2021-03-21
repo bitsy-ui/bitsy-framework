@@ -13,8 +13,7 @@
       "*": ["node_modules", "packages"]
     },
     "types": [
-      "node",
-      "jest"
+      "node"
     ]
   },
   "include": [

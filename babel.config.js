@@ -10,12 +10,6 @@ module.exports = (api) => {
           }
         },
       ],
-      [
-        "@babel/preset-react",
-        {
-          development: process.env.BABEL_ENV !== "build",
-        },
-      ],
       "@babel/preset-typescript",
     ],
     env: {
