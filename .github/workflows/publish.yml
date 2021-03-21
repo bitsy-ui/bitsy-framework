@@ -40,6 +40,7 @@ jobs:
         with:
           node-version: 12
           registry-url: 'https://registry.npmjs.org'
+          scope: "@bitsy-ui"
       - name: Publish
         run: |
           yarn lerna publish from-package --yes
