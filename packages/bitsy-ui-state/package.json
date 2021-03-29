@@ -1,0 +1,42 @@
+{
+  "name": "@bitsy-ui/state",
+  "version": "0.0.0",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "src": "src"
+  },
+  "files": [
+    "lib"
+  ],
+  "exports": {
+    ".": {
+      "default": "./index.js"
+    },
+    "./": "./"
+  },
+  "scripts": {
+    "build": "rimraf lib && yarn run build:js && yarn run build:ts",
+    "build:ts": "tsc --project ./tsconfig.build.json",
+    "build:js": "BABEL_ENV=build babel --root-mode upward src --out-dir lib --extensions .ts,.tsx --no-comments && tsc --project ./tsconfig.json"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitsy-ui/bitsy-framework.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bitsy-ui/bitsy-framework/issues"
+  },
+  "dependencies": {
+    "eventemitter3": "^4.0.7",
+    "react": "^17.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.3"
+  }
+}

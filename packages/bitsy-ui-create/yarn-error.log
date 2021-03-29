@@ -1,0 +1,64 @@
+Arguments: 
+  /usr/bin/node /usr/share/yarn/bin/yarn.js run build:ts
+
+PATH: 
+  /tmp/yarn--1617013710738-0.08073707659012608:/home/sackrin/Projects/bitsy-ui/bitsy-framework/packages/bitsy-ui-create/node_modules/.bin:/home/sackrin/.config/yarn/link/node_modules/.bin:/home/sackrin/Projects/bitsy-ui/bitsy-framework/node_modules/.bin:/usr/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/lib/node_modules/npm/bin/node-gyp-bin:/usr/bin/node_modules/npm/bin/node-gyp-bin:/home/sackrin/Projects/bitsy-ui/bitsy-framework/packages/bitsy-ui-create/node_modules/.bin:/home/sackrin/Projects/bitsy-ui/bitsy-framework/packages/node_modules/.bin:/home/sackrin/Projects/bitsy-ui/bitsy-framework/node_modules/.bin:/home/sackrin/Projects/bitsy-ui/node_modules/.bin:/home/sackrin/Projects/node_modules/.bin:/home/sackrin/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/usr/bin:/tmp/yarn--1617013709761-0.7927900797778318:/home/sackrin/Projects/bitsy-ui/bitsy-framework/node_modules/.bin:/home/sackrin/.config/yarn/link/node_modules/.bin:/home/sackrin/Projects/bitsy-ui/bitsy-framework/node_modules/.bin:/home/sackrin/.yarn/bin:/usr/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/lib/node_modules/npm/bin/node-gyp-bin:/usr/bin/node_modules/npm/bin/node-gyp-bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  10.19.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: package.json: write EPIPE
+      at afterWriteDispatched (internal/stream_base_commons.js:78:25)
+      at writeGeneric (internal/stream_base_commons.js:73:3)
+      at Socket._writeGeneric (net.js:714:5)
+      at Socket._write (net.js:726:8)
+      at doWrite (_stream_writable.js:415:12)
+      at writeOrBuffer (_stream_writable.js:399:5)
+      at Socket.Writable.write (_stream_writable.js:299:11)
+      at ConsoleReporter.warn (/usr/share/yarn/lib/cli.js:96792:17)
+      at warn (/usr/share/yarn/lib/cli.js:51521:23)
+      at module.exports.exports.default (/usr/share/yarn/lib/cli.js:37358:7)
+
+npm manifest: 
+  {
+    "name": "create-bitsy-ui",
+    "version": "0.0.0",
+    "main": "lib/index.js",
+    "typings": "lib/index.d.ts",
+    "directories": {
+      "lib": "lib",
+      "src": "src"
+    },
+    "files": [
+      "lib"
+    ],
+    "publishConfig": {
+      "access": "public",
+      "registry": "https://registry.npmjs.org"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/bitsy-ui/bitsy-framework.git"
+    },
+    "bugs": {
+      "url": "https://github.com/bitsy-ui/bitsy-framework/issues"
+    },
+    "scripts": {
+      "build": "rimraf lib && yarn run build:js && yarn run build:ts",
+      "build:ts": "tsc --project tsconfig.build.json",
+      "build:js": "BABEL_ENV=build babel --root-mode upward src --out-dir lib --extensions .ts,.tsx --no-comments && tsc --project ./tsconfig.json"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
