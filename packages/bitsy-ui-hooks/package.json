@@ -23,10 +23,13 @@
   },
   "scripts": {
     "build": "rimraf lib && yarn run build:js && yarn run build:ts",
-    "build:ts": "tsc --project tsconfig.build.json",
+    "build:ts": "tsc --project ./tsconfig.build.json",
     "build:js": "BABEL_ENV=build babel --root-mode upward src --out-dir lib --extensions .ts,.tsx --no-comments && tsc --project ./tsconfig.json"
   },
   "dependencies": {
     "react": "^17.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.3"
   }
 }

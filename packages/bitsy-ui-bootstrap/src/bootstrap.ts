@@ -26,7 +26,7 @@ const fetchAssetsHandler = () => {
   // Set the webpack custom URL for asset retrieval
   window[`__MicroUI${env.name}AssetURL__`] = env.assetUrl + '/';
   // Retrieve the main JS
-  const entryUrl = manifest[env.assetEntry || 'main.js'];
+  const entryUrl = manifest[env.entry || 'main.js'];
   // Load the manifest assets
   // @QUESTION should we support multiple entry files?
   doLoadScript(`${env.assetUrl}${entryUrl}`)

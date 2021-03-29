@@ -23,9 +23,9 @@ module.exports = {
         headers: {},
       },
       messages: {
-        START_UP: 'API starting',
-        STARTED_UP: 'API started and listening on port',
-        CRASHED: 'API crashed with message',
+        START_UP: 'Micro UI API starting',
+        STARTED_UP: 'Micro UI API started and listening on port',
+        CRASHED: 'Micro UI API crashed with message',
       },
     },
   },

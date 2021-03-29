@@ -3,8 +3,12 @@
   "compilerOptions": {
     "outDir": "./lib",
     "rootDir": "./src",
-    "noEmit": true
+    "noEmit": true,
+    "paths": {
+      "@bitsy-ui/hooks/lib/*": ["../bitsy-ui-hooks/src/*"]
+    }
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "lib"]
+  "exclude": ["node_modules", "lib"],
+  "references": [{ "@bitsy-ui/hooks": "../bitsy-ui-hooks" }]
 }

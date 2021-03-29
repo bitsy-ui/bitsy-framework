@@ -26,13 +26,17 @@ const doStrapHandler = ({
   // Extract and construct the component props from the provided POST and GET variables
   const httpQuery = !req.query ? {} : req.query;
   const httpBody = !req.body ? {} : req.body;
-  const props = { ...httpQuery, ...httpBody };
+  let props = { ...httpQuery, ...httpBody };
   const strapHeaders = config?.settings?.api?.ssr?.headers || {};
   // Attempt to construct a static HTML representation of the component
   // Do this using provided POST and GET parameters
   try {
+    // If the component has a SSR props helper
+    if (component.getSSRProps) props = await component.getSSRProps(props);
+    // Create the react element
+    const el = createElement(component, props);
     // Attempt to render the component's HTML using react's ReactDOMServer
-    const rendered = ReactDOMServer.renderToString(createElement(component, props));
+    const rendered = ReactDOMServer.renderToString(el);
     const html = embedComponent(name, config, props, rendered);
     // Set express to return the component as the response body
     res.set('Content-Type', 'text/html');

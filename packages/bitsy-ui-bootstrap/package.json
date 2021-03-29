@@ -10,10 +10,6 @@
   "files": [
     "lib"
   ],
-  "dependencies": {
-    "core-js": "^3.9.1",
-    "regenerator-runtime": "^0.13.7"
-  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
@@ -29,6 +25,11 @@
     "build": "rimraf lib && yarn run build:js && yarn run build:ts",
     "build:ts": "tsc --project tsconfig.build.json",
     "build:js": "npx webpack --config webpack.config.js"
+  },
+  "dependencies": {
+    "core-js": "^3.9.1",
+    "react-dev-utils": "^11.0.4",
+    "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.10",

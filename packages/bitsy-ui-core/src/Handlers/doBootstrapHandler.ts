@@ -23,7 +23,7 @@ const doBootstrapHandler: DoBootstrapHandler = ({ name, settings: { ui, api } })
       apiPath: api.path,
       assetUrl: ui.url || api.url,
       assetTarget: ui.target,
-      assetEntry: ui.manifest,
+      assetEntry: ui.entry,
       ...(ui.env || {}),
     }),
   );
