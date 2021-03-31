@@ -13,7 +13,7 @@ import doBootControl from './Controls/doBootControl';
 const createMicroUIService = ({
   config,
   logger = console,
-  onError,
+  onError = (e) => {},
 }: {
   config: MicroUIConfig;
   logger?: MicroUiLogger;

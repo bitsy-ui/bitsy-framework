@@ -3,6 +3,7 @@
   "version": "0.1.2",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
+  "license": "MIT",
   "directories": {
     "lib": "lib",
     "src": "src"
@@ -40,6 +41,7 @@
     "react-ssr-prepass": "^1.4.0",
     "regenerator-runtime": "^0.13.7",
     "winston": "^3.3.3",
-    "winston-cloudwatch": "^2.5.0"
+    "winston-cloudwatch": "^2.5.0",
+    "@bitsy-ui/bootstrap": "^0.0.1"
   }
 }

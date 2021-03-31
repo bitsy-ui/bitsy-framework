@@ -11,5 +11,8 @@
   },
   "include": [],
   "exclude": ["**/*.test.*", "lib"],
-  "references": [{ "path": "./packages/bitsy-ui-hooks/tsconfig.json"}]
+  "references": [
+    { "path": "./packages/bitsy-ui-hooks/tsconfig.json" },
+    { "path": "./packages/bitsy-ui-bootstrap/tsconfig.json" }
+  ]
 }

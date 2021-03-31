@@ -2,6 +2,7 @@
   "name": "@bitsy-ui/bootstrap",
   "version": "0.0.1",
   "main": "lib/index.js",
+  "license": "MIT",
   "typings": "lib/index.d.ts",
   "directories": {
     "lib": "lib",

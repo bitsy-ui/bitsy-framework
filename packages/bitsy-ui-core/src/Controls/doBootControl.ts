@@ -1,4 +1,4 @@
-const doBootControl = (api, config, logger) => (onNotFound = () => {}) => {
+const doBootControl = (api, config, logger) => (onNotFound = (req, res) => {}) => {
   // If a not found handler was passed through
   // Attach the not found to our api object
   if (onNotFound) api.use(onNotFound);

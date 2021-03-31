@@ -1,0 +1,16 @@
+{
+  "name": "mybitsyapp",
+  "version": "0.0.1",
+  "private": true,
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "license": "MIT",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {},
+  "dependencies": {
+    "@bitsy-ui/core": "^0.1.2",
+    "@bitsy-ui/state": "^0.0.1"
+  }
+}

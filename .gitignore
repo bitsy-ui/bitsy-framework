@@ -1,6 +1,9 @@
 # editors
 .idea
 
+# development
+sandbox
+
 # dependencies
 /node_modules
 
