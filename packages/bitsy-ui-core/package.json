@@ -1,6 +1,6 @@
 {
   "name": "@bitsy-ui/core",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "license": "MIT",
@@ -8,8 +8,13 @@
     "lib": "lib",
     "src": "src"
   },
+  "bin": {
+    "bitsy-ui": "./lib/Scripts/cli.js"
+  },
   "files": [
-    "lib"
+    "lib",
+    "babel",
+    "webpack"
   ],
   "publishConfig": {
     "access": "public",
@@ -28,13 +33,31 @@
     "build:js": "BABEL_ENV=build babel --root-mode upward src --out-dir lib --extensions .ts,.tsx --no-comments && tsc --project ./tsconfig.json"
   },
   "dependencies": {
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.6.2",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.4.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.9.0",
+    "@babel/plugin-transform-spread": "^7.6.2",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.1",
+    "@babel/preset-typescript": "^7.10.1",
+    "@bitsy-ui/bootstrap": "^0.0.1",
     "@loadable/component": "^5.14.1",
     "@loadable/server": "^5.14.2",
+    "@loadable/webpack-plugin": "^5.13.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "babel-plugin-transform-imports": "^2.0.0",
+    "babel-plugin-transform-mui-imports": "^0.2.0",
+    "commander": "^7.2.0",
     "compression": "^1.7.4",
     "core-js": "^3.9.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "helmet": "^4.4.1",
+    "inquirer": "^8.0.0",
     "react": "^17.0.1",
     "react-async-ssr": "^0.7.2",
     "react-dom": "^17.0.1",
@@ -42,6 +65,12 @@
     "regenerator-runtime": "^0.13.7",
     "winston": "^3.3.3",
     "winston-cloudwatch": "^2.5.0",
-    "@bitsy-ui/bootstrap": "^0.0.1"
+    "webpack": "^4.41.2",
+    "webpack-bundle-analyzer": "^3.8.0",
+    "webpack-cleanup-plugin": "^0.5.1",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-manifest-plugin": "^2.2.0",
+    "case-sensitive-paths-webpack-plugin": "^2.2.0"
   }
 }

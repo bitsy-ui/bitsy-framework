@@ -1,6 +1,6 @@
+const process = require("process");
 const path = require('path');
 const fs = require('fs');
-const microUiConfig = require('./microui.config');
 const webpack = require('webpack');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
@@ -10,31 +10,38 @@ const TerserPlugin = require('terser-webpack-plugin');
 const LoadablePlugin = require('@loadable/webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
+// Determine the project directory
+const projectDir = process.cwd();
+// Determine the location of the bitsyui config
+const configPathname = path.resolve(projectDir, 'bitsyui.config.js');
+// Load the bitsyUiConfig
+const bitsyUiConfig = require(configPathname);
+// Determine the assets folder
+const assetsFolder = bitsyUiConfig.settings?.ui?.dist || '.ui';
+
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
 const appPath = path.resolve(fs.realpathSync(process.cwd()), '.');
 const appNodeModules = path.resolve(fs.realpathSync(process.cwd()), 'node_modules');
 const publicPath = '/';
 
-if (!fs.existsSync('./.assets')) {
-  fs.mkdirSync('./.assets');
-}
+if (!fs.existsSync(assetsFolder)) fs.mkdirSync(assetsFolder);
 
 module.exports = {
-  entry: [`${appNodeModules}/@bitsy-ui/core/webpack/webpack.path.js`, './src/assets.js'],
+  entry: [`./webpack.path.js`, './src/assets.js'],
   devtool: false,
   node: {
     fs: 'empty',
     net: 'empty',
   },
   output: {
-    filename: 'micro-ui.[hash].js',
+    filename: 'bitsy-ui.[hash].js',
     globalObject: `(typeof self !== 'undefined' ? self : this)`,
     umdNamedDefine: true,
-    library: microUiConfig.name,
-    libraryTarget: microUiConfig.settings.ui.target,
+    library: bitsyUiConfig.name,
+    libraryTarget: bitsyUiConfig.settings.ui.target,
     publicPath: publicPath,
-    path: path.resolve(__dirname, './.assets'),
+    path: path.resolve(__dirname, assetsFolder),
     pathinfo: true,
   },
   resolve: {
@@ -134,7 +141,7 @@ module.exports = {
     new LoadablePlugin({}),
     new webpack.DefinePlugin({
       __MICROUI__: {
-        library: JSON.stringify(microUiConfig.name),
+        library: JSON.stringify(bitsyUiConfig.name),
       },
     }),
     new ManifestPlugin({
