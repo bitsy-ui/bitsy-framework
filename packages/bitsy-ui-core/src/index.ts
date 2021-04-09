@@ -1,4 +1,4 @@
 export * from './Helpers';
 export * from './Types';
 
-export { default as createMicroUIService } from './createMicroUIService';
+export { default as createBitsyUI } from './createBitsyUI';

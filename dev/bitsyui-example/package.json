@@ -1,0 +1,51 @@
+{
+  "name": "mybitsyapp",
+  "version": "0.0.1",
+  "private": true,
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "license": "MIT",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "reset": "sudo rm -r node_modules && rm yarn.lock && yarn"
+  },
+  "dependencies": {
+    "@bitsy-ui/core": "^0.1.2",
+    "deepmerge": "^4.2.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.6.2",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.4.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.9.0",
+    "@babel/plugin-transform-spread": "^7.6.2",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.1",
+    "@babel/preset-typescript": "^7.10.1",
+    "@loadable/webpack-plugin": "^5.13.0",
+    "@types/classnames": "^2.2.10",
+    "@types/node": "^13.11.0",
+    "@types/react": "^16.9.32",
+    "@types/react-dom": "^16.9.6",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "babel-plugin-transform-imports": "^2.0.0",
+    "babel-plugin-transform-mui-imports": "^0.2.0",
+    "case-sensitive-paths-webpack-plugin": "^2.2.0",
+    "compression-webpack-plugin": "^3.0.0",
+    "svg-inline-loader": "^0.8.2",
+    "terser-webpack-plugin": "^4.1.0",
+    "typescript": "^3.8.3",
+    "url-loader": "^2.2.0",
+    "webpack": "^4.41.2",
+    "webpack-bundle-analyzer": "^3.8.0",
+    "webpack-cleanup-plugin": "^0.5.1",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-manifest-plugin": "^2.2.0"
+  }
+}

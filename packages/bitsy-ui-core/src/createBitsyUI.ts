@@ -4,13 +4,13 @@ import express, { json } from 'express';
 import cors from 'cors';
 import compression from 'compression';
 import doBootstrapHandler from './Handlers/doBootstrapHandler';
-import type MicroUIConfig from './Types/MicroUIConfig';
-import type MicroUiLogger from './Types/MicroUiLogger';
 import addRouteControl from './Controls/addRouteControl';
 import addStrapControl from './Controls/addStrapControl';
 import doBootControl from './Controls/doBootControl';
+import type MicroUIConfig from './Types/MicroUIConfig';
+import type MicroUiLogger from './Types/MicroUiLogger';
 
-const createMicroUIService = ({
+const createBitsyUI = ({
   config,
   logger = console,
   onError = (e) => {},
@@ -55,4 +55,4 @@ const createMicroUIService = ({
   }
 };
 
-export default createMicroUIService;
+export default createBitsyUI;
