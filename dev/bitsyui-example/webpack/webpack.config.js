@@ -119,6 +119,7 @@ module.exports = {
               cacheDirectory: true,
               cacheCompression: false,
               sourceMaps: false,
+              configFile: '../babel/babel.ui.config.json'
             },
           },
           { test: /\.css$/, loader: 'style-loader!css-loader' },

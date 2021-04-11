@@ -4,7 +4,7 @@
     "paths": {
       "@src/*": ["src/*"],
     },
-    "module": "ES2020",
+    "module": "commonjs",
     "target": "ES2019",
     "moduleResolution": "node",
     "allowJs": true,

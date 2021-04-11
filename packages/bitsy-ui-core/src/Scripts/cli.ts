@@ -5,6 +5,7 @@ import create from 'create-bitsy-ui/lib/scripts/create';
 import * as process from 'process';
 import path from 'path';
 const { spawn } = require('child_process');
+import { spawnSync } from 'child_process';
 
 const baseDir = __dirname;
 const projectDir = process.cwd();
@@ -42,51 +43,17 @@ program
       path.join(process.cwd(), 'node_modules', '@bitsy-ui/core', 'babel', 'babel.api.config.json');
     // Determine the api extensions
     const apiExtensions = config.settings?.api?.extensions || '.ts,.tsx,.js';
+
+    const apiBuild = spawnSync(
+      'npx',
+      ['babel', 'src', '--extensions', apiExtensions, '--config-file', apiBabel, '--out-dir', apiDestination],
+      { encoding: 'utf8' },
+    );
+
     // Attempt to build the bitsyui
-    const apiBuild = spawn('npx', [
-      'babel',
-      'src',
-      '--extensions',
-      apiExtensions,
-      '--config-file',
-      apiBabel,
-      '--out-dir',
-      apiDestination,
-    ]);
+    const uiBuild = spawnSync('npx', ['webpack', '--mode', 'development', '--config', uiWebpack], { encoding: 'utf8' });
 
-    apiBuild.stdout.on('data', (data) => {
-      console.log(`stdout: ${data}`);
-    });
-
-    apiBuild.stderr.on('data', (data) => {
-      console.log(`stderr: ${data}`);
-    });
-
-    apiBuild.on('error', (error) => {
-      console.log(`error: ${error.message}`);
-    });
-
-    apiBuild.on('close', (code) => {
-      console.log(`child process exited with code ${code}`);
-      // Attempt to build the bitsyui
-      const uiBuild = spawn('npx', ['webpack', '--mode', 'development', '--config', uiWebpack]);
-
-      uiBuild.stdout.on('data', (data) => {
-        console.log(`stdout: ${data}`);
-      });
-
-      uiBuild.stderr.on('data', (data) => {
-        console.log(`stderr: ${data}`);
-      });
-
-      uiBuild.on('error', (error) => {
-        console.log(`error: ${error.message}`);
-      });
-
-      uiBuild.on('close', (code) => {
-        console.log(`child process exited with code ${code}`);
-      });
-    });
+    console.log('stdout here', uiBuild);
 
     // Determine location of the webpack config
     // Determine the location of the babel config
