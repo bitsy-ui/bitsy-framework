@@ -20,11 +20,14 @@ const manifest = __MANIFEST__;
  */
 const fetchAssetsHandler = () => {
   // Set the env vars in the window space for easy access
+  // These should be only the safe vars which users could see if they monitored traffic
   window[`__BitsyUI${env.name}Env__`] = env;
-  // Set the webpack custom URL for asset retrieval
+  // Set the webpack custom URL for api retrieval
   window[`__BitsyUI${env.name}ApiUrl__`] = getCombinedURL(env.api.url, '/');
-  // Set the webpack custom URL for asset retrieval
+  // @TODO should we provide a list of endpoints here?
+  // Set the webpack custom URL for ui retrieval
   window[`__BitsyUI${env.name}UiUrl__`] = getCombinedURL(env.ui.url, '/');
+  // @TODO should we provide a list of components here?
   // Retrieve the main JS
   const script = manifest[env.ui.script || 'main.js'];
   // Load the manifest assets

@@ -15,6 +15,8 @@ const embedComponent: EmbedComponent = (name, protocol, hostname, config, props,
   const { bootstrap, api, ui } = config.settings;
   // Construct the props to be passed to the rendered component
   const _props = {
+    // Add the frontend safe micro ui vars as env to pass into the micro ui component
+    // These would typically be available on mount if mounted via the browser
     env: {
       name,
       bootstrap: {
@@ -38,9 +40,14 @@ const embedComponent: EmbedComponent = (name, protocol, hostname, config, props,
         options: ui.options || {},
       },
     },
+    // Spread operate any additional props
     ...props,
   };
-  // Return the built component
+  // Return the native JS embedding code
+  // This will render a div element on the page
+  // It will provide the scripting to load the bootstrap.js if it is not already present
+  // It will provide the props to the component
+  // It will trigger a component hydration once bootstrap has loaded
   // prettier-ignore
   return ('<div data-bitsyui-library="' + config.name + '" data-bitsyui-component="' + name + '">' +
     '' + el + '' +
