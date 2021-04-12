@@ -1,8 +1,8 @@
 import path from 'path';
 import { createElement } from 'react';
 import embedComponent from '../Helpers/embedComponent';
-import type MicroUIConfig from '../Types/MicroUIConfig';
-import type MicroUiLogger from '../Types/MicroUiLogger';
+import type BitsyUIConfig from '../Types/BitsyUIConfig';
+import type BitsyUiLogger from '../Types/BitsyUiLogger';
 
 // Direct Import React
 // We have to do it this way to permit SSR react + hooks
@@ -17,8 +17,8 @@ const doStrapHandler = ({
 }: {
   name: string;
   component: any;
-  logger: MicroUiLogger;
-  config: MicroUIConfig;
+  logger: BitsyUiLogger;
+  config: BitsyUIConfig;
 }) => async (req, res) => {
   // This is needed to stop issues with window and document throwing errors in SSR
   (global as any).window = {};
@@ -31,13 +31,18 @@ const doStrapHandler = ({
   // Attempt to construct a static HTML representation of the component
   // Do this using provided POST and GET parameters
   try {
+    // Determine URL via request object
+    // Determine the request protocol
+    const protocol = req.secure ? 'https://' : 'http://';
+    // We do this to allow bitsyui to be hosted within multiple URLs
+    const hostname = req.headers.host;
     // If the component has a SSR props helper
     if (component.getSSRProps) props = await component.getSSRProps(props);
     // Create the react element
     const el = createElement(component, props);
     // Attempt to render the component's HTML using react's ReactDOMServer
     const rendered = ReactDOMServer.renderToString(el);
-    const html = embedComponent(name, config, props, rendered);
+    const html = embedComponent(name, protocol, hostname, config, props, rendered);
     // Set express to return the component as the response body
     res.set('Content-Type', 'text/html');
     // Inject any additional headers

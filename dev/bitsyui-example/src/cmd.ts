@@ -4,7 +4,6 @@ import open from 'open';
 import path from 'path';
 import process from 'process';
 import program from 'commander';
-import { spawn } from 'child_process';
 import { spawnSync } from 'child_process';
 
 const baseDir = __dirname;
@@ -24,10 +23,16 @@ program
     // Load the bitsyui config file
     // This will always be located at the project root
     const config = require(configPathname);
+    // BOOTSTRAP ASSETS BUILD
+    const bootWebpack = path.resolve(projectDir, 'webpack', 'webpack.config.bootstrap.js');
+    // Attempt to build the micro UI
+    const bootBuild = spawnSync('npx', ['webpack', '--mode', 'development', '--config', bootWebpack], {
+      encoding: 'utf8',
+    });
     // UI ASSETS BUILD
     // @TODO delete any current folder
     // @TODO create the destination folder
-    const uiWebpack = path.resolve(projectDir, 'webpack', 'webpack.config.js');
+    const uiWebpack = path.resolve(projectDir, 'webpack', 'webpack.config.ui.js');
     // Attempt to build the micro UI
     const uiBuild = spawnSync('npx', ['webpack', '--mode', 'development', '--config', uiWebpack], { encoding: 'utf8' });
     // API ASSETS BUILD
@@ -35,13 +40,23 @@ program
     // @TODO create the destination folder
     const apiBuild = spawnSync(
       'npx',
-      ['babel', 'src', '--extensions', ['.ts', '.tsx', '.js', '.jsx'].join(','), '--config-file', path.resolve(projectDir, 'babel', 'babel.api.config.json'), '--out-dir', path.resolve(projectDir, '.api')],
+      [
+        'babel',
+        'src',
+        '--extensions',
+        ['.ts', '.tsx', '.js', '.jsx'].join(','),
+        '--config-file',
+        path.resolve(projectDir, 'babel', 'babel.api.config.json'),
+        '--out-dir',
+        path.resolve(projectDir, '.api'),
+      ],
       { encoding: 'utf8' },
     );
     //
     // OPEN WITHIN BROWSER
-    open('http://www.google.com');
+    // open('http://www.google.com');
 
+    console.log('bootBuild', bootBuild);
     console.log('uiBuild', uiBuild);
     console.log('apiBuild', apiBuild);
   });

@@ -1,4 +1,4 @@
-const process = require("process");
+const process = require('process');
 const path = require('path');
 const fs = require('fs');
 const webpack = require('webpack');
@@ -17,7 +17,7 @@ const configPathname = path.resolve(projectDir, 'bitsyui.config.js');
 const bitsyUiConfig = require(configPathname);
 
 // Determine the assets public path
-const publicPath = bitsyUiConfig.settings.ui.public || '/';
+const publicPath = bitsyUiConfig.settings.ui.path || '/';
 // Determine the assets folder
 const entryFile = bitsyUiConfig.settings.ui.entry;
 // Determine the assets folder
@@ -25,7 +25,7 @@ const assetsDir = bitsyUiConfig.settings.ui.destination || '.ui';
 // Determine the assets folder
 const outputFile = bitsyUiConfig.settings.ui.output || 'bitsy-ui.[hash].js';
 // Determine the extensions
-const extensions = bitsyUiConfig.settings.ui.extensions || ['.js', '.json', '.jsx']
+const extensions = bitsyUiConfig.settings.ui.extensions || ['.js', '.json', '.jsx'];
 
 // Retrieve any path aliases
 // These help make development a much more pleasurable experience
@@ -57,7 +57,7 @@ module.exports = {
       react: path.resolve('./node_modules/react'),
       'react-dom': path.resolve('./node_modules/react-dom'),
       '@src': path.resolve('./src'),
-      ...pathAliases
+      ...pathAliases,
     },
   },
   optimization: {
@@ -119,7 +119,7 @@ module.exports = {
               cacheDirectory: true,
               cacheCompression: false,
               sourceMaps: false,
-              configFile: '../babel/babel.ui.config.json'
+              configFile: path.resolve(projectDir, 'babel', 'babel.ui.config.json'),
             },
           },
           { test: /\.css$/, loader: 'style-loader!css-loader' },

@@ -9,10 +9,13 @@
     "lib": "lib"
   },
   "scripts": {
-    "reset": "sudo rm -r node_modules && rm yarn.lock && yarn"
+    "reset": "sudo rm -r node_modules && rm yarn.lock && yarn",
+    "local": "yarn ts-node ./src/cmd.ts build",
+    "serve": "node ./.api/service.js"
   },
   "dependencies": {
     "@bitsy-ui/core": "^0.1.2",
+    "@bitsy-ui/bootstrap": "^0.0.2",
     "commander": "^7.2.0",
     "deepmerge": "^4.2.2",
     "open": "^8.0.5",

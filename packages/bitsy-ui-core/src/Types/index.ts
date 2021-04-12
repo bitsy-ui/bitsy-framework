@@ -1,1 +1,1 @@
-export { default as MicroUIConfig } from './MicroUIConfig';
+export { default as BitsyUIConfig } from './BitsyUIConfig';

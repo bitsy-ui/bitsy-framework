@@ -1,42 +1,63 @@
-import { MicroUIConfig } from '../Types';
+import { BitsyUIConfig } from '../Types';
+import getCombinedURL from './getCombinedURL';
 
-type EmbedComponent = (name: string, config: MicroUIConfig, props: any, el: string) => string;
+type EmbedComponent = (
+  name: string,
+  protocol: string,
+  hostname: string,
+  config: BitsyUIConfig,
+  props: any,
+  el: string,
+) => string;
 
-const embedComponent: EmbedComponent = (name, config, props, el) => {
+const embedComponent: EmbedComponent = (name, protocol, hostname, config, props, el) => {
   // Determine the correct api and asset values based on
-  const apiUrl = config.settings.api?.url;
-  const apiPath = config.settings.api?.path;
-  const assetUrl = config.settings.ui?.url || apiUrl;
-  const assetTarget = config.settings.ui?.target || config.settings.ui.target;
-  const assetEnv = config.settings.ui?.env || {};
+  const { bootstrap, api, ui } = config.settings;
   // Construct the props to be passed to the rendered component
   const _props = {
-    name,
-    apiUrl,
-    apiPath,
-    assetUrl: assetUrl || apiUrl,
-    assetTarget,
-    ...assetEnv,
+    env: {
+      name,
+      bootstrap: {
+        host: protocol + hostname,
+        path: bootstrap.path,
+        url: protocol + getCombinedURL(hostname, bootstrap.path, 'bootstrap.js'),
+        options: bootstrap.options || {},
+      },
+      api: {
+        host: protocol + hostname,
+        path: api.path,
+        url: protocol + getCombinedURL(hostname, api.path),
+        options: api.options || {},
+      },
+      ui: {
+        host: protocol + hostname,
+        path: ui.path,
+        url: protocol + getCombinedURL(hostname, ui.path),
+        main: ui.main,
+        env: ui.env || {},
+        options: ui.options || {},
+      },
+    },
     ...props,
   };
   // Return the built component
   // prettier-ignore
-  return ('<div data-microui-library="' + config.name + '" data-microui-component="' + name + '">' +
+  return ('<div data-bitsyui-library="' + config.name + '" data-bitsyui-component="' + name + '">' +
     '' + el + '' +
     '</div>' +
     '<script type="application/javascript">' +
     ' (function(n, c, p, t) {' +
     '  var w = window, m = function(e){' +
     '   if (e.detail.name === n && w[n] && w[n].Hydrate) {' +
-    '    w[n].Hydrate(document.querySelector(`div[data-microui-component="' + name + '"] div`),c,p,t);' +
+    '    w[n].Hydrate(document.querySelector(`div[data-bitsyui-component="' + name + '"] div`),c,p,t);' +
     '   };' +
     '  };' +
-    '  if (w[`' + config.name + '`]) { m(); } else { w.addEventListener(\'microUILoaded\', m); }' +
+    '  if (w[`' + config.name + '`]) { m(); } else { w.addEventListener(\'bitsyUILoaded\', m); }' +
     '  var d = document.getElementById(`' + config.name + 'Library`);' +
     '  if (d === null || d.length === 0) {' +
     '   var tag = document.createElement(\'script\');' +
     '   tag.id = `' + config.name + 'Library`;' +
-    '   tag.src = `' + apiUrl + '/bootstrap.js`;' +
+    '   tag.src = `' + protocol + getCombinedURL(hostname, bootstrap.path, 'bootstrap.js') + '`;' +
     '   document.body.appendChild(tag);' +
     '  }' +
     ' })(\'' + config.name + '\', \'' + name + '\', ' + JSON.stringify(_props) + ', {});' +

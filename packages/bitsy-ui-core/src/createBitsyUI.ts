@@ -7,16 +7,19 @@ import doBootstrapHandler from './Handlers/doBootstrapHandler';
 import addRouteControl from './Controls/addRouteControl';
 import addStrapControl from './Controls/addStrapControl';
 import doBootControl from './Controls/doBootControl';
-import type MicroUIConfig from './Types/MicroUIConfig';
-import type MicroUiLogger from './Types/MicroUiLogger';
+import getBootstrapPath from './Selectors/getBootstrapPath';
+import getUiPath from './Selectors/getUiPath';
+import getUiAssets from './Selectors/getUiAssets';
+import type BitsyUIConfig from './Types/BitsyUIConfig';
+import type BitsyUiLogger from './Types/BitsyUiLogger';
 
 const createBitsyUI = ({
   config,
   logger = console,
   onError = (e) => {},
 }: {
-  config: MicroUIConfig;
-  logger?: MicroUiLogger;
+  config: BitsyUIConfig;
+  logger?: BitsyUiLogger;
   onError?: (e) => void;
 }) => {
   // Attempt to start the express server
@@ -29,12 +32,10 @@ const createBitsyUI = ({
     api.use(json());
     api.use(cors(config.settings.api.cors));
     api.use(compression());
-    // Retrieve the the api prefix
-    const _prefix = config.settings.api?.prefix || '';
     // Serve static assets
-    api.use(`${_prefix}`, express.static('./.assets'));
+    api.use(getUiPath(config), express.static(getUiAssets(config)));
     // Hydrate and output the bootstrapper script
-    api.get(`${_prefix}/bootstrap.js`, doBootstrapHandler(config));
+    api.get(getBootstrapPath(config), doBootstrapHandler(config));
     // Returns the instance of the server, the strapper the booter, the config and the logger
     return {
       api,
