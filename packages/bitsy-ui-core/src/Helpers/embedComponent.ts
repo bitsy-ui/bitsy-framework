@@ -21,21 +21,21 @@ const embedComponent: EmbedComponent = (name, protocol, hostname, config, props,
       name,
       bootstrap: {
         host: protocol + hostname,
-        path: bootstrap.path,
-        url: protocol + getCombinedURL(hostname, bootstrap.path, 'bootstrap.js'),
+        path: bootstrap.publicPath,
+        url: protocol + getCombinedURL(hostname, bootstrap.publicPath, 'bootstrap.js'),
         options: bootstrap.options || {},
       },
       api: {
         host: protocol + hostname,
-        path: api.path,
-        url: protocol + getCombinedURL(hostname, api.path),
+        path: api.publicPath,
+        url: protocol + getCombinedURL(hostname, api.publicPath),
         options: api.options || {},
       },
       ui: {
         host: protocol + hostname,
-        path: ui.path,
-        url: protocol + getCombinedURL(hostname, ui.path),
-        main: ui.main,
+        path: ui.publicPath,
+        url: protocol + getCombinedURL(hostname, ui.publicPath),
+        script: ui.script,
         env: ui.env || {},
         options: ui.options || {},
       },
@@ -64,7 +64,7 @@ const embedComponent: EmbedComponent = (name, protocol, hostname, config, props,
     '  if (d === null || d.length === 0) {' +
     '   var tag = document.createElement(\'script\');' +
     '   tag.id = `' + config.name + 'Library`;' +
-    '   tag.src = `' + protocol + getCombinedURL(hostname, bootstrap.path, 'bootstrap.js') + '`;' +
+    '   tag.src = `' + protocol + getCombinedURL(hostname, bootstrap.publicPath, 'bootstrap.js') + '`;' +
     '   document.body.appendChild(tag);' +
     '  }' +
     ' })(\'' + config.name + '\', \'' + name + '\', ' + JSON.stringify(_props) + ', {});' +

@@ -3,23 +3,41 @@ const fs = require('fs');
 const webpack = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
 
-// Webpack uses `publicPath` to determine where the app is being served from.
-// In development, we always serve from the root. This makes config easier.
-const publicPath = '/';
+// Determine the project directory
+const projectDir = path.resolve(fs.realpathSync(process.cwd()), '.');
+// Determine the location of the bitsyui config
+// @TODO if no local config we should default to the base config
+const configPathname = path.resolve(projectDir, 'bitsyui.config.js');
+// Load the bitsyUiConfig
+const bitsyUiConfig = require(configPathname);
+
+// Determine the assets public path
+const publicPath = bitsyUiConfig.settings.bootstrap.publicPath;
+// Determine the assets folder
+const entryFile = bitsyUiConfig.settings.bootstrap.fileEntry;
+// Determine the assets folder
+const publishDir = bitsyUiConfig.settings.bootstrap.publishDir;
+// Determine the assets folder
+const outputFile = bitsyUiConfig.settings.bootstrap.filePattern;
+// Determine the babel config to use
+const babelConfig = bitsyUiConfig.settings.bootstrap.babelConfig;
+// Determine the extensions
+const extensions = bitsyUiConfig.settings.bootstrap.fileExtensions;
 
 module.exports = {
-  entry: path.resolve(process.cwd(), 'node_modules', '@bitsy-ui', 'bootstrap', 'lib', 'bootstrap.js'),
+  entry: entryFile,
   devtool: 'source-map',
   mode: 'production',
   output: {
-    filename: 'bootstrap.js',
+    filename: outputFile,
     publicPath: publicPath,
     globalObject: `(typeof self !== 'undefined' ? self : this)`,
-    path: path.resolve(process.cwd(), './.bootstrap'),
+    path: publishDir,
     pathinfo: true,
   },
   resolve: {
-    extensions: ['.js'],
+    extensions: extensions,
+    symlinks: false,
   },
   optimization: {
     minimizer: [
@@ -54,18 +72,14 @@ module.exports = {
       {
         oneOf: [
           {
-            test: /\.(ts|tsx|js|jsx)$/,
+            test: /\.(js|jsx)$/,
             exclude: [/node_modules/],
             loader: require.resolve('babel-loader'),
             options: {
               cacheDirectory: true,
-              // Don't waste time on Gzipping the cache
               cacheCompression: false,
-              // If an error happens in a package, it's possible to be
-              // because it was compiled. Thus, we don't want the browser
-              // debugger to show the original code. Instead, the code
-              // being evaluated would be much more helpful.
               sourceMaps: true,
+              configFile: babelConfig,
             },
           },
         ],

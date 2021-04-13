@@ -6,6 +6,8 @@
   "license": "MIT",
   "directories": {
     "lib": "lib",
+    "babel": "babel",
+    "webpack": "webpack",
     "src": "src"
   },
   "bin": {

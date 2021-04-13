@@ -16,40 +16,40 @@ program
   .option('-p, --production', 'builds bitsy ui in production mode')
   .option('-d, --development', 'builds bitsy ui in development mode')
   .action((options) => {
+    // Determine the current build mode
+    // We will default to development unless production is supplied
+    const mode = options.development || (!options.development && options.production) ? 'development' : 'production';
     // Determine the location of the bitsyui config
     const configPathname = path.resolve(projectDir, 'bitsyui.config.js');
     // Determine the location of the bitsyui config
+    // @TODO use this and combine with the provided config
     const configDefaultPathname = path.resolve(projectDir, 'bitsyui.default.config.js');
     // Load the bitsyui config file
     // This will always be located at the project root
+    // @TODO do some combining or something
     const config = require(configPathname);
     // BOOTSTRAP ASSETS BUILD
-    const bootWebpack = path.resolve(projectDir, 'webpack', 'webpack.config.bootstrap.js');
+    // Determine the webpack config to use
+    const bootWebpack = config.settings.bootstrap.webpackConfig;
     // Attempt to build the micro UI
-    const bootBuild = spawnSync('npx', ['webpack', '--mode', 'development', '--config', bootWebpack], {
+    const bootBuild = spawnSync('npx', ['webpack', '--mode', mode, '--config', bootWebpack], {
       encoding: 'utf8',
     });
     // UI ASSETS BUILD
     // @TODO delete any current folder
     // @TODO create the destination folder
-    const uiWebpack = path.resolve(projectDir, 'webpack', 'webpack.config.ui.js');
+    const uiWebpack = config.settings.ui.webpackConfig;
     // Attempt to build the micro UI
-    const uiBuild = spawnSync('npx', ['webpack', '--mode', 'development', '--config', uiWebpack], { encoding: 'utf8' });
+    const uiBuild = spawnSync('npx', ['webpack', '--mode', mode, '--config', uiWebpack], { encoding: 'utf8' });
     // API ASSETS BUILD
+    const apiBabel = config.settings.api.babelConfig;
+    const apiPublishDir = config.settings.api.publishDir;
+    const apiExtensions = config.settings.api.fileExtensions;
     // @TODO delete any current folder
     // @TODO create the destination folder
     const apiBuild = spawnSync(
       'npx',
-      [
-        'babel',
-        'src',
-        '--extensions',
-        ['.ts', '.tsx', '.js', '.jsx'].join(','),
-        '--config-file',
-        path.resolve(projectDir, 'babel', 'babel.api.config.json'),
-        '--out-dir',
-        path.resolve(projectDir, '.api'),
-      ],
+      ['babel', 'src', '--extensions', apiExtensions.join(','), '--config-file', apiBabel, '--out-dir', apiPublishDir],
       { encoding: 'utf8' },
     );
     //

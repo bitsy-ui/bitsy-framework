@@ -22,11 +22,6 @@
         "root": ["./"],
         "alias": {
           "@src": "./src",
-          "@context": "./src/Context",
-          "@components": "./src/Components",
-          "@endpoints": "./src/Endpoints",
-          "@hooks": "./src/Hooks",
-          "@services": "./src/Services",
           "node_modules": "./node_modules"
         }
       }

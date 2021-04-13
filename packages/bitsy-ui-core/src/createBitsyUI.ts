@@ -8,8 +8,8 @@ import addRouteControl from './Controls/addRouteControl';
 import addStrapControl from './Controls/addStrapControl';
 import doBootControl from './Controls/doBootControl';
 import getBootstrapPath from './Selectors/getBootstrapPath';
-import getUiPath from './Selectors/getUiPath';
-import getUiAssets from './Selectors/getUiAssets';
+import getUiPublishPath from './Selectors/getUiPublishPath';
+import getUiPublicPath from './Selectors/getUiPublicPath';
 import type BitsyUIConfig from './Types/BitsyUIConfig';
 import type BitsyUiLogger from './Types/BitsyUiLogger';
 
@@ -33,7 +33,7 @@ const createBitsyUI = ({
     api.use(cors(config.settings.api.cors));
     api.use(compression());
     // Serve static assets
-    api.use(getUiPath(config), express.static(getUiAssets(config)));
+    api.use(getUiPublicPath(config), express.static(getUiPublishPath(config)));
     // Hydrate and output the bootstrapper script
     api.get(getBootstrapPath(config), doBootstrapHandler(config));
     // Returns the instance of the server, the strapper the booter, the config and the logger

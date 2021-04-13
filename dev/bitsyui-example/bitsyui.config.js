@@ -4,10 +4,19 @@ module.exports = {
   name: 'exampleMicroUI',
   settings: {
     bootstrap: {
-      entry: path.resolve(process.cwd(), 'node_modules', '@bitsy-ui', 'bootstrap', 'lib', 'bootstrap.js'),
-      destination: path.join(process.cwd(), '.bootstrap'),
-      path: '/',
-      asset: path.join(process.cwd(), '.bootstrap', 'bootstrap.js'),
+      // Build config files
+      webpackConfig: path.join(process.cwd(), 'node_modules', '@bitsy-ui', 'bootstrap', 'webpack', 'webpack.config.js'),
+      babelConfig: path.join(process.cwd(), 'node_modules', '@bitsy-ui', 'bootstrap', 'babel', 'babel.config.json'),
+      // Build files and configuration
+      filePattern: 'bootstrap.js',
+      fileEntry: path.resolve(process.cwd(), 'node_modules', '@bitsy-ui', 'bootstrap', 'lib', 'bootstrap.js'),
+      fileExtensions: ['.js'],
+      // Publish configuration
+      publishDir: path.join(process.cwd(), '.bootstrap'),
+      publicPath: '/',
+      // Path to built bootstrap.js
+      // This will be consumed by the API and token replaced
+      script: path.join(process.cwd(), '.bootstrap', 'bootstrap.js'),
       // WARNING! Try everything we can to make sure the assets are NOT cached
       // This is the worst file to have cached, ensure this file does not cache
       headers: {
@@ -16,24 +25,29 @@ module.exports = {
         Expires: '-1',
         Pragma: 'no-cache',
       },
+      options: {},
     },
     ui: {
+      // Build config files
+      babelConfig: path.join(process.cwd(), 'node_modules', '@bitsy-ui', 'core', 'babel', 'babel.config.ui.json'),
+      webpackConfig: path.join(process.cwd(), 'node_modules', '@bitsy-ui', 'core', 'webpack', 'webpack.config.ui.js'),
       script: 'main.js',
-      entry: path.join(process.cwd(), 'src', 'ui.ts'),
-      output: 'bitsy-ui.[hash].js',
-      path: '/',
+      publicPath: '/',
       manifest: path.join(process.cwd(), '.ui', 'manifest.json'),
-      destination: path.join(process.cwd(), '.ui'),
-      babelConfig: path.join(process.cwd(), 'node_modules', '@bitsy-ui/core', 'babel', 'babel.ui.config.json'),
-      webpackConfig: path.join(process.cwd(), 'node_modules', '@bitsy-ui/core', 'webpack', 'webpack.config.js'),
-      extensions: ['.ts', '.tsx', '.js', '.jsx'],
-      aliases: {},
+      publishDir: path.join(process.cwd(), '.ui'),
+      fileEntry: path.join(process.cwd(), 'src', 'ui.ts'),
+      filePattern: 'bitsy-ui.[hash].js',
+      fileExtensions: ['.ts', '.tsx', '.js', '.jsx'],
+      aliasDirs: {},
       env: {},
+      options: {},
     },
     api: {
-      destination: path.join(process.cwd(), '.api'),
-      babelConfig: path.join(process.cwd(), 'node_modules', '@bitsy-ui/core', 'babel', 'babel.api.config.json'),
-      path: '/',
+      // Build config files
+      babelConfig: path.join(process.cwd(), 'node_modules', '@bitsy-ui', 'core', 'babel', 'babel.config.api.json'),
+      publishDir: path.join(process.cwd(), '.api'),
+      fileExtensions: ['.ts', '.tsx', '.js', '.jsx'],
+      publicPath: '/',
       port: 9010,
       cors: { origin: '*' },
       env: {},
@@ -41,9 +55,9 @@ module.exports = {
         headers: {},
       },
       messages: {
-        START_UP: 'Micro UI API starting',
-        STARTED_UP: 'Micro UI API started and listening on port',
-        CRASHED: 'Micro UI API crashed with message',
+        START_UP: 'Bitsy UI API starting',
+        STARTED_UP: 'Bitsy UI API started and listening on port',
+        CRASHED: 'Bitsy UI API crashed with message',
       },
     },
   },

@@ -10,28 +10,28 @@ const TerserPlugin = require('terser-webpack-plugin');
 const projectDir = path.resolve(fs.realpathSync(process.cwd()), '.');
 // Determine the current dirname
 const currentDir = path.resolve(fs.realpathSync(__dirname), '.');
-
 // Determine the location of the bitsyui config
 const configPathname = path.resolve(projectDir, 'bitsyui.config.js');
 // Load the bitsyUiConfig
 const bitsyUiConfig = require(configPathname);
 
 // Determine the assets public path
-const publicPath = bitsyUiConfig.settings.ui.path || '/';
+const publicPath = bitsyUiConfig.settings.ui.publicPath;
 // Determine the assets folder
-const entryFile = bitsyUiConfig.settings.ui.entry;
+const entryFile = bitsyUiConfig.settings.ui.fileEntry;
 // Determine the assets folder
-const assetsDir = bitsyUiConfig.settings.ui.destination || '.ui';
+const publishDir = bitsyUiConfig.settings.ui.publishDir;
 // Determine the assets folder
-const outputFile = bitsyUiConfig.settings.ui.output || 'bitsy-ui.[hash].js';
+const outputFile = bitsyUiConfig.settings.ui.filePattern;
 // Determine the extensions
-const extensions = bitsyUiConfig.settings.ui.extensions || ['.js', '.json', '.jsx'];
-
+const extensions = bitsyUiConfig.settings.ui.fileExtensions;
 // Retrieve any path aliases
 // These help make development a much more pleasurable experience
-const pathAliases = bitsyUiConfig.settings.ui.aliases || {};
+const pathAliases = bitsyUiConfig.settings.ui.aliasDirs || {};
+// Determine the babel config to use
+const babelConfig = bitsyUiConfig.settings.ui.babelConfig;
 
-if (!fs.existsSync(assetsDir)) fs.mkdirSync(assetsDir);
+if (!fs.existsSync(publishDir)) fs.mkdirSync(publishDir);
 
 module.exports = {
   entry: [path.resolve(currentDir, `./webpack.path.js`), entryFile],
@@ -47,7 +47,7 @@ module.exports = {
     library: bitsyUiConfig.name,
     libraryTarget: 'umd',
     publicPath: publicPath,
-    path: path.resolve(__dirname, assetsDir),
+    path: publishDir,
     pathinfo: true,
   },
   resolve: {
@@ -119,7 +119,7 @@ module.exports = {
               cacheDirectory: true,
               cacheCompression: false,
               sourceMaps: false,
-              configFile: path.resolve(projectDir, 'babel', 'babel.ui.config.json'),
+              configFile: babelConfig,
             },
           },
           { test: /\.css$/, loader: 'style-loader!css-loader' },

@@ -23,6 +23,8 @@ const fetchAssetsHandler = () => {
   // These should be only the safe vars which users could see if they monitored traffic
   window[`__BitsyUI${env.name}Env__`] = env;
   // Set the webpack custom URL for api retrieval
+  window[`__BitsyUI${env.name}BootUrl__`] = getCombinedURL(env.bootstrap.url, '/');
+  // Set the webpack custom URL for api retrieval
   window[`__BitsyUI${env.name}ApiUrl__`] = getCombinedURL(env.api.url, '/');
   // @TODO should we provide a list of endpoints here?
   // Set the webpack custom URL for ui retrieval
