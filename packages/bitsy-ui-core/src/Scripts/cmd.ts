@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
-import open from 'open';
 import path from 'path';
+import chalk from 'chalk';
 import process from 'process';
 import program from 'commander';
-import { spawnSync } from 'child_process';
+import open from 'open';
+import { spawn, spawnSync } from 'child_process';
 
 const baseDir = __dirname;
 const projectDir = process.cwd();
@@ -31,20 +32,30 @@ program
     // BOOTSTRAP ASSETS BUILD
     // Determine the webpack config to use
     const bootWebpack = config.settings.bootstrap.webpackConfig;
+    // Alert the world as to what we are doing
+    console.log(chalk.blue('Building Bitsy Boostrap Assets'));
     // Attempt to build the micro UI
     const bootBuild = spawnSync('npx', ['webpack', '--mode', mode, '--config', bootWebpack], {
       encoding: 'utf8',
     });
+    // Notify the results of the bootstrap assets build
+    console.log(bootBuild.stdout);
     // UI ASSETS BUILD
     // @TODO delete any current folder
     // @TODO create the destination folder
     const uiWebpack = config.settings.ui.webpackConfig;
+    // Alert the world as to what we are doing
+    console.log(chalk.blue('Building Bitsy UI Assets'));
     // Attempt to build the micro UI
     const uiBuild = spawnSync('npx', ['webpack', '--mode', mode, '--config', uiWebpack], { encoding: 'utf8' });
+    // Notify the results of the bootstrap assets build
+    console.log(uiBuild.stdout);
     // API ASSETS BUILD
     const apiBabel = config.settings.api.babelConfig;
     const apiPublishDir = config.settings.api.publishDir;
     const apiExtensions = config.settings.api.fileExtensions;
+    // Alert the world as to what we are doing
+    console.log(chalk.blue('Building Bitsy API Assets'));
     // @TODO delete any current folder
     // @TODO create the destination folder
     const apiBuild = spawnSync(
@@ -52,15 +63,19 @@ program
       ['babel', 'src', '--extensions', apiExtensions.join(','), '--config-file', apiBabel, '--out-dir', apiPublishDir],
       { encoding: 'utf8' },
     );
-    //
+    // Notify the results of the bootstrap assets build
+    console.log(apiBuild.stdout);
+    // BOOT LOCAL SERVER
+    // Attempt to start the application locally
+    const serve = spawn('node', ['./.api/service.js']);
+    // Notify the results of the bootstrap assets build
+    serve.stdout.on('data', (data) => {
+      console.log(`stdout: ${data}`);
+    });
     // OPEN WITHIN BROWSER
-    // open('http://www.google.com');
-
-    console.log('bootBuild', bootBuild);
-    console.log('uiBuild', uiBuild);
-    console.log('apiBuild', apiBuild);
+    open('http://localhost:9010');
   });
-
+ 
 program
   .command('local')
   .description('serve a bitsy ui locally')

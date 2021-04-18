@@ -10,7 +10,7 @@
   },
   "scripts": {
     "reset": "sudo rm -r node_modules && rm yarn.lock && yarn",
-    "local": "yarn ts-node ./src/cmd.ts build",
+    "local": "yarn run bitsy-ui build",
     "serve": "node ./.api/service.js"
   },
   "dependencies": {
