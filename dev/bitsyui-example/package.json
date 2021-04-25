@@ -9,7 +9,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "reset": "sudo rm -r node_modules && rm yarn.lock && yarn",
+    "reset": "sudo rm -r node_modules && rm yarn.lock && yarn && yarn run bitsy-ui build",
     "local": "yarn run bitsy-ui build",
     "serve": "node ./.api/service.js"
   },

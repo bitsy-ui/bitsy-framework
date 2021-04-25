@@ -6,6 +6,7 @@ import process from 'process';
 import program from 'commander';
 import open from 'open';
 import { spawn, spawnSync } from 'child_process';
+import getCombinedConfig from "../Helpers/Config/getCombinedConfig";
 
 const baseDir = __dirname;
 const projectDir = process.cwd();
@@ -21,14 +22,17 @@ program
     // We will default to development unless production is supplied
     const mode = options.development || (!options.development && options.production) ? 'development' : 'production';
     // Determine the location of the bitsyui config
-    const configPathname = path.resolve(projectDir, 'bitsyui.config.js');
-    // Determine the location of the bitsyui config
     // @TODO use this and combine with the provided config
     const configDefaultPathname = path.resolve(projectDir, 'bitsyui.default.config.js');
+    // This will always be located at the project root
+    const defaultConfigFile = require(configDefaultPathname);
+    // Determine the location of the bitsyui config
+    const configPathname = path.resolve(projectDir, 'bitsyui.config.js');
     // Load the bitsyui config file
     // This will always be located at the project root
+    const projectConfigFile = require(configPathname);
     // @TODO do some combining or something
-    const config = require(configPathname);
+    const config = getCombinedConfig(defaultConfigFile, projectConfigFile);
     // BOOTSTRAP ASSETS BUILD
     // Determine the webpack config to use
     const bootWebpack = config.settings.bootstrap.webpackConfig;
@@ -65,6 +69,18 @@ program
     );
     // Notify the results of the bootstrap assets build
     console.log(apiBuild.stdout);
+    // Alert the world as to what we are doing
+    console.log(chalk.blue('Congratulations! Bitsy UI Successfully Built!'));
+  });
+
+program
+  .command('local')
+  .description('serve a bitsy ui locally')
+  .action((options) => {
+    console.log('attempting to serve locally');
+    // Build the assets with watching enabled
+    // @TODO add some kind of hot loading capacity
+    // @TODO create some kind of macro ui sandbox environment
     // BOOT LOCAL SERVER
     // Attempt to start the application locally
     const serve = spawn('node', ['./.api/service.js']);
@@ -74,13 +90,6 @@ program
     });
     // OPEN WITHIN BROWSER
     open('http://localhost:9010');
-  });
- 
-program
-  .command('local')
-  .description('serve a bitsy ui locally')
-  .action((options) => {
-    console.log('attempting to serve locally');
   });
 
 program.parse(process.argv);

@@ -30,6 +30,7 @@ type BitsyUIConfig = {
     api: {
       publicPath: string;
       publishDir: string;
+      babelConfig: string;
       fileExtensions: string[];
       port: string | number;
       ssr?: {
