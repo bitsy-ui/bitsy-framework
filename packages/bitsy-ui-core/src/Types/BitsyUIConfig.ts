@@ -32,6 +32,7 @@ type BitsyUIConfig = {
       publishDir: string;
       babelConfig: string;
       fileExtensions: string[];
+      fileEntry: string;
       port: string | number;
       ssr?: {
         headers?: { [k: string]: any };

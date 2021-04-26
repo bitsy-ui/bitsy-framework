@@ -45,8 +45,12 @@ module.exports = {
     api: {
       // Build config files
       babelConfig: path.join(process.cwd(), 'node_modules', '@bitsy-ui', 'core', 'babel', 'babel.config.api.json'),
-      publishDir: path.join(process.cwd(), '.api'),
+      // Build files and configuration
       fileExtensions: ['.ts', '.tsx', '.js', '.jsx'],
+      fileEntry: path.join(process.cwd(), '.api', 'service.js'),
+      // Publish configuration
+      publishDir: path.join(process.cwd(), '.api'),
+
       publicPath: '/',
       port: 9010,
       cors: { origin: '*' },

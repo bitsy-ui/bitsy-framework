@@ -11,6 +11,7 @@
   "scripts": {
     "reset": "sudo rm -r node_modules && rm yarn.lock && yarn && yarn run bitsy-ui build",
     "local": "yarn run bitsy-ui build",
+    "dev": "yarn run bitsy-ui local",
     "serve": "node ./.api/service.js"
   },
   "dependencies": {
