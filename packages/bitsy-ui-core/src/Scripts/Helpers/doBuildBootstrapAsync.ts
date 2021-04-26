@@ -1,4 +1,4 @@
-import { spawn } from "child_process";
+import { spawn } from 'child_process';
 
 const doBuildBootstrapAsync = (mode, config) => {
   // Attempt to build the files

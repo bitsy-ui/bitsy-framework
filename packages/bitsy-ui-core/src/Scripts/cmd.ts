@@ -7,8 +7,8 @@ import program from 'commander';
 import open from 'open';
 import { spawn, spawnSync } from 'child_process';
 import getCombinedConfig from '../Helpers/Config/getCombinedConfig';
-import doBuildBootstrapSync from "./Helpers/doBuildBootstrapSync";
-import doBuildBootstrapAsync from "./Helpers/doBuildBootstrapAsync";
+import doBuildBootstrapSync from './Helpers/doBuildBootstrapSync';
+import doBuildBootstrapAsync from './Helpers/doBuildBootstrapAsync';
 
 const baseDir = __dirname;
 const projectDir = process.cwd();
