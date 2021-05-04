@@ -7,8 +7,10 @@ import program from 'commander';
 import open from 'open';
 import { spawn, spawnSync } from 'child_process';
 import getCombinedConfig from '../Helpers/Config/getCombinedConfig';
-import doBuildBootstrapSync from './Helpers/doBuildBootstrapSync';
 import doBuildBootstrapAsync from './Helpers/doBuildBootstrapAsync';
+import doBuildUiAsync from './Helpers/doBuildUiAsync';
+import doBuildBootstrapSync from './Helpers/doBuildBootstrapSync';
+import doBuildUiSync from './Helpers/doBuildUiSync';
 
 const baseDir = __dirname;
 const projectDir = process.cwd();
@@ -43,8 +45,10 @@ program
     // Alert the world as to what we are doing
     console.log(chalk.blue('Building Bitsy Boostrap Assets'));
     // Attempt to build the micro UI
-    // doBuildBootstrapSync(mode, bootWebpack);
-    doBuildBootstrapAsync(mode, bootWebpack);
+    // If we are building within watch mode then execute the async build helper
+    if (options.watch) doBuildBootstrapSync(mode, bootWebpack);
+    // If we are not building within watch mode then build in async mode
+    else doBuildBootstrapSync(mode, bootWebpack);
     // UI ASSETS BUILD
     // @TODO delete any current folder
     // @TODO create the destination folder
@@ -52,9 +56,10 @@ program
     // Alert the world as to what we are doing
     console.log(chalk.blue('Building Bitsy UI Assets'));
     // Attempt to build the micro UI
-    const uiBuild = spawnSync('npx', ['webpack', '--mode', mode, '--config', uiWebpack], { encoding: 'utf8' });
-    // Notify the results of the bootstrap assets build
-    console.log(uiBuild.stdout);
+    // If we are building within watch mode then execute the async build helper
+    if (options.watch) doBuildUiAsync(mode, uiWebpack);
+    // If we are not building within watch mode then build in async mode
+    else doBuildUiSync(mode, uiWebpack);
     // API ASSETS BUILD
     const apiBabel = config.settings.api.babelConfig;
     const apiPublishDir = config.settings.api.publishDir;
