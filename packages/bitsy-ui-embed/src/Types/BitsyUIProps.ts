@@ -1,6 +1,6 @@
-export type MicroUIProps = {
+export type BitsyUIProps = {
   [k: string]: any;
-  microUi: {
+  bitsyUi: {
     library: string;
     name: string;
     url: string;

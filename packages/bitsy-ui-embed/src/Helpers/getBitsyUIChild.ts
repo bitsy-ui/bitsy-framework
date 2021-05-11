@@ -1,20 +1,20 @@
 import React from 'react';
-import { MicroUIProps } from '../Types/MicroUIProps';
-import getMicroUiEnv from './getMicroUiEnv';
+import { BitsyUIProps } from '../Types/BitsyUIProps';
+import getBitsyUIEnv from './getBitsyUiEnv';
 
-type GetMicroUiChild = (props: MicroUIProps) => React.ReactChild | undefined;
+type GetBitsyUIChild = (props: BitsyUIProps) => React.ReactChild | undefined;
 
-export const getMicroUIChild: GetMicroUiChild = (props) => {
+export const getBitsyUIChild: GetBitsyUIChild = (props) => {
   // Deconstruct the micro UI component values
   const {
-    microUi: { library, name },
+    bitsyUI: { library, name },
   } = props;
   // Retrieve the current env setting for this micro UI
-  const env = getMicroUiEnv(library);
+  const env = getBitsyUIEnv(library);
   // If the library exists then return the built child
   return (window as { [k: string]: any })[library] && window[library].Child
     ? window[library].Child(name, { ...props, env })
     : undefined;
 };
 
-export default getMicroUIChild;
+export default getBitsyUIChild;
