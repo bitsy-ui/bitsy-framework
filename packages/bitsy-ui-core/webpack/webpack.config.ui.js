@@ -5,15 +5,30 @@ const webpack = require('webpack');
 const LoadablePlugin = require('@loadable/webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const getCombinedConfig = require('@bitsy-ui/core/lib/Helpers/Config/getCombinedConfig').default;
+
+console.log('---> getCombinedConfig', getCombinedConfig);
 
 // Determine the project directory
 const projectDir = path.resolve(fs.realpathSync(process.cwd()), '.');
 // Determine the current dirname
 const currentDir = path.resolve(fs.realpathSync(__dirname), '.');
+
+// MICRO FRONTEND CONFIG
+// Determine the location of the bitsyui config
+const configDefaultPathname = path.resolve(currentDir, '../lib/bitsyui.default.config.js');
+// This will always be located at the project root
+const defaultConfigFile = require(configDefaultPathname);
 // Determine the location of the bitsyui config
 const configPathname = path.resolve(projectDir, 'bitsyui.config.js');
-// Load the bitsyUiConfig
-const bitsyUiConfig = require(configPathname);
+// Load the bitsyui config file
+// This will always be located at the project root
+const projectConfigFile = require(configPathname);
+// Retrieve the combined config
+// This should use the default config as a base
+const bitsyUiConfig = getCombinedConfig(defaultConfigFile, projectConfigFile);
+
+console.log('bitsyUiConfig', bitsyUiConfig);
 
 // Determine the assets public path
 const publicPath = bitsyUiConfig.settings.ui.publicPath;

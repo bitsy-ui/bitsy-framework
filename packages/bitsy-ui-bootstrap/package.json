@@ -15,10 +15,6 @@
     "webpack",
     "babel"
   ],
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/bitsy-ui/bitsy-framework.git"

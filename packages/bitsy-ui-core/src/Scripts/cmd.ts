@@ -17,7 +17,7 @@ const projectDir = process.cwd();
 
 // MICRO FRONTEND CONFIG
 // Determine the location of the bitsyui config
-const configDefaultPathname = path.resolve(projectDir, 'bitsyui.default.config.js');
+const configDefaultPathname = path.resolve(baseDir, '../bitsyui.default.config.js');
 // This will always be located at the project root
 const defaultConfigFile = require(configDefaultPathname);
 // Determine the location of the bitsyui config
