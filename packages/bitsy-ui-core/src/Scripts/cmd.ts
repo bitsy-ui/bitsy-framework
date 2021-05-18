@@ -8,8 +8,7 @@ import { spawn, spawnSync } from 'child_process';
 import doBuildUiAsync from './Helpers/doBuildUiAsync';
 import doBuildBootstrapSync from './Helpers/doBuildBootstrapSync';
 import doBuildUiSync from './Helpers/doBuildUiSync';
-import getBitsyConfig from "../Config/getBitsyConfig";
-
+import getBitsyConfig from '../Config/getBitsyConfig';
 
 // MICRO FRONTEND CONFIG
 // Determine the location of the bitsyui config

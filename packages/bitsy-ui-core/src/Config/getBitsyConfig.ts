@@ -1,6 +1,6 @@
-import process from "process";
-import path from "path";
-import getCombinedBitsyConfig from "./Helpers/getCombinedBitsyConfig";
+import process from 'process';
+import path from 'path';
+import getCombinedBitsyConfig from './Helpers/getCombinedBitsyConfig';
 import defaultBitsyConfig from './bitsyui.default.config.js';
 
 const getBitsyConfig = () => {

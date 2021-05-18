@@ -1,5 +1,5 @@
 import doStrapHandler from '../Handlers/doStrapHandler';
-import getCombinedURL from "../Helpers/getCombinedURL";
+import getCombinedURL from '../Helpers/getCombinedURL';
 
 const addStrapControl = (api, config, logger) => (name, component) => {
   // Retrieve the the api prefix

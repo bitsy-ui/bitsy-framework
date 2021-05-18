@@ -1,8 +1,7 @@
 import { BitsyUIConfig } from '../../Types';
 
 const getCombinedBitsyConfig = (baseConfig, ...configs): BitsyUIConfig => {
-
-  const newConfig =  configs.filter(Boolean).reduce((curr, config) => {
+  const newConfig = configs.filter(Boolean).reduce((curr, config) => {
     // Progressively build the config
     const settings = Object.entries(config.settings).reduce((_curr, [key, data]) => {
       // retrieve the current settings value
