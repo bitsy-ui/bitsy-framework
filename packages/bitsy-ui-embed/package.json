@@ -1,6 +1,6 @@
 {
   "name": "@bitsy-ui/embed",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "license": "MIT",
@@ -28,7 +28,7 @@
     "build:js": "BABEL_ENV=build babel --root-mode upward src --out-dir lib --extensions .ts,.tsx --no-comments && tsc --project ./tsconfig.json"
   },
   "dependencies": {
-    "@bitsy-ui/hooks": "^0.0.1",
+    "@bitsy-ui/hooks": "^0.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
