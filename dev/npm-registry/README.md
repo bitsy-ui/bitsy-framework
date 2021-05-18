@@ -18,4 +18,7 @@ Use this for testing published versions
 
 ## Installing
 - run `NPM_CONFIG_REGISTRY=http://localhost:4873`
+- run `yarn config set registry http://localhost:4873`
 - `yarn add {package}` or `npm install {package}`
+
+

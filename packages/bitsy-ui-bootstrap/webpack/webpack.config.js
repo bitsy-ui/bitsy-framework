@@ -2,14 +2,10 @@ const path = require('path');
 const fs = require('fs');
 const webpack = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
+const getBitsyConfig = require('@bitsy-ui/core/lib/Config/getBitsyConfig').default;
 
-// Determine the project directory
-const projectDir = path.resolve(fs.realpathSync(process.cwd()), '.');
-// Determine the location of the bitsyui config
-// @TODO if no local config we should default to the base config
-const configPathname = path.resolve(projectDir, 'bitsyui.config.js');
-// Load the bitsyUiConfig
-const bitsyUiConfig = require(configPathname);
+// MICRO FRONTEND CONFIG
+const bitsyUiConfig = getBitsyConfig();
 
 // Determine the assets public path
 const publicPath = bitsyUiConfig.settings.bootstrap.publicPath;

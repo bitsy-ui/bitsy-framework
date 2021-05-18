@@ -10,7 +10,7 @@ const doBuildUiAsync = (mode, config) => {
     console.log(`stdout: ${data}`);
   });
   // Notify the results of the ui assets build
-  build.stderr.on('data', (data) => {
+  build.stderr.on('error', (data) => {
     console.log(`stderr: ${data}`);
   });
 };

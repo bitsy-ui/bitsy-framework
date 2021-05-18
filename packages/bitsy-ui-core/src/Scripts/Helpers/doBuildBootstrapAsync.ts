@@ -10,7 +10,7 @@ const doBuildBootstrapAsync = (mode, config) => {
     console.log(`stdout: ${data}`);
   });
   // Notify the results of the bootstrap assets build
-  build.stderr.on('data', (data) => {
+  build.stderr.on('error', (data) => {
     console.log(`stderr: ${data}`);
   });
 };

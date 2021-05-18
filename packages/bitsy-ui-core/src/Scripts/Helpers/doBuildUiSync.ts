@@ -8,6 +8,7 @@ const doBuildUiSync = (mode, config) => {
   });
   // Notify the results of the ui assets build
   console.log(build.stdout);
+  console.log(build.stderr);
 };
 
 export default doBuildUiSync;

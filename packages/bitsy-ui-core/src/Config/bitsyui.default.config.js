@@ -52,7 +52,7 @@ module.exports = {
       publishDir: path.join(process.cwd(), '.api'),
 
       publicPath: '/',
-      port: 9010,
+      port: 8000,
       cors: { origin: '*' },
       env: {},
       ssr: {

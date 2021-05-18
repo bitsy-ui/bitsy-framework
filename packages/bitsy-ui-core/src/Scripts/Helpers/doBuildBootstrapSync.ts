@@ -8,6 +8,7 @@ const doBuildBootstrapSync = (mode, config) => {
   });
   // Notify the results of the bootstrap assets build
   console.log(build.stdout);
+  console.log(build.stderr);
 };
 
 export default doBuildBootstrapSync;

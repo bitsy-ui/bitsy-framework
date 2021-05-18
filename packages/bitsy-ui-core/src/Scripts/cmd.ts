@@ -1,33 +1,19 @@
 #!/usr/bin/env node
 
-import path from 'path';
 import chalk from 'chalk';
 import process from 'process';
 import program from 'commander';
 import open from 'open';
 import { spawn, spawnSync } from 'child_process';
-import getCombinedConfig from '../Helpers/Config/getCombinedConfig';
-import doBuildBootstrapAsync from './Helpers/doBuildBootstrapAsync';
 import doBuildUiAsync from './Helpers/doBuildUiAsync';
 import doBuildBootstrapSync from './Helpers/doBuildBootstrapSync';
 import doBuildUiSync from './Helpers/doBuildUiSync';
+import getBitsyConfig from "../Config/getBitsyConfig";
 
-const baseDir = __dirname;
-const projectDir = process.cwd();
 
 // MICRO FRONTEND CONFIG
 // Determine the location of the bitsyui config
-const configDefaultPathname = path.resolve(baseDir, '../bitsyui.default.config.js');
-// This will always be located at the project root
-const defaultConfigFile = require(configDefaultPathname);
-// Determine the location of the bitsyui config
-const configPathname = path.resolve(projectDir, 'bitsyui.config.js');
-// Load the bitsyui config file
-// This will always be located at the project root
-const projectConfigFile = require(configPathname);
-// Retrieve the combined config
-// This should use the default config as a base
-const config = getCombinedConfig(defaultConfigFile, projectConfigFile);
+const config = getBitsyConfig();
 
 program
   .command('build')
@@ -94,6 +80,10 @@ program
     // Notify the results of the bootstrap assets build
     serve.stdout.on('data', (data) => {
       console.log(`stdout: ${data}`);
+    });
+    // Notify the results of the bootstrap assets build
+    serve.stdout.on('error', (error) => {
+      console.log(`stdout: ${error}`);
     });
     // OPEN WITHIN BROWSER
     // open('http://localhost:9010');
