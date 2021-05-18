@@ -1,3 +1,3 @@
-export { default as getMicroUIChild } from './Helpers/getMicroUIChild';
-export { default as MicroUIChild } from './MicroUIChild';
-export { default as MicroUIComponent } from './MicroUIComponent';
+export { default as getBitsyUIChild } from './Helpers/getBitsyUIChild';
+export { default as BitsyUIChild } from './BitsyUIChild';
+export { default as BitsyUIComponent } from './BitsyUIComponent';

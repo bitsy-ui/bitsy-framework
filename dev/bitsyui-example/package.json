@@ -1,0 +1,29 @@
+{
+  "name": "mybitsyapp",
+  "version": "0.0.1",
+  "private": true,
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "license": "MIT",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "reset": "sudo rm -r node_modules && rm yarn.lock && yarn && yarn run bitsy-ui build",
+    "local": "yarn run bitsy-ui build",
+    "dev": "yarn run bitsy-ui local",
+    "serve": "node ./.api/service.js"
+  },
+  "dependencies": {
+    "@bitsy-ui/core": "^0.1.4",
+    "@bitsy-ui/bootstrap": "^0.0.2",
+    "ts-node": "^9.1.1"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.10",
+    "@types/node": "^13.11.0",
+    "@types/react": "^16.9.32",
+    "@types/react-dom": "^16.9.6",
+    "typescript": "^3.8.3"
+  }
+}

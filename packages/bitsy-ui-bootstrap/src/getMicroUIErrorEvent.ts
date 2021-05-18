@@ -1,3 +1,3 @@
-const getMicroUIErrorEvent = (env) => new CustomEvent('microUIError', { detail: env });
+const getMicroUIErrorEvent = (env) => new CustomEvent('bitsyUIError', { detail: env });
 
 export default getMicroUIErrorEvent;

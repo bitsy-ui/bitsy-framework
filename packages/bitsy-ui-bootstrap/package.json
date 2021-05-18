@@ -1,19 +1,20 @@
 {
   "name": "@bitsy-ui/bootstrap",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "lib/index.js",
+  "license": "MIT",
   "typings": "lib/index.d.ts",
   "directories": {
     "lib": "lib",
+    "webpack": "webpack",
+    "babel": "babel",
     "src": "src"
   },
   "files": [
-    "lib"
+    "lib",
+    "webpack",
+    "babel"
   ],
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/bitsy-ui/bitsy-framework.git"
@@ -24,12 +25,14 @@
   "scripts": {
     "build": "rimraf lib && yarn run build:js && yarn run build:ts",
     "build:ts": "tsc --project tsconfig.build.json",
-    "build:js": "npx webpack --config webpack.config.js"
+    "build:js": "BABEL_ENV=build babel --root-mode upward src --out-dir lib --extensions .ts,.tsx --no-comments && tsc --project ./tsconfig.json",
+    "deploy": "yarn run build && npm unpublish --force --registry http://localhost:4873 @bitsy-ui/bootstrap && npm publish --registry http://localhost:4873"
   },
   "dependencies": {
     "core-js": "^3.9.1",
     "react-dev-utils": "^11.0.4",
-    "regenerator-runtime": "^0.13.7"
+    "regenerator-runtime": "^0.13.7",
+    "@bitsy-ui/core": "^0.1.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.10",

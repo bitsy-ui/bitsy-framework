@@ -1,8 +1,8 @@
-import 'core-js/stable';
-import 'regenerator-runtime/runtime';
+// import 'core-js/stable';
 import doLoadScript from './doLoadScript';
 import getMicroUILoadedEvent from './getMicroUILoadedEvent';
 import getMicroUIErrorEvent from './getMicroUIErrorEvent';
+import getCombinedURL from './getCombinedURL';
 
 // Tokens to be replaced by the express endpoint
 // PLEASE NOTE: the __???__ will be stripped out and replaced when express serves this file
@@ -20,16 +20,21 @@ const manifest = __MANIFEST__;
  */
 const fetchAssetsHandler = () => {
   // Set the env vars in the window space for easy access
-  window[`__MicroUI${env.name}Environment__`] = env;
-  // Set the webpack custom URL for asset retrieval
-  window[`__MicroUI${env.name}URL__`] = env.apiUrl + '/';
-  // Set the webpack custom URL for asset retrieval
-  window[`__MicroUI${env.name}AssetURL__`] = env.assetUrl + '/';
+  // These should be only the safe vars which users could see if they monitored traffic
+  window[`__BitsyUI${env.name}Env__`] = env;
+  // Set the webpack custom URL for api retrieval
+  window[`__BitsyUI${env.name}BootUrl__`] = getCombinedURL(env.bootstrap.url, '/');
+  // Set the webpack custom URL for api retrieval
+  window[`__BitsyUI${env.name}ApiUrl__`] = getCombinedURL(env.api.url, '/');
+  // @TODO should we provide a list of endpoints here?
+  // Set the webpack custom URL for ui retrieval
+  window[`__BitsyUI${env.name}UiUrl__`] = getCombinedURL(env.ui.url, '/');
+  // @TODO should we provide a list of components here?
   // Retrieve the main JS
-  const entryUrl = manifest[env.entry || 'main.js'];
+  const script = manifest[env.ui.script || 'main.js'];
   // Load the manifest assets
   // @QUESTION should we support multiple entry files?
-  doLoadScript(`${env.assetUrl}${entryUrl}`)
+  doLoadScript(getCombinedURL(env.ui.url, script))
     .catch(() => {
       window.dispatchEvent(getMicroUIErrorEvent(env));
     })

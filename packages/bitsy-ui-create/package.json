@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
+  "license": "MIT",
   "directories": {
     "lib": "lib",
     "src": "src"
@@ -24,6 +25,14 @@
   "scripts": {
     "build": "rimraf lib && yarn run build:js && yarn run build:ts",
     "build:ts": "tsc --project tsconfig.build.json",
-    "build:js": "BABEL_ENV=build babel --root-mode upward src --out-dir lib --extensions .ts,.tsx --no-comments && tsc --project ./tsconfig.json"
+    "build:js": "BABEL_ENV=build babel --root-mode upward src --out-dir lib --extensions .ts,.tsx --no-comments && tsc --project ./tsconfig.json",
+    "cli": "node ./lib/index.js"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^7.2.0",
+    "inquirer": "^8.0.0",
+    "fs-extra": "^9.1.0",
+    "os": "^0.1.1"
   }
 }
