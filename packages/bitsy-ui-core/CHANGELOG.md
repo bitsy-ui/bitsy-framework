@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/bitsy-ui/bitsy-framework/compare/@bitsy-ui/core@0.2.0...@bitsy-ui/core@0.3.0) (2021-05-18)
+
+
+### Features
+
+* pre commit styling ([1b76e74](https://github.com/bitsy-ui/bitsy-framework/commit/1b76e74a4bd0d3defed61a5b4a33329eb5552e3f))
+
+
+
+
+
 # [0.2.0](https://github.com/bitsy-ui/bitsy-framework/compare/@bitsy-ui/core@0.1.2...@bitsy-ui/core@0.2.0) (2021-05-18)
 
 
