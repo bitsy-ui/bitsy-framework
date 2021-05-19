@@ -1,6 +1,3 @@
-const path = require('path');
-const fs = require('fs');
-const webpack = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
 const getBitsyConfig = require('@bitsy-ui/core/lib/Config/getBitsyConfig').default;
 

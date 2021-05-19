@@ -1,8 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-const webpack = require('webpack');
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
-const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
@@ -81,10 +79,6 @@ module.exports = {
     // This gives some necessary context to module not found errors, such as
     // the requesting resource.
     new ModuleNotFoundPlugin(appPath),
-    // Watcher doesn't work well if you mistype casing in a path so we use
-    // a plugin that prints an error when you attempt to do this.
-    // See https://github.com/facebook/create-react-app/issues/240
-    new CaseSensitivePathsPlugin(),
     // If you require a missing module and then `npm install` it, you still have
     // to restart the development server for Webpack to discover it. This plugin
     // makes the discovery automatic so you don't have to restart.

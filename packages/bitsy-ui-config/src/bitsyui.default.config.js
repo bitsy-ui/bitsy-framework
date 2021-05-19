@@ -13,6 +13,8 @@ module.exports = {
       fileExtensions: ['.js'],
       // Publish configuration
       publishDir: path.join(process.cwd(), '.bootstrap'),
+      // Use this to explicitly define the bootstrap URL
+      hostname: undefined,
       publicPath: '/',
       // Path to built bootstrap.js
       // This will be consumed by the API and token replaced
@@ -31,11 +33,13 @@ module.exports = {
       // Build config files
       babelConfig: path.join(process.cwd(), 'node_modules', '@bitsy-ui', 'core', 'babel', 'babel.config.ui.json'),
       webpackConfig: path.join(process.cwd(), 'node_modules', '@bitsy-ui', 'core', 'webpack', 'webpack.config.ui.js'),
+      buildEntry: path.join(process.cwd(), 'src', 'ui.js'),
       script: 'main.js',
+      // Use this to explicitly define the bootstrap URL
+      hostname: undefined,
       publicPath: '/',
       manifest: path.join(process.cwd(), '.ui', 'manifest.json'),
       publishDir: path.join(process.cwd(), '.ui'),
-      fileEntry: path.join(process.cwd(), 'src', 'ui.ts'),
       filePattern: 'bitsy-ui.[hash].js',
       fileExtensions: ['.ts', '.tsx', '.js', '.jsx'],
       aliasDirs: {},
@@ -50,7 +54,8 @@ module.exports = {
       fileEntry: path.join(process.cwd(), '.api', 'service.js'),
       // Publish configuration
       publishDir: path.join(process.cwd(), '.api'),
-
+      // Use this to explicitly define the bootstrap URL
+      hostname: undefined,
       publicPath: '/',
       port: 8000,
       cors: { origin: '*' },

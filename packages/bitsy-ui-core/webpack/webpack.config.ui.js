@@ -1,11 +1,9 @@
-const process = require('process');
 const path = require('path');
 const fs = require('fs');
 const webpack = require('webpack');
-const LoadablePlugin = require('@loadable/webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const getBitsyConfig = require('@bitsy-ui/core/lib/Config/getBitsyConfig').default;
+const getBitsyConfig = require('@bitsy-ui/config/lib/getBitsyConfig').default;
 
 // MICRO FRONTEND CONFIG
 const bitsyUiConfig = getBitsyConfig();
@@ -13,7 +11,7 @@ const bitsyUiConfig = getBitsyConfig();
 // Determine the assets public path
 const publicPath = bitsyUiConfig.settings.ui.publicPath;
 // Determine the assets folder
-const entryFile = bitsyUiConfig.settings.ui.fileEntry;
+const entryFile = bitsyUiConfig.settings.ui.buildEntry;
 // Determine the assets folder
 const publishDir = bitsyUiConfig.settings.ui.publishDir;
 // Determine the assets folder
@@ -92,18 +90,6 @@ module.exports = {
       {
         oneOf: [
           {
-            test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/],
-            loader: require.resolve('url-loader'),
-            options: {
-              limit: 10000,
-              name: 'media/[name].[hash:8].[ext]',
-            },
-          },
-          {
-            test: /\.svg$/,
-            loader: require.resolve('svg-inline-loader'),
-          },
-          {
             test: /\.ts(x?)$/,
             use: 'ts-loader',
             exclude: [/node_modules/],
@@ -118,8 +104,7 @@ module.exports = {
               sourceMaps: false,
               configFile: babelConfig,
             },
-          },
-          { test: /\.css$/, loader: 'style-loader!css-loader' },
+          }
         ],
       },
     ],
@@ -138,11 +123,6 @@ module.exports = {
         library: JSON.stringify(bitsyUiConfig.name),
       },
     }),
-    // Initiate the loadable plugin
-    // This will support code split bitsy ui components
-    // Without this ALL components would be loaded
-    // This would be bad and result in horrible performance for large bitsy ui apps
-    new LoadablePlugin({}),
     // Generate the bitsyui asset manifest
     // This is needed by bootstrap to load the correct assets
     new ManifestPlugin({

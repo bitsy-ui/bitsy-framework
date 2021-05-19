@@ -1,4 +1,4 @@
-import { BitsyUIConfig } from '../../Types';
+import { BitsyUIConfig } from '@bitsy-ui/core/lib/Types';
 
 const getCombinedBitsyConfig = (baseConfig, ...configs): BitsyUIConfig => {
 

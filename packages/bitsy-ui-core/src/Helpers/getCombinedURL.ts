@@ -1,8 +1,9 @@
-const getCombinedURL = (...segments) =>
-  segments
+const getCombinedURL = (...segments) => {
+  return segments
     .filter(Boolean)
     .map((s) => (s || '').replace(/^\/|\/$/g, ''))
     .join('/')
-    .replace(/([^:]\/)\/+/g, '$1');
+    .replace(/(\/)\/+/g, '$1');
+}
 
 export default getCombinedURL;

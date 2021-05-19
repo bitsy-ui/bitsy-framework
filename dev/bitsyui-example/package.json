@@ -11,15 +11,14 @@
   "scripts": {
     "reset": "sudo rm -r node_modules && rm yarn.lock && yarn && yarn run bitsy-ui build",
     "local": "yarn run bitsy-ui build",
-    "dev": "yarn run bitsy-ui local",
-    "serve": "node ./.api/service.js"
+    "dev": "yarn run bitsy-ui local"
   },
   "dependencies": {
-    "@bitsy-ui/core": "^0.1.4",
-    "@bitsy-ui/bootstrap": "^0.0.2",
-    "ts-node": "^9.1.1"
+    "@bitsy-ui/core": "^0.3.1",
+    "@bitsy-ui/bootstrap": "^0.1.2"
   },
   "devDependencies": {
+    "ts-node": "^9.1.1",
     "@types/classnames": "^2.2.10",
     "@types/node": "^13.11.0",
     "@types/react": "^16.9.32",

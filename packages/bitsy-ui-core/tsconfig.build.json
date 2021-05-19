@@ -5,6 +5,7 @@
     "declarationDir": "./lib",
     "rootDir": "./src",
     "paths": {
+      "@bitsy-ui/config/lib/*": ["../bitsy-ui-config/src/*"],
       "@bitsy-ui/bootstrap/lib/*": ["../bitsy-ui-bootstrap/src/*"]
     }
   },
@@ -12,5 +13,5 @@
     "./src"
   ],
   "exclude": ["node_modules", "lib", "**/*.test.*"],
-  "references": [{ "@bitsy-ui/bootstrap": "../bitsy-ui-bootstrap" }]
+  "references": [{ "@bitsy-ui/bootstrap": "../bitsy-ui-bootstrap" }, { "@bitsy-ui/config": "../bitsy-ui-config" }]
 }

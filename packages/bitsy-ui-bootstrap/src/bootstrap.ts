@@ -1,4 +1,3 @@
-// import 'core-js/stable';
 import doLoadScript from './doLoadScript';
 import getMicroUILoadedEvent from './getMicroUILoadedEvent';
 import getMicroUIErrorEvent from './getMicroUIErrorEvent';

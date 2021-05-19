@@ -7,6 +7,7 @@ Use this for testing published versions
 - start local registry `sudo docker-compose up -d`
 - create new user `npm adduser --registry http://localhost:4873`
 - login `npm login --registry http://localhost:4873 --scope=@bitsy-ui`
+- login `npm login --scope=@bitsy-ui`
 - access registry via browser `http://localhost:4873`
 
 ## Publishing to local registry

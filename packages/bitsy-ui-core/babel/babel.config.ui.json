@@ -25,10 +25,6 @@
           "node_modules": "./node_modules"
         }
       }
-    ],
-    "@babel/plugin-proposal-class-properties",
-    "@babel/plugin-transform-spread",
-    "@babel/plugin-proposal-optional-chaining",
-    "@babel/plugin-proposal-nullish-coalescing-operator"
+    ]
   ]
 }
