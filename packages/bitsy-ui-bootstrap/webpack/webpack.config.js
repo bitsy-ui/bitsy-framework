@@ -1,5 +1,5 @@
 const TerserPlugin = require('terser-webpack-plugin');
-const getBitsyConfig = require('@bitsy-ui/core/lib/Config/getBitsyConfig').default;
+const getBitsyConfig = require('@bitsy-ui/config/lib/getBitsyConfig').default;
 
 // MICRO FRONTEND CONFIG
 const bitsyUiConfig = getBitsyConfig();

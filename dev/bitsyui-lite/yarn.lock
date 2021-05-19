@@ -993,8 +993,8 @@
 
 "@bitsy-ui/bootstrap@^0.1.2":
   version "0.1.4"
-  resolved "http://localhost:4873/@bitsy-ui%2fbootstrap/-/bootstrap-0.1.4.tgz#83fcfe5a534b95a4c94e2280d83dc1670682674e"
-  integrity sha512-8B/dooa9r/dA0FXOh+9UhptHtvbMv+nsts+eMEW8eKf76PCcIS09SU+kZKtlLwb0IyN+16k7rr/hvvhXjtfu9g==
+  resolved "http://localhost:4873/@bitsy-ui%2fbootstrap/-/bootstrap-0.1.4.tgz#6a773c4feda6977c5a49f23a54b03e775794c336"
+  integrity sha512-/c5xYN4+kqMxqPkuCk1krDbvJOx3MCPW9Dntlc5J7CPzPlaRoqsJKzfVbaH8/rp/sAmmWJvxIQk/OZn8ISA+4Q==
   dependencies:
     "@bitsy-ui/config" "^0.0.1"
     react-dev-utils "^11.0.4"
@@ -1006,8 +1006,8 @@
 
 "@bitsy-ui/core@^0.3.0":
   version "0.3.3"
-  resolved "http://localhost:4873/@bitsy-ui%2fcore/-/core-0.3.3.tgz#e9943ad42904b284febf5dbedd11c16735ba1a89"
-  integrity sha512-g0+1svw9naOhJDs+4Mhna0YxouzH9AeeacIIKu83ON0vOucFEbTYW/qkUgG8UGet6iVlMIr2ySYw1HjbtkNh+g==
+  resolved "http://localhost:4873/@bitsy-ui%2fcore/-/core-0.3.3.tgz#8000b320a24e18d456474836038c841bb351c33e"
+  integrity sha512-OeZJY+SeE1dG6i4qSUuFdc3j45l6c+/VvjUz0+5+f2E1ETPCZWO4Ft5inPLqOKcHPLwtrTBSdpedBDnGj81TWg==
   dependencies:
     "@babel/cli" "^7.6.2"
     "@babel/core" "^7.9.0"
@@ -1016,9 +1016,11 @@
     "@babel/preset-react" "^7.9.1"
     "@babel/preset-typescript" "^7.10.1"
     "@bitsy-ui/bootstrap" "^0.1.2"
+    "@bitsy-ui/config" "^0.0.1"
     babel-loader "^8.1.0"
     babel-plugin-module-resolver "^3.2.0"
     chalk "^4.1.0"
+    chokidar "^3.5.1"
     commander "^7.2.0"
     compression "^1.7.4"
     core-js "^3.9.1"
@@ -1026,6 +1028,7 @@
     express "^4.17.1"
     helmet "^4.4.1"
     inquirer "^8.0.0"
+    lodash "^4.17.21"
     open "^8.0.5"
     react "^17.0.1"
     react-dom "^17.0.1"
@@ -1928,7 +1931,7 @@ chokidar@^2.1.8:
   optionalDependencies:
     fsevents "^1.2.7"
 
-chokidar@^3.4.0, chokidar@^3.4.1:
+chokidar@^3.4.0, chokidar@^3.4.1, chokidar@^3.5.1:
   version "3.5.1"
   resolved "http://localhost:4873/chokidar/-/chokidar-3.5.1.tgz#ee9ce7bbebd2b79f49f304799d5468e31e14e68a"
   integrity sha512-9+s+Od+W0VJJzawDma/gvBNQqkTiqYTWLuZoyAsivsI4AaWTCzHG06/TMjsf1cYe9Cb97UCEhjz7HvnPk2p/tw==

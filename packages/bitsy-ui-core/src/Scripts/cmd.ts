@@ -3,8 +3,10 @@
 import chalk from 'chalk';
 import process from 'process';
 import program from 'commander';
+import _ from 'lodash';
 import open from 'open';
 import { spawn, spawnSync } from 'child_process';
+import { watch } from 'chokidar';
 import doBuildUiAsync from './Helpers/doBuildUiAsync';
 import doBuildBootstrapSync from './Helpers/doBuildBootstrapSync';
 import doBuildUiSync from './Helpers/doBuildUiSync';
@@ -70,21 +72,46 @@ program
   .description('serve a bitsy ui locally')
   .action((options) => {
     console.log('attempting to serve locally');
+    const apiPublishDir = config.settings.api.publishDir;
+    const uiWebpack = config.settings.ui.publishDir;
     // Build the assets with watching enabled
     // @TODO add some kind of hot loading capacity
     // @TODO create some kind of macro ui sandbox environment
+    // @TODO I think SSR should be good enough here
+    const watcher = watch([
+      uiWebpack,
+      apiPublishDir
+    ], { ignored: /^\./, persistent: true, awaitWriteFinish: true });
     // BOOT LOCAL SERVER
     const apiEntry = config.settings.api.fileEntry;
-    // Attempt to start the application locally
-    const serve = spawn('node', [apiEntry]);
-    // Notify the results of the bootstrap assets build
-    serve.stdout.on('data', (data) => {
-      console.log(`stdout: ${data}`);
-    });
-    // Notify the results of the bootstrap assets build
-    serve.stdout.on('error', (error) => {
-      console.log(`stdout: ${error}`);
-    });
+    // Place to store the current thread
+    let thread;
+
+    watcher.on('ready', _.debounce(() => {
+      // Attempt to start the application locally
+      thread = spawn('node', [apiEntry]);
+      // Notify the results of the bootstrap assets build
+      thread.stdout.on('data', (data) => {
+        console.log(`stdout: ${data}`);
+      });
+      // Notify the results of the bootstrap assets build
+      thread.stdout.on('error', (error) => {
+        console.log(`stdout: ${error}`);
+      });
+    }));
+
+    watcher.on('change', _.debounce(() => {
+      // Attempt to start the application locally
+      thread = spawn('node', [apiEntry]);
+      // Notify the results of the bootstrap assets build
+      thread.stdout.on('data', (data) => {
+        console.log(`stdout: ${data}`);
+      });
+      // Notify the results of the bootstrap assets build
+      thread.stdout.on('error', (error) => {
+        console.log(`stdout: ${error}`);
+      });
+    }));
     // OPEN WITHIN BROWSER
     // open('http://localhost:9010');
   });
