@@ -1,22 +1,18 @@
 {
-  "name": "@bitsy-ui/core",
-  "version": "0.3.3",
+  "name": "@bitsy-ui/cli",
+  "version": "0.0.1",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "license": "MIT",
   "directories": {
     "lib": "lib",
-    "babel": "babel",
-    "webpack": "webpack",
     "src": "src"
   },
   "bin": {
-    "bitsy-ui": "./lib/Scripts/cmd.js"
+    "bitsy-ui": "./lib/cmd.js"
   },
   "files": [
-    "lib",
-    "babel",
-    "webpack"
+    "lib"
   ],
   "repository": {
     "type": "git",
@@ -32,28 +28,30 @@
     "deploy": "yarn run build && npm unpublish --force --registry http://localhost:4873 @bitsy-ui/core && npm publish --registry http://localhost:4873"
   },
   "dependencies": {
-    "@bitsy-ui/bootstrap": "^0.1.2",
-    "@bitsy-ui/config": "^0.0.1",
-    "compression": "^1.7.4",
-    "core-js": "^3.9.1",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "helmet": "^4.4.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "regenerator-runtime": "^0.13.7"
-  },
-  "devDependencies": {
     "@babel/cli": "^7.6.2",
     "@babel/core": "^7.9.0",
     "@babel/node": "^7.6.2",
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.1",
     "@babel/preset-typescript": "^7.10.1",
+    "@bitsy-ui/config": "^0.0.1",
     "babel-loader": "^8.1.0",
     "babel-plugin-module-resolver": "^3.2.0",
+    "chalk": "^4.1.0",
+    "chokidar": "^3.5.1",
+    "commander": "^7.2.0",
+    "compression": "^1.7.4",
+    "core-js": "^3.9.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^4.4.1",
+    "inquirer": "^8.0.0",
+    "lodash": "^4.17.21",
+    "open": "^8.0.5",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "regenerator-runtime": "^0.13.7",
     "terser-webpack-plugin": "^4.1.0",
-    "ts-jest": "^25.3.1",
     "ts-loader": "^6.2.2",
     "ts-node": "^9.1.1",
     "typescript": "^3.8.3",
@@ -63,5 +61,8 @@
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0",
     "webpack-manifest-plugin": "^2.2.0"
+  },
+  "devDependencies": {
+    "ts-jest": "^25.3.1"
   }
 }
