@@ -25,7 +25,7 @@
     "build": "rimraf lib && yarn run build:js && yarn run build:ts",
     "build:ts": "tsc --project tsconfig.build.json",
     "build:js": "BABEL_ENV=build babel --root-mode upward src --out-dir lib --extensions .js,.ts,.tsx --no-comments && tsc --project ./tsconfig.json",
-    "deploy": "yarn run build && npm unpublish --force --registry http://localhost:4873 @bitsy-ui/core && npm publish --registry http://localhost:4873"
+    "deploy": "yarn run build && npm unpublish --force --registry http://localhost:4873 @bitsy-ui/cli && npm publish --registry http://localhost:4873"
   },
   "dependencies": {
     "@babel/cli": "^7.6.2",
@@ -55,12 +55,9 @@
     "ts-loader": "^6.2.2",
     "ts-node": "^9.1.1",
     "typescript": "^3.8.3",
-    "webpack": "^4.41.2",
-    "webpack-bundle-analyzer": "^3.8.0",
-    "webpack-cleanup-plugin": "^0.5.1",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0",
-    "webpack-manifest-plugin": "^2.2.0"
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0",
+    "webpack-manifest-plugin": "^3.1.1"
   },
   "devDependencies": {
     "ts-jest": "^25.3.1"

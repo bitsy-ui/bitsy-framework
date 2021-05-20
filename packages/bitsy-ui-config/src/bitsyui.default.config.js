@@ -40,7 +40,7 @@ module.exports = {
       publicPath: '/',
       manifest: path.join(process.cwd(), '.ui', 'manifest.json'),
       publishDir: path.join(process.cwd(), '.ui'),
-      filePattern: 'bitsy-ui.[hash].js',
+      filePattern: 'bitsy-ui.[contenthash].js',
       fileExtensions: ['.ts', '.tsx', '.js', '.jsx'],
       aliasDirs: {},
       env: {},

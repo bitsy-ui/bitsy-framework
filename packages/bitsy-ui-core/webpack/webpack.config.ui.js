@@ -1,8 +1,9 @@
 const path = require('path');
 const fs = require('fs');
 const webpack = require('webpack');
-const ManifestPlugin = require('webpack-manifest-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 const getBitsyConfig = require('@bitsy-ui/config/lib/getBitsyConfig').default;
 
 // MICRO FRONTEND CONFIG
@@ -31,10 +32,6 @@ if (!fs.existsSync(publishDir)) fs.mkdirSync(publishDir);
 module.exports = {
   entry: [path.resolve(currentDir, `./webpack.path.js`), entryFile],
   devtool: false,
-  node: {
-    fs: 'empty',
-    net: 'empty',
-  },
   output: {
     filename: outputFile,
     globalObject: `(typeof self !== 'undefined' ? self : this)`,
@@ -104,7 +101,7 @@ module.exports = {
               sourceMaps: false,
               configFile: babelConfig,
             },
-          }
+          },
         ],
       },
     ],
@@ -115,6 +112,8 @@ module.exports = {
     new webpack.optimize.LimitChunkCountPlugin({
       maxChunks: 10,
     }),
+    // Support asset compression
+    new CompressionPlugin(),
     // Provide the library name
     // This will allow the window var within webpack.path to reference the correct bitsyui
     // This permits multiple bitsyui apps to operate side by side
@@ -125,7 +124,7 @@ module.exports = {
     }),
     // Generate the bitsyui asset manifest
     // This is needed by bootstrap to load the correct assets
-    new ManifestPlugin({
+    new WebpackManifestPlugin({
       fileName: 'manifest.json',
       publicPath: publicPath,
     }),

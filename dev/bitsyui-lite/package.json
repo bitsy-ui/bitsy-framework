@@ -5,7 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "@bitsy-ui/cli": "^0.0.1",
-    "@bitsy-ui/core": "^0.3.0",
+    "@bitsy-ui/core": "^0.3.3",
     "@bitsy-ui/config": "^0.0.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"

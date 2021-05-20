@@ -1,8 +1,10 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
-import express, { json } from 'express';
-import cors from 'cors';
-import compression from 'compression';
+// import express, { json } from 'express';
+import fastify from 'fastify';
+import fastifyStatic from 'fastify-static';
+// import cors from 'cors';
+// import compression from 'compression';
 import doBootstrapHandler from './Handlers/doBootstrapHandler';
 import addRouteControl from './Controls/addRouteControl';
 import addStrapControl from './Controls/addStrapControl';
@@ -27,14 +29,17 @@ const createBitsyUI = ({
     // Saying hello
     logger.info(config.settings.api.messages?.START_UP);
     // Create a new express instance
-    const api = express();
+    const api = fastify();
+    // Set up the ability to serve static assets
+    api.register(fastifyStatic, {
+      root: getUiPublishPath(config),
+      prefix: getUiPublicPath(config),
+      preCompressed: true,
+    });
     // Setting up middlewares
-    api.use(json());
-    api.use(cors(config.settings.api.cors));
-    api.use(compression());
-    // Serve static assets
-    api.use(getUiPublicPath(config), express.static(getUiPublishPath(config)));
+    // api.use(cors(config.settings.api.cors));
     // Hydrate and output the bootstrapper script
+    // @TODO should we somehow cache this after the first request
     api.get(getBootstrapPath(config), doBootstrapHandler(config));
     // Returns the instance of the server, the strapper the booter, the config and the logger
     return {
@@ -44,7 +49,7 @@ const createBitsyUI = ({
       boot: doBootControl(api, config, logger),
       config,
       logger,
-      express,
+      fastify,
     };
     // If the application throws an error
     // We catch and log for debugging
