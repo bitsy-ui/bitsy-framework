@@ -8,7 +8,6 @@ const BuildBitsyUICommand = (config, options) => {
   // We will default to development unless production is supplied
   const mode = options.development || !options.production ? 'development' : 'production';
   // BOOTSTRAP ASSETS BUILD
-  console.log('production', options.production);
   // Determine the webpack config to use
   const bootWebpack = config.settings.bootstrap.webpackConfig;
   // Alert the world as to what we are doing

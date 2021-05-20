@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const zlib = require("zlib");
 const webpack = require('webpack');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -113,7 +114,26 @@ module.exports = {
       maxChunks: 10,
     }),
     // Support asset compression
-    new CompressionPlugin(),
+    new CompressionPlugin({
+      filename: "[path][base].gz",
+      algorithm: "gzip",
+      test: /\.js$|\.css$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.8,
+    }),
+    new CompressionPlugin({
+      filename: "[path][base].br",
+      algorithm: "brotliCompress",
+      test: /\.(js|css|html|svg)$/,
+      compressionOptions: {
+        params: {
+          [zlib.constants.BROTLI_PARAM_QUALITY]: 11,
+        },
+      },
+      threshold: 10240,
+      minRatio: 0.8,
+      deleteOriginalAssets: false,
+    }),
     // Provide the library name
     // This will allow the window var within webpack.path to reference the correct bitsyui
     // This permits multiple bitsyui apps to operate side by side

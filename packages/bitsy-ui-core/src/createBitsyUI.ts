@@ -34,7 +34,7 @@ const createBitsyUI = ({
     api.register(fastifyStatic, {
       root: getUiPublishPath(config),
       prefix: getUiPublicPath(config),
-      preCompressed: true,
+      preCompressed: true
     });
     // Setting up middlewares
     // api.use(cors(config.settings.api.cors));
