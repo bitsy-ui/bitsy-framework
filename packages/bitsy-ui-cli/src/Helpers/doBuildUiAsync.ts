@@ -4,7 +4,11 @@ const doBuildUiAsync = (mode, config) => {
   // Attempt to build the files
   // If we are using ui async we will be watching for changes
   // This should be used when building within a pipeline
-  const build = spawn('npx', ['webpack', '--mode', mode, '--watch', '--config', config], { stdio: 'pipe' });
+  const build = spawn('npx', ['webpack', '--mode', mode, '--watch', '--config', config], {
+    // shell: true,
+    // stdio: 'inherit',
+    env: process.env,
+  });
   // Notify the results of the ui assets build
   build.stdout.on('data', (data) => {
     console.log(`stdout: ${data}`);

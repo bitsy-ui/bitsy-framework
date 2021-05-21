@@ -1,10 +1,7 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
-// import express, { json } from 'express';
 import fastify from 'fastify';
 import fastifyStatic from 'fastify-static';
-// import cors from 'cors';
-// import compression from 'compression';
 import doBootstrapHandler from './Handlers/doBootstrapHandler';
 import addRouteControl from './Controls/addRouteControl';
 import addStrapControl from './Controls/addStrapControl';

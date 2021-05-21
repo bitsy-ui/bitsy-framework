@@ -32,6 +32,7 @@ type BitsyUIConfig = {
     api: {
       hostname: void | string;
       publicPath: string;
+      buildDir: string;
       publishDir: string;
       babelConfig: string;
       fileExtensions: string[];

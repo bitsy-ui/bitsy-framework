@@ -27,6 +27,7 @@ module.exports = {
     globalObject: `(typeof self !== 'undefined' ? self : this)`,
     path: publishDir,
     pathinfo: true,
+    clean: true,
   },
   resolve: {
     extensions: extensions,

@@ -35,7 +35,7 @@ const BuildBitsyUICommand = (config, options) => {
   const apiBuild = spawnSync(
     'npx',
     ['babel', 'src', '--extensions', apiExtensions.join(','), '--config-file', apiBabel, '--out-dir', apiPublishDir],
-    { encoding: 'utf8' },
+    { env: process.env, encoding: 'utf8' },
   );
   // Notify the results of the bootstrap assets build
   console.log(apiBuild.stdout);

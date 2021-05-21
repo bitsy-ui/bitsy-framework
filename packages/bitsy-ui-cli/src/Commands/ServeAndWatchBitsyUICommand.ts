@@ -28,11 +28,11 @@ const ServeAndWatchBitsyUICommand = (config, options) => {
       thread = spawn('node', [apiEntry]);
       // Notify the results of the bootstrap assets build
       thread.stdout.on('data', (data) => {
-        console.log(`stdout: ${data}`);
+        console.log(`${data}`);
       });
       // Notify the results of the bootstrap assets build
       thread.stdout.on('error', (error) => {
-        console.log(`stdout: ${error}`);
+        console.log(`${error}`);
       });
     }),
   );
@@ -46,11 +46,11 @@ const ServeAndWatchBitsyUICommand = (config, options) => {
       thread = spawn('node', [apiEntry]);
       // Notify the results of the bootstrap assets build
       thread.stdout.on('data', (data) => {
-        console.log(`stdout: ${data}`);
+        console.log(`${data}`);
       });
       // Notify the results of the bootstrap assets build
       thread.stdout.on('error', (error) => {
-        console.log(`stdout: ${error}`);
+        console.log(`${error}`);
       });
     }),
   );

@@ -49,6 +49,8 @@ module.exports = {
     api: {
       // Build config files
       babelConfig: path.join(process.cwd(), 'node_modules', '@bitsy-ui', 'core', 'babel', 'babel.config.api.json'),
+      // Publish configuration
+      buildDir: path.join(process.cwd(), 'src'),
       // Build files and configuration
       fileExtensions: ['.ts', '.tsx', '.js', '.jsx'],
       fileEntry: path.join(process.cwd(), '.api', 'service.js'),

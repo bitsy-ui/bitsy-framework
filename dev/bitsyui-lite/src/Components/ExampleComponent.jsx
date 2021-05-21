@@ -7,7 +7,7 @@ const ExampleComponent = (props) => {
   }, [setMessage]);
   return (
     <div onClick={doClick}>
-      {message} {props?.rah}
+      {message} {props?.rah} Blah
     </div>
   );
 };

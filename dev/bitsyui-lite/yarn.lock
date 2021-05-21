@@ -993,16 +993,16 @@
 
 "@bitsy-ui/bootstrap@^0.1.2":
   version "0.1.4"
-  resolved "http://localhost:4873/@bitsy-ui%2fbootstrap/-/bootstrap-0.1.4.tgz#6a773c4feda6977c5a49f23a54b03e775794c336"
-  integrity sha512-/c5xYN4+kqMxqPkuCk1krDbvJOx3MCPW9Dntlc5J7CPzPlaRoqsJKzfVbaH8/rp/sAmmWJvxIQk/OZn8ISA+4Q==
+  resolved "http://localhost:4873/@bitsy-ui%2fbootstrap/-/bootstrap-0.1.4.tgz#5c46e828330a60c97078b53f40b3084be6637fb8"
+  integrity sha512-GzPSe6cJF1yuv9JCbpaJ80OUDT5kM+5CrqHZOogRyA1aJLNmcAW1+vL7Vildn3B/xq1teXUfomxl0QJtJBbA2g==
   dependencies:
     "@bitsy-ui/config" "^0.0.1"
     react-dev-utils "^11.0.4"
 
 "@bitsy-ui/cli@^0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@bitsy-ui%2fcli/-/cli-0.0.1.tgz#86962edd6431d721a7f7c1ae8c7fada32665d2c6"
-  integrity sha512-6llfMnhx12MOHCO5ZYkh/NTicsOUisNya5RMJLiOU/qAuY6vZ7gjs/HliWpTILoYTR0yKaHIZG0lAx75qVENYw==
+  resolved "http://localhost:4873/@bitsy-ui%2fcli/-/cli-0.0.1.tgz#c5d9b1c0f897104c3da2fb3b0566b9fa32836be0"
+  integrity sha512-huqR78eCP/2eWqGgPLbYCbw53wuwwdo9Kz1h6IogrOxPqdT8ccZKfSnPyk330Z1tOZGILCwpIGthhHvU5mFaXg==
   dependencies:
     "@babel/cli" "^7.6.2"
     "@babel/core" "^7.9.0"
@@ -1037,26 +1037,22 @@
 
 "@bitsy-ui/config@^0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@bitsy-ui%2fconfig/-/config-0.0.1.tgz#cde773ad09aed202b83ce06600b2d0d94a958338"
-  integrity sha512-1qhySww1CNs2aKZ32Gu+Pge/fqp4Hjjqohiacxg1NtaO4cKdzmKHOr1MYUrHAQFBnYqBo/TST3K1W/RiiPrsjg==
+  resolved "http://localhost:4873/@bitsy-ui%2fconfig/-/config-0.0.1.tgz#2cb0f7430663e4441f76a110d38ef02c998f329d"
+  integrity sha512-rS2/Fd3h9zS2KXlBPPgi+lDIsSGHDzYLayZGlKJr6yA3mGLb48LRROUZ/o18qH8w4TCHag+L4eX8vKwS3ztEWg==
 
 "@bitsy-ui/core@^0.3.3":
   version "0.3.3"
-  resolved "http://localhost:4873/@bitsy-ui%2fcore/-/core-0.3.3.tgz#82e092d1ea6518bdb3b21e2a76d05e5b344c05ab"
-  integrity sha512-EHOv7HKAiOiwn5RAzYyKCkvzgvoKV6yLIhmI0iFv/txisSReQF4gdD3CgHO04nq74Qj6ew6WvNtU2Ys2pWq3jQ==
+  resolved "http://localhost:4873/@bitsy-ui%2fcore/-/core-0.3.3.tgz#083d186b4d420c894cdefaa702daeb3c19d33340"
+  integrity sha512-Z1YebAu9NFTSP0l0rj/GmBzgNMnqRLsD///aDdytQSQ0QI5smOcmDVkdlSukK6/FMWDi9Xsj5lBY4Mkjn56tgA==
   dependencies:
     "@bitsy-ui/bootstrap" "^0.1.2"
     "@bitsy-ui/config" "^0.0.1"
-    compression "^1.7.4"
     compression-webpack-plugin "^7.1.2"
     core-js "^3.9.1"
-    cors "^2.8.5"
-    express "^4.17.1"
     fastify "^3.15.1"
     fastify-compress "^3.5.0"
     fastify-cors "^6.0.1"
     fastify-static "^4.2.1"
-    helmet "^4.4.1"
     react "^17.0.1"
     react-dom "^17.0.1"
     regenerator-runtime "^0.13.7"
@@ -1134,9 +1130,9 @@
     "@types/estree" "*"
 
 "@types/eslint@*":
-  version "7.2.10"
-  resolved "http://localhost:4873/@types%2feslint/-/eslint-7.2.10.tgz#4b7a9368d46c0f8cd5408c23288a59aa2394d917"
-  integrity sha512-kUEPnMKrqbtpCq/KTaGFFKAcz6Ethm2EjCoKIDaCmfRBWLbFuTcOJfTlorwbnboXBzahqWLgUp1BQeKHiJzPUQ==
+  version "7.2.11"
+  resolved "http://localhost:4873/@types%2feslint/-/eslint-7.2.11.tgz#180b58f5bb7d7376e39d22496e2b08901aa52fd2"
+  integrity sha512-WYhv//5K8kQtsSc9F1Kn2vHzhYor6KpwPbARH7hwYe3C3ETD0EVx/3P5qQybUoaBEuUa9f/02JjBiXFWalYUmw==
   dependencies:
     "@types/estree" "*"
     "@types/json-schema" "*"
