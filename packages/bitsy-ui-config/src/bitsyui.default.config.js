@@ -1,15 +1,18 @@
 const path = require('path');
 
+const bootstrapLibDir = path.dirname(require.resolve('@bitsy-ui/bootstrap/package.json'));
+const coreLibDir = path.dirname(require.resolve('@bitsy-ui/core/package.json'));
+
 module.exports = {
   name: 'exampleMicroUI',
   settings: {
     bootstrap: {
       // Build config files
-      webpackConfig: path.join(process.cwd(), 'node_modules', '@bitsy-ui', 'bootstrap', 'webpack', 'webpack.config.js'),
-      babelConfig: path.join(process.cwd(), 'node_modules', '@bitsy-ui', 'bootstrap', 'babel', 'babel.config.json'),
+      webpackConfig: path.resolve(bootstrapLibDir, 'webpack', 'webpack.config.js'),
+      babelConfig: path.resolve(bootstrapLibDir, 'babel', 'babel.config.json'),
       // Build files and configuration
       filePattern: 'bootstrap.js',
-      fileEntry: path.resolve(process.cwd(), 'node_modules', '@bitsy-ui', 'bootstrap', 'lib', 'bootstrap.js'),
+      fileEntry: path.resolve(bootstrapLibDir, 'lib', 'bootstrap.js'),
       fileExtensions: ['.js'],
       // Publish configuration
       publishDir: path.join(process.cwd(), '.bootstrap'),
@@ -31,8 +34,8 @@ module.exports = {
     },
     ui: {
       // Build config files
-      babelConfig: path.join(process.cwd(), 'node_modules', '@bitsy-ui', 'core', 'babel', 'babel.config.ui.json'),
-      webpackConfig: path.join(process.cwd(), 'node_modules', '@bitsy-ui', 'core', 'webpack', 'webpack.config.ui.js'),
+      babelConfig: path.resolve(coreLibDir, 'babel', 'babel.config.ui.json'),
+      webpackConfig: path.resolve(coreLibDir, 'webpack', 'webpack.config.ui.js'),
       buildEntry: path.join(process.cwd(), 'src', 'ui.js'),
       script: 'main.js',
       // Use this to explicitly define the bootstrap URL
@@ -48,7 +51,7 @@ module.exports = {
     },
     api: {
       // Build config files
-      babelConfig: path.join(process.cwd(), 'node_modules', '@bitsy-ui', 'core', 'babel', 'babel.config.api.json'),
+      babelConfig: path.resolve(coreLibDir, 'babel', 'babel.config.api.json'),
       // Publish configuration
       buildDir: path.join(process.cwd(), 'src'),
       // Build files and configuration

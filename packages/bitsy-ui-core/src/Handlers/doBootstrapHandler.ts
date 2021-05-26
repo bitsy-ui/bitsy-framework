@@ -1,5 +1,4 @@
 import fs from 'fs';
-// import { Request, Reply } from 'fastify';
 import { BitsyUIConfig } from '../Types';
 import getBootstrapAsset from '../Selectors/getBootstrapAsset';
 import getCombinedURL from '../Helpers/getCombinedURL';
