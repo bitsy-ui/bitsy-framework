@@ -7,7 +7,9 @@
     "@bitsy-ui/cli": "^0.0.1",
     "@bitsy-ui/core": "^0.3.3",
     "@bitsy-ui/config": "^0.0.1",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "core-js": "^3.9.1",
+    "regenerator-runtime": "^0.13.7"
   }
 }

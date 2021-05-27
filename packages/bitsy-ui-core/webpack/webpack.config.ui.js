@@ -48,8 +48,8 @@ module.exports = {
     extensions: extensions,
     symlinks: false,
     alias: {
-      react: path.resolve('./node_modules/react'),
-      'react-dom': path.resolve('./node_modules/react-dom'),
+      react: path.dirname(require.resolve('react')),
+      'react-dom': path.dirname(require.resolve('react-dom')),
       '@src': path.resolve('./src'),
       ...pathAliases,
     },

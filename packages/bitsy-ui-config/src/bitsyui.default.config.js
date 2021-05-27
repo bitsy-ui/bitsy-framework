@@ -34,7 +34,7 @@ module.exports = {
     },
     ui: {
       // Build config files
-      babelConfig: path.resolve(coreLibDir, 'babel', 'babel.config.ui.json'),
+      babelConfig: path.resolve(coreLibDir, 'babel', 'babel.config.ui.js'),
       webpackConfig: path.resolve(coreLibDir, 'webpack', 'webpack.config.ui.js'),
       buildEntry: path.join(process.cwd(), 'src', 'ui.js'),
       script: 'main.js',
@@ -51,7 +51,7 @@ module.exports = {
     },
     api: {
       // Build config files
-      babelConfig: path.resolve(coreLibDir, 'babel', 'babel.config.api.json'),
+      babelConfig: path.resolve(coreLibDir, 'babel', 'babel.config.api.js'),
       // Publish configuration
       buildDir: path.join(process.cwd(), 'src'),
       // Build files and configuration

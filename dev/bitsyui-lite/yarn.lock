@@ -112,10 +112,10 @@
     "@babel/helper-annotate-as-pure" "^7.12.13"
     regexpu-core "^4.7.1"
 
-"@babel/helper-define-polyfill-provider@^0.2.1":
-  version "0.2.1"
-  resolved "http://localhost:4873/@babel%2fhelper-define-polyfill-provider/-/helper-define-polyfill-provider-0.2.1.tgz#e6f5f4a6edc3722152c21359190de67fc6cf664d"
-  integrity sha512-x3AUTVZNPunaw1opRTa5OwVA5N0YxGlIad9xQ5QflK1uIS7PnAGGU5O2Dj/G183fR//N8AzTq+Q8+oiu9m0VFg==
+"@babel/helper-define-polyfill-provider@^0.2.2":
+  version "0.2.3"
+  resolved "http://localhost:4873/@babel%2fhelper-define-polyfill-provider/-/helper-define-polyfill-provider-0.2.3.tgz#0525edec5094653a282688d34d846e4c75e9c0b6"
+  integrity sha512-RH3QDAfRMzj7+0Nqu5oqgO5q9mFtQEVvCRsi8qCEfzLR9p2BHfn5FzhSB2oj1fF7I2+DcTORkYaQ6aTR9Cofew==
   dependencies:
     "@babel/helper-compilation-targets" "^7.13.0"
     "@babel/helper-module-imports" "^7.12.13"
@@ -1001,8 +1001,8 @@
 
 "@bitsy-ui/cli@^0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@bitsy-ui%2fcli/-/cli-0.0.1.tgz#86962edd6431d721a7f7c1ae8c7fada32665d2c6"
-  integrity sha512-6llfMnhx12MOHCO5ZYkh/NTicsOUisNya5RMJLiOU/qAuY6vZ7gjs/HliWpTILoYTR0yKaHIZG0lAx75qVENYw==
+  resolved "http://localhost:4873/@bitsy-ui%2fcli/-/cli-0.0.1.tgz#c5d9b1c0f897104c3da2fb3b0566b9fa32836be0"
+  integrity sha512-huqR78eCP/2eWqGgPLbYCbw53wuwwdo9Kz1h6IogrOxPqdT8ccZKfSnPyk330Z1tOZGILCwpIGthhHvU5mFaXg==
   dependencies:
     "@babel/cli" "^7.6.2"
     "@babel/core" "^7.9.0"
@@ -1037,13 +1037,13 @@
 
 "@bitsy-ui/config@^0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@bitsy-ui%2fconfig/-/config-0.0.1.tgz#5c44939a6e098ec305c95195c3d7bc1c6eb3f2b8"
-  integrity sha512-NLtYSCuCPegmEgkoat2ergZMo3YYguW9jSI1+6gV16Ij9re1A1zDGJbnxogH5jSjNw5ggdVrIZd8orKm2NKfcw==
+  resolved "http://localhost:4873/@bitsy-ui%2fconfig/-/config-0.0.1.tgz#fcc86cdce7639d6f0097c5f7c6359718088dbc58"
+  integrity sha512-aAzsZxTOjx6gXyh8sz8D1E4NlblakMCyTQzuNpb8vZVKe5t3UYsZ6iSfcrOoJELNW49IT2R0dlRDVLX/WrOybA==
 
 "@bitsy-ui/core@^0.3.3":
   version "0.3.3"
-  resolved "http://localhost:4873/@bitsy-ui%2fcore/-/core-0.3.3.tgz#083d186b4d420c894cdefaa702daeb3c19d33340"
-  integrity sha512-Z1YebAu9NFTSP0l0rj/GmBzgNMnqRLsD///aDdytQSQ0QI5smOcmDVkdlSukK6/FMWDi9Xsj5lBY4Mkjn56tgA==
+  resolved "http://localhost:4873/@bitsy-ui%2fcore/-/core-0.3.3.tgz#ab7b7fd91d9d7e8c212ba15e9ea699aca41be81b"
+  integrity sha512-QRy0dktRrAgU3t6/GxpJd+HLRMIK51xSpjMJdVs8HEeRC2BmQnaL7XJux6IF0m8Qo+dxhc13B4zTERQPwC7gqQ==
   dependencies:
     "@bitsy-ui/bootstrap" "^0.1.2"
     "@bitsy-ui/config" "^0.0.1"
@@ -1053,8 +1053,6 @@
     fastify-compress "^3.5.0"
     fastify-cors "^6.0.1"
     fastify-static "^4.2.1"
-    react "^17.0.1"
-    react-dom "^17.0.1"
     regenerator-runtime "^0.13.7"
 
 "@discoveryjs/json-ext@^0.5.0":
@@ -1494,28 +1492,28 @@ babel-plugin-module-resolver@^3.2.0:
     resolve "^1.4.0"
 
 babel-plugin-polyfill-corejs2@^0.2.0:
-  version "0.2.1"
-  resolved "http://localhost:4873/babel-plugin-polyfill-corejs2/-/babel-plugin-polyfill-corejs2-0.2.1.tgz#ae2cf6d6f1aa7c0edcf04a25180e8856a6d1184f"
-  integrity sha512-hXGSPbr6IbjeMyGew+3uGIAkRjBFSOJ9FLDZNOfHuyJZCcoia4nd/72J0bSgvfytcVfUcP/dxEVcUhVJuQRtSw==
+  version "0.2.2"
+  resolved "http://localhost:4873/babel-plugin-polyfill-corejs2/-/babel-plugin-polyfill-corejs2-0.2.2.tgz#e9124785e6fd94f94b618a7954e5693053bf5327"
+  integrity sha512-kISrENsJ0z5dNPq5eRvcctITNHYXWOA4DUZRFYCz3jYCcvTb/A546LIddmoGNMVYg2U38OyFeNosQwI9ENTqIQ==
   dependencies:
     "@babel/compat-data" "^7.13.11"
-    "@babel/helper-define-polyfill-provider" "^0.2.1"
+    "@babel/helper-define-polyfill-provider" "^0.2.2"
     semver "^6.1.1"
 
 babel-plugin-polyfill-corejs3@^0.2.0:
-  version "0.2.1"
-  resolved "http://localhost:4873/babel-plugin-polyfill-corejs3/-/babel-plugin-polyfill-corejs3-0.2.1.tgz#786f40218040030f0edecfd48e6e59f1ee9bef53"
-  integrity sha512-WZCqF3DLUhdTD/P381MDJfuP18hdCZ+iqJ+wHtzhWENpsiof284JJ1tMQg1CE+hfCWyG48F7e5gDMk2c3Laz7w==
+  version "0.2.2"
+  resolved "http://localhost:4873/babel-plugin-polyfill-corejs3/-/babel-plugin-polyfill-corejs3-0.2.2.tgz#7424a1682ee44baec817327710b1b094e5f8f7f5"
+  integrity sha512-l1Cf8PKk12eEk5QP/NQ6TH8A1pee6wWDJ96WjxrMXFLHLOBFzYM4moG80HFgduVhTqAFez4alnZKEhP/bYHg0A==
   dependencies:
-    "@babel/helper-define-polyfill-provider" "^0.2.1"
+    "@babel/helper-define-polyfill-provider" "^0.2.2"
     core-js-compat "^3.9.1"
 
 babel-plugin-polyfill-regenerator@^0.2.0:
-  version "0.2.1"
-  resolved "http://localhost:4873/babel-plugin-polyfill-regenerator/-/babel-plugin-polyfill-regenerator-0.2.1.tgz#ca9595d7d5f3afefec2d83126148b90db751a091"
-  integrity sha512-T3bYyL3Sll2EtC94v3f+fA8M28q7YPTOZdB++SRHjvYZTvtd+WorMUq3tDTD4Q7Kjk1LG0gGromslKjcO5p2TA==
+  version "0.2.2"
+  resolved "http://localhost:4873/babel-plugin-polyfill-regenerator/-/babel-plugin-polyfill-regenerator-0.2.2.tgz#b310c8d642acada348c1fa3b3e6ce0e851bee077"
+  integrity sha512-Goy5ghsc21HgPDFtzRkSirpZVW35meGoTmTOb2bxqdl60ghub4xOidgNTHaZfQ2FaxQsKmwvXtOAkcIS4SMBWg==
   dependencies:
-    "@babel/helper-define-polyfill-provider" "^0.2.1"
+    "@babel/helper-define-polyfill-provider" "^0.2.2"
 
 balanced-match@^1.0.0:
   version "1.0.2"
@@ -2507,9 +2505,9 @@ fastify-warning@^0.2.0:
   integrity sha512-s1EQguBw/9qtc1p/WTY4eq9WMRIACkj+HTcOIK1in4MV5aFaQC9ZCIt0dJ7pr5bIf4lPpHvAtP2ywpTNgs7hqw==
 
 fastify@^3.15.1:
-  version "3.16.1"
-  resolved "http://localhost:4873/fastify/-/fastify-3.16.1.tgz#03209a9063a1156a72b1b4327957e9a80bbbf92b"
-  integrity sha512-gClaXPCW+L6muSyGBZURGCdeHMA7tuFLbM3zCZnfIeZOnkfCiJqnWPyuqB//IaCG7HlKvwbMTuKftga3jul24Q==
+  version "3.16.2"
+  resolved "http://localhost:4873/fastify/-/fastify-3.16.2.tgz#be26789fe9bac588bcbd5ae3ff6d1dc06cd53f00"
+  integrity sha512-tdu0fz6wk9AbtD91AbzZGjKgEQLcIy7rT2vEzTUL/zifAMS/L7ViKY9p9k3g3yCRnIQzYzxH2RAbvYZaTbKasw==
   dependencies:
     "@fastify/ajv-compiler" "^1.0.0"
     "@fastify/proxy-addr" "^3.0.0"
@@ -3445,7 +3443,7 @@ log-symbols@^4.1.0:
     chalk "^4.1.0"
     is-unicode-supported "^0.1.0"
 
-loose-envify@^1.1.0, loose-envify@^1.4.0:
+loose-envify@^1.1.0:
   version "1.4.0"
   resolved "http://localhost:4873/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
@@ -4063,15 +4061,6 @@ prompts@2.4.0:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.6.2:
-  version "15.7.2"
-  resolved "http://localhost:4873/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
-  integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
-  dependencies:
-    loose-envify "^1.4.0"
-    object-assign "^4.1.1"
-    react-is "^16.8.1"
-
 proxy-addr@~2.0.5:
   version "2.0.6"
   resolved "http://localhost:4873/proxy-addr/-/proxy-addr-2.0.6.tgz#fdc2336505447d3f2f2c638ed272caf614bbb2bf"
@@ -4174,17 +4163,7 @@ react-dev-utils@^11.0.4:
     strip-ansi "6.0.0"
     text-table "0.2.0"
 
-react-dom@^16.9.0:
-  version "16.14.0"
-  resolved "http://localhost:4873/react-dom/-/react-dom-16.14.0.tgz#7ad838ec29a777fb3c75c3a190f661cf92ab8b89"
-  integrity sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.2"
-    scheduler "^0.19.1"
-
-react-dom@^17.0.1:
+react-dom@^17.0.1, react-dom@^17.0.2:
   version "17.0.2"
   resolved "http://localhost:4873/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
   integrity sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==
@@ -4198,21 +4177,7 @@ react-error-overlay@^6.0.9:
   resolved "http://localhost:4873/react-error-overlay/-/react-error-overlay-6.0.9.tgz#3c743010c9359608c375ecd6bc76f35d93995b0a"
   integrity sha512-nQTTcUu+ATDbrSD1BZHr5kgSD4oF8OFjxun8uAaL8RwPBacGBNPf/yAuVVdx17N8XNzRDMrZ9XcKZHCjPW+9ew==
 
-react-is@^16.8.1:
-  version "16.13.1"
-  resolved "http://localhost:4873/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
-  integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
-
-react@^16.9.0:
-  version "16.14.0"
-  resolved "http://localhost:4873/react/-/react-16.14.0.tgz#94d776ddd0aaa37da3eda8fc5b6b18a4c9a3114d"
-  integrity sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.2"
-
-react@^17.0.1:
+react@^17.0.1, react@^17.0.2:
   version "17.0.2"
   resolved "http://localhost:4873/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
   integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
@@ -4462,14 +4427,6 @@ safe-regex@^1.1.0:
   version "2.1.2"
   resolved "http://localhost:4873/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
-
-scheduler@^0.19.1:
-  version "0.19.1"
-  resolved "http://localhost:4873/scheduler/-/scheduler-0.19.1.tgz#4f3e2ed2c1a7d65681f4c854fa8c5a1ccb40f196"
-  integrity sha512-n/zwRWRYSUj0/3g/otKDRPMh6qv2SYMWNq85IEa8iZyAv8od9zDYpGSnpBEjNgcMNq6Scbu5KfIPxNF72R/2EA==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
 
 scheduler@^0.20.2:
   version "0.20.2"

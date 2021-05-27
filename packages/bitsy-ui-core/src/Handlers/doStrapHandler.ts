@@ -1,14 +1,8 @@
-import path from 'path';
 import { createElement } from 'react';
+import ReactDOMServer from 'react-dom/server';
 import embedComponent from '../Helpers/embedComponent';
 import type BitsyUIConfig from '../Types/BitsyUIConfig';
 import type BitsyUiLogger from '../Types/BitsyUiLogger';
-
-// Direct Import React
-// We have to do it this way to permit SSR react + hooks
-const reactDomLibDir = path.dirname(require.resolve('react-dom/package.json'));
-// tslint:disable-next-line
-const ReactDOMServer = require(path.join(reactDomLibDir, 'server'));
 
 const doStrapHandler =
   ({
