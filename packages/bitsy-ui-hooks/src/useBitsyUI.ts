@@ -24,20 +24,22 @@ const useBitsyUI: UseBitsyUI = (baseUrl, libraryName) => {
   const [libraryLoaded, setLibraryLoaded] = useState(false);
   const [bootstrapLoaded, setBootstrapLoaded] = useState(false);
   const [bootstrapError, setBootstrapError] = useState(false);
+  // If document does not exist
+  if (typeof document === 'undefined') return [null, false, false, false, null];
   // Checks if the bitsy UI script is present
   const hasBootstrapScript = useCallback(() => {
     // We want to check for both the script and the window object
     // This is in case the script was included somewhere without the id we expect
-    return !!document.getElementById(`${libraryName}Library`) || window[libraryName];
+    return !!document?.getElementById(`${libraryName}Library`) || window[libraryName];
   }, [baseUrl, libraryName]);
   // Loads the bitsy UI script
   const addBootstrapScript = useCallback(() => {
-    const tag = document.createElement('script');
+    const tag = document?.createElement('script');
     tag.id = `${libraryName}Library`;
     tag.src = `${baseUrl}/bootstrap.js`;
     tag.onload = () => setBootstrapLoaded(true);
     tag.onerror = (e) => setBootstrapError(true);
-    document.getElementsByTagName('head')[0].appendChild(tag);
+    document?.getElementsByTagName('head')[0].appendChild(tag);
   }, [baseUrl, libraryName]);
   // Handle the bitsy UI emitting a loaded event
   const handleBitsyUILoadEvent = useCallback((e) => {

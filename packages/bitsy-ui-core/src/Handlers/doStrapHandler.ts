@@ -1,8 +1,9 @@
 import { createElement } from 'react';
 import ReactDOMServer from 'react-dom/server';
-import embedComponent from '../Helpers/embedComponent';
 import type BitsyUIConfig from '../Types/BitsyUIConfig';
 import type BitsyUiLogger from '../Types/BitsyUiLogger';
+import renderStaticComponent from '../Helpers/renderStaticComponent';
+import renderEmbeddableComponent from '../Helpers/renderEmbeddableComponent';
 
 const doStrapHandler =
   ({
@@ -39,7 +40,11 @@ const doStrapHandler =
       const el = createElement(component, props);
       // Attempt to render the component's HTML using react's ReactDOMServer
       const rendered = ReactDOMServer.renderToString(el);
-      const html = embedComponent(name, protocol, hostname, config, props, rendered);
+      // If htmlOnly props has been passed we want to return only the HTML
+      // otherwise we wanted to return the embeddable component
+      const html = props.htmlOnly
+        ? renderStaticComponent(name, config, props, rendered)
+        : renderEmbeddableComponent(name, protocol, hostname, config, props, rendered);
       // Set express to return the component as the response body
       reply.header('Content-Type', 'text/html');
       // Inject any additional headers

@@ -1,7 +1,7 @@
 import { BitsyUIConfig } from '../Types';
 import getCombinedURL from './getCombinedURL';
 
-type EmbedComponent = (
+type RenderEmbeddableComponent = (
   name: string,
   protocol: string,
   hostname: string,
@@ -10,7 +10,7 @@ type EmbedComponent = (
   el: string,
 ) => string;
 
-const embedComponent: EmbedComponent = (name, protocol, hostname, config, props, el) => {
+const embedComponent: RenderEmbeddableComponent = (name, protocol, hostname, config, props, el) => {
   // Determine the correct api and asset values based on
   const { bootstrap, api, ui } = config.settings;
   // Construct the props to be passed to the rendered component
@@ -22,19 +22,25 @@ const embedComponent: EmbedComponent = (name, protocol, hostname, config, props,
       bootstrap: {
         host: protocol + hostname,
         path: bootstrap.publicPath,
-        url: bootstrap.hostname ? getCombinedURL(bootstrap.hostname, bootstrap.publicPath, 'bootstrap.js') : protocol + getCombinedURL(hostname, bootstrap.publicPath, 'bootstrap.js'),
+        url: bootstrap.hostname
+          ? getCombinedURL(bootstrap.hostname, bootstrap.publicPath, 'bootstrap.js')
+          : protocol + getCombinedURL(hostname, bootstrap.publicPath, 'bootstrap.js'),
         options: bootstrap.options || {},
       },
       api: {
         host: protocol + hostname,
         path: api.publicPath,
-        url: api.hostname ? getCombinedURL(api.hostname, api.publicPath) : protocol + getCombinedURL( hostname, api.publicPath),
+        url: api.hostname
+          ? getCombinedURL(api.hostname, api.publicPath)
+          : protocol + getCombinedURL(hostname, api.publicPath),
         options: api.options || {},
       },
       ui: {
         host: protocol + hostname,
         path: ui.publicPath,
-        url: ui.hostname ? getCombinedURL(ui.hostname, ui.publicPath) :  protocol + getCombinedURL(hostname, ui.publicPath),
+        url: ui.hostname
+          ? getCombinedURL(ui.hostname, ui.publicPath)
+          : protocol + getCombinedURL(hostname, ui.publicPath),
         script: ui.script,
         env: ui.env || {},
         options: ui.options || {},

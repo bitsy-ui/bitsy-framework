@@ -7,6 +7,7 @@ import { useBitsyUI } from '@bitsy-ui/hooks';
 export const BitsyUIComponent = (props: BitsyUIProps) => {
   // Deconstruct the micro UI component values
   const {
+    html,
     bitsyUi: { url, library, name },
     ..._props
   } = props;
@@ -32,8 +33,11 @@ export const BitsyUIComponent = (props: BitsyUIProps) => {
     [],
   );
   // Return out a div to embed within
-  // @TODO make this able to be passed in
-  return <div ref={el} {..._props} />;
+  return html ? (
+    <div ref={el} dangerouslySetInnerHTML={{ __html: props.html }} {..._props} />
+  ) : (
+    <div ref={el} {..._props} />
+  );
 };
 
 export default BitsyUIComponent;
