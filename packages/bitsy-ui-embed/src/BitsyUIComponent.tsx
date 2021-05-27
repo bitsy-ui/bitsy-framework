@@ -7,7 +7,7 @@ import { useBitsyUI } from '@bitsy-ui/hooks';
 export const BitsyUIComponent = (props: BitsyUIProps) => {
   // Deconstruct the micro UI component values
   const {
-    bitsyUI: { url, library, name },
+    bitsyUi: { url, library, name },
     ..._props
   } = props;
   // We need to have a ref, this will be the component the micro UI's internal reactDomRender will render into

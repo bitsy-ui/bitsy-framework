@@ -1,6 +1,6 @@
 {
   "name": "@bitsy-ui/hooks",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "license": "MIT",
@@ -11,10 +11,6 @@
   "files": [
     "lib"
   ],
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/bitsy-ui/bitsy-framework.git"
@@ -25,12 +21,16 @@
   "scripts": {
     "build": "rimraf lib && yarn run build:js && yarn run build:ts",
     "build:ts": "tsc --project ./tsconfig.build.json",
-    "build:js": "BABEL_ENV=build babel --root-mode upward src --out-dir lib --extensions .ts,.tsx --no-comments && tsc --project ./tsconfig.json"
+    "build:js": "BABEL_ENV=build babel --root-mode upward src --out-dir lib --extensions .ts,.tsx --no-comments && tsc --project ./tsconfig.json",
+    "deploy": "yarn run build && npm unpublish --force --registry http://localhost:4873 @bitsy-ui/hooks && npm publish --registry http://localhost:4873"
   },
-  "dependencies": {
-    "react": "^17.0.1"
+  "peerDependencies": {
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
   },
   "devDependencies": {
-    "@types/react": "^17.0.3"
+    "@types/react": "^17.0.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   }
 }
