@@ -1,1 +1,1 @@
-export { default as getCombinedBitsyConfig } from './getCombinedBitsyConfig'
+export { default as getCombinedBitsyConfig } from './getCombinedBitsyConfig';

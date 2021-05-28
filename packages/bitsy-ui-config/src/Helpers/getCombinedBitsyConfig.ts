@@ -1,8 +1,7 @@
-import { BitsyUIConfig } from '@bitsy-ui/core/lib/Types';
+import BitsyUIConfig from '../Types/BitsyUIConfig';
 
-const getCombinedBitsyConfig = (baseConfig, ...configs): BitsyUIConfig => {
-
-  const newConfig =  configs.filter(Boolean).reduce((curr, config) => {
+const getCombinedBitsyConfig = (baseConfig, ...configs): BitsyUIConfig =>
+  configs.filter(Boolean).reduce((curr, config) => {
     // Progressively build the config
     const settings = Object.entries(config.settings).reduce((_curr, [key, data]) => {
       // retrieve the current settings value
@@ -14,8 +13,5 @@ const getCombinedBitsyConfig = (baseConfig, ...configs): BitsyUIConfig => {
     }, curr.settings);
     return { ...curr, ...config, settings };
   }, baseConfig);
-
-  return newConfig;
-};
 
 export default getCombinedBitsyConfig;
