@@ -54,11 +54,6 @@ module.exports = {
       ...pathAliases,
     },
   },
-  devServer: {
-    contentBase: publishDir,
-    compress: true,
-    port: 9087,
-  },
   optimization: {
     minimizer: [
       new TerserPlugin({

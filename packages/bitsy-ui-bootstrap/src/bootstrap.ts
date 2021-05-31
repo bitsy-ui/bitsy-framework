@@ -29,6 +29,7 @@ const fetchAssetsHandler = () => {
   // Set the webpack custom URL for ui retrieval
   window[`__BitsyUI${env.name}UiUrl__`] = getCombinedURL(env.ui.url, '/');
   // @TODO should we provide a list of components here?
+  console.log('env.ui.url', env.ui.url, env.ui);
   // Retrieve the main JS
   const script = manifest[env.ui.script || 'main.js'];
   // Load the manifest assets

@@ -38,7 +38,7 @@ const doBootstrapHandler: DoBootstrapHandler = (config) => async (request, reply
       JSON.stringify({
         name,
         bootstrap: {
-          host: protocol + hostname,
+          host: bootstrap.hostname ? bootstrap.hostname : protocol + hostname,
           path: bootstrap.publicPath,
           url: bootstrap.hostname
             ? getCombinedURL(bootstrap.hostname, bootstrap.publicPath, 'bootstrap.js')
@@ -46,7 +46,7 @@ const doBootstrapHandler: DoBootstrapHandler = (config) => async (request, reply
           options: bootstrap.options || {},
         },
         api: {
-          host: protocol + hostname,
+          host: api.hostname ? api.hostname : protocol + hostname,
           path: api.publicPath,
           url: api.hostname
             ? getCombinedURL(api.hostname, api.publicPath)
@@ -54,7 +54,7 @@ const doBootstrapHandler: DoBootstrapHandler = (config) => async (request, reply
           options: api.options || {},
         },
         ui: {
-          host: protocol + hostname,
+          host: ui.hostname ? ui.hostname : protocol + hostname,
           path: ui.publicPath,
           url: ui.hostname
             ? getCombinedURL(ui.hostname, ui.publicPath)

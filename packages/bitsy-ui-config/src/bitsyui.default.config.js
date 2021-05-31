@@ -36,6 +36,7 @@ module.exports = {
       // Build config files
       babelConfig: path.resolve(coreLibDir, 'babel', 'babel.config.ui.js'),
       webpackConfig: path.resolve(coreLibDir, 'webpack', 'webpack.config.ui.js'),
+      webpackPort: 9087,
       buildEntry: path.join(process.cwd(), 'src', 'ui.js'),
       script: 'main.js',
       // Use this to explicitly define the bootstrap URL

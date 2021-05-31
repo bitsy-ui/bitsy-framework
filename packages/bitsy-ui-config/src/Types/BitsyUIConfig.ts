@@ -22,6 +22,7 @@ type BitsyUIConfig = {
       publishDir: string;
       babelConfig: string;
       webpackConfig: string;
+      webpackPort: boolean;
       buildEntry: string;
       filePattern: string;
       fileExtensions: string[];

@@ -13,6 +13,8 @@ type RenderEmbeddableComponent = (
 const embedComponent: RenderEmbeddableComponent = (name, protocol, hostname, config, props, el) => {
   // Determine the correct api and asset values based on
   const { bootstrap, api, ui } = config.settings;
+
+  console.log('---->', ui.hostname);
   // Construct the props to be passed to the rendered component
   const _props = {
     // Add the frontend safe micro ui vars as env to pass into the micro ui component
@@ -20,7 +22,7 @@ const embedComponent: RenderEmbeddableComponent = (name, protocol, hostname, con
     env: {
       name,
       bootstrap: {
-        host: protocol + hostname,
+        host: bootstrap.hostname ? bootstrap.hostname : protocol + hostname,
         path: bootstrap.publicPath,
         url: bootstrap.hostname
           ? getCombinedURL(bootstrap.hostname, bootstrap.publicPath, 'bootstrap.js')
@@ -28,7 +30,7 @@ const embedComponent: RenderEmbeddableComponent = (name, protocol, hostname, con
         options: bootstrap.options || {},
       },
       api: {
-        host: protocol + hostname,
+        host: api.hostname ? api.hostname : protocol + hostname,
         path: api.publicPath,
         url: api.hostname
           ? getCombinedURL(api.hostname, api.publicPath)
@@ -36,7 +38,7 @@ const embedComponent: RenderEmbeddableComponent = (name, protocol, hostname, con
         options: api.options || {},
       },
       ui: {
-        host: protocol + hostname,
+        host: ui.hostname ? ui.hostname : protocol + hostname,
         path: ui.publicPath,
         url: ui.hostname
           ? getCombinedURL(ui.hostname, ui.publicPath)
@@ -49,6 +51,8 @@ const embedComponent: RenderEmbeddableComponent = (name, protocol, hostname, con
     // Spread operate any additional props
     ...props,
   };
+  // Generate some chaos
+  const chaos = Math.random().toString(36).substring(7);
   // Return the native JS embedding code
   // This will render a div element on the page
   // It will provide the scripting to load the bootstrap.js if it is not already present
@@ -70,7 +74,7 @@ const embedComponent: RenderEmbeddableComponent = (name, protocol, hostname, con
     '  if (d === null || d.length === 0) {' +
     '   var tag = document.createElement(\'script\');' +
     '   tag.id = `' + config.name + 'Library`;' +
-    '   tag.src = `' + _props.env.bootstrap.url + '`;' +
+    '   tag.src = `' + _props.env.bootstrap.url + '?c=' + chaos + '`;' +
     '   document.body.appendChild(tag);' +
     '  }' +
     ' })(\'' + config.name + '\', \'' + name + '\', ' + JSON.stringify(_props) + ', {});' +

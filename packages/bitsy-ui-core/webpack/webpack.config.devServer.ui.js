@@ -20,6 +20,8 @@ const publishDir = bitsyUiConfig.settings.ui.publishDir;
 const outputFile = bitsyUiConfig.settings.ui.filePattern;
 // Determine the extensions
 const extensions = bitsyUiConfig.settings.ui.fileExtensions;
+// Determine the extensions
+const port = bitsyUiConfig.settings.ui.webpackPort;
 // Retrieve any path aliases
 // These help make development a much more pleasurable experience
 const pathAliases = bitsyUiConfig.settings.ui.aliasDirs || {};
@@ -57,7 +59,8 @@ module.exports = {
   devServer: {
     contentBase: publishDir,
     compress: true,
-    port: 9087,
+    port: port,
+    hot: true,
   },
   module: {
     strictExportPresence: true,

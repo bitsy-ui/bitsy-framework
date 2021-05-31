@@ -30,7 +30,7 @@ program
   .option('-d, --development', 'builds bitsy ui in development mode')
   .action((options) => {
     // First build the assets as is
-    BuildBitsyUICommand(config, options);
+    // BuildBitsyUICommand(config, options);
     // Next start the local service
     ServeAndWatchBitsyUICommand(config, options);
     // Next, if things change then execute UI updates
