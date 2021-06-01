@@ -30,7 +30,8 @@
   },
   "dependencies": {
     "react-dev-utils": "^11.0.4",
-    "@bitsy-ui/config": "^0.0.1"
+    "@bitsy-ui/config": "^0.0.1",
+    "@bitsy-ui/common": "^0.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.10",

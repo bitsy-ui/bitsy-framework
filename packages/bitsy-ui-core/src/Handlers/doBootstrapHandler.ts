@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { BitsyUIConfig } from '../Types';
 import getBootstrapAsset from '../Selectors/getBootstrapAsset';
-import getCombinedURL from '../Helpers/getCombinedURL';
+import getCombinedURL from '@bitsy-ui/common/lib/Helpers/getCombinedURL';
 
 type DoBootstrapHandler = (config: BitsyUIConfig) => (request: any, reply: any) => Promise<void>;
 

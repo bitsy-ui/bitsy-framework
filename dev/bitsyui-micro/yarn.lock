@@ -993,9 +993,10 @@
 
 "@bitsy-ui/bootstrap@^0.1.4":
   version "0.1.4"
-  resolved "http://localhost:4873/@bitsy-ui%2fbootstrap/-/bootstrap-0.1.4.tgz#aba2f2b17d8e1688c29eed1a534f9025879859d7"
-  integrity sha512-aNgv+H15WwatYst++87NifgHFPw19BpyaMgQqV88SNAoDShvmaYw1gkd4/HzUBEgLKMvl9lt36w4voI5hyxtkg==
+  resolved "http://localhost:4873/@bitsy-ui%2fbootstrap/-/bootstrap-0.1.4.tgz#39cd316f1858e92e03a3e25c9b4c9c5493c633f7"
+  integrity sha512-wsYrBa8Id3bHS7NS6WrmBbTTExqLxN5WcrQ2Y1zWh48ynw0IRGQ4XrWPNkCFyMsfg2ragzOlmrF7x4bljRrZeQ==
   dependencies:
+    "@bitsy-ui/common" "^0.0.1"
     "@bitsy-ui/config" "^0.0.1"
     react-dev-utils "^11.0.4"
 
@@ -1036,6 +1037,11 @@
     webpack-dev-server "^3.11.2"
     webpack-manifest-plugin "^3.1.1"
 
+"@bitsy-ui/common@^0.0.1":
+  version "0.0.1"
+  resolved "http://localhost:4873/@bitsy-ui%2fcommon/-/common-0.0.1.tgz#be4e89bf7559709d18763ae71cdf83951f103637"
+  integrity sha512-9T40gH1o2M1MQ9w/NyDlkbyuKVxxQijN2g2CAxsUMp8nhkj35ybDNZDbRjOJ4dsSS8jVhKtTe0q59Afa6w1ymg==
+
 "@bitsy-ui/config@^0.0.1":
   version "0.0.1"
   resolved "http://localhost:4873/@bitsy-ui%2fconfig/-/config-0.0.1.tgz#e35407546c8f14d7a90f66f771f1446c2127ac66"
@@ -1043,10 +1049,11 @@
 
 "@bitsy-ui/core@^0.3.3":
   version "0.3.3"
-  resolved "http://localhost:4873/@bitsy-ui%2fcore/-/core-0.3.3.tgz#6efa173c61957fe1d9157dd59f32b413c16e71be"
-  integrity sha512-SfWV6H95yxTSteKg+U7c8bzGfFuISVUQAmCc6rDRcqhJ6zbxxdQcS3Cc3KMgN4SlX+w16McLyWyfi0BXYqDb8Q==
+  resolved "http://localhost:4873/@bitsy-ui%2fcore/-/core-0.3.3.tgz#b7d6b7d31f655fc6660340e28b3c1822690117dd"
+  integrity sha512-7KRW8XxCWA92vE4r3SRjt4oSMozXiFWTe8Ns8PGyzYd6H51eNJA/jIn6B8bbKxDxDjVDRCowXolh0ySBjmgY0A==
   dependencies:
     "@bitsy-ui/bootstrap" "^0.1.4"
+    "@bitsy-ui/common" "^0.0.1"
     "@bitsy-ui/config" "^0.0.1"
     compression-webpack-plugin "^7.1.2"
     core-js "^3.9.1"

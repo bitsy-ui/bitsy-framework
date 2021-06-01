@@ -5,13 +5,16 @@
     "declarationDir": "./lib",
     "rootDir": "./src",
     "paths": {
+      "@bitsy-ui/common/lib/*": ["../bitsy-ui-common/src/*"],
       "@bitsy-ui/config/lib/*": ["../bitsy-ui-config/src/*"],
       "@bitsy-ui/bootstrap/lib/*": ["../bitsy-ui-bootstrap/src/*"]
     }
   },
-  "include": [
-    "./src"
-  ],
+  "include": ["./src"],
   "exclude": ["node_modules", "lib", "**/*.test.*"],
-  "references": [{ "@bitsy-ui/bootstrap": "../bitsy-ui-bootstrap" }, { "@bitsy-ui/config": "../bitsy-ui-config" }]
+  "references": [
+    { "@bitsy-ui/common": "../bitsy-ui-common" },
+    { "@bitsy-ui/bootstrap": "../bitsy-ui-bootstrap" },
+    { "@bitsy-ui/config": "../bitsy-ui-config" }
+  ]
 }

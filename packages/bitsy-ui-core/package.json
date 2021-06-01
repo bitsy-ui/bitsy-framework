@@ -29,6 +29,7 @@
     "deploy": "yarn run build && npm unpublish --force --registry http://localhost:4873 @bitsy-ui/core && npm publish --registry http://localhost:4873"
   },
   "dependencies": {
+    "@bitsy-ui/common": "^0.0.1",
     "@bitsy-ui/bootstrap": "^0.1.4",
     "@bitsy-ui/config": "^0.0.1",
     "compression-webpack-plugin": "^7.1.2",

@@ -5,10 +5,14 @@
     "rootDir": "./src",
     "noEmit": true,
     "paths": {
-      "@bitsy-ui/config/lib/*": ["../bitsy-ui-config/src/*"]
+      "@bitsy-ui/config/lib/*": ["../bitsy-ui-config/src/*"],
+      "@bitsy-ui/common/lib/*": ["../bitsy-ui-common/src/*"]
     }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "lib"],
-  "references": [{ "@bitsy-ui/config": "../bitsy-ui-config" }]
+  "references": [
+    { "@bitsy-ui/config": "../bitsy-ui-config" },
+    { "@bitsy-ui/common": "../bitsy-ui-common" }
+  ]
 }

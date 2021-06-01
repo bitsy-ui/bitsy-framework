@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BitsyUIComponent } from '@bitsy-ui/embed';
 
 const Home = ({ microUI }) => {
+  const [toggled, setToggled] = useState('');
   return (
     <div>
-      This is a test page
+      <div>hello {toggled}</div>
+      This is a test page{' '}
+      <span
+        onClick={() => {
+          setToggled('Blah');
+        }}
+      >
+        click here
+      </span>
       <BitsyUIComponent
         html={microUI}
         bitsyUi={{
-          library: 'travellersCommonUI',
+          library: 'exampleMicroUI',
           name: 'ExampleComponent',
           url: 'http://localhost:8000',
         }}

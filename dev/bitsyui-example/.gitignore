@@ -1,7 +1,0 @@
-.bootstrap
-.ui
-.api
-
-node_modules
-
-yarn.lock
