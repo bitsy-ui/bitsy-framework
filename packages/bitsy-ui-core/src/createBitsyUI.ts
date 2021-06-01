@@ -2,15 +2,15 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import fastify from 'fastify';
 import fastifyStatic from 'fastify-static';
-import doBootstrapHandler from './Handlers/doBootstrapHandler';
 import addRouteControl from './Controls/addRouteControl';
 import addStrapControl from './Controls/addStrapControl';
 import doBootControl from './Controls/doBootControl';
-import getBootstrapPath from './Selectors/getBootstrapPath';
 import getUiPublishPath from './Selectors/getUiPublishPath';
 import getUiPublicPath from './Selectors/getUiPublicPath';
-import type BitsyUIConfig from './Types/BitsyUIConfig';
+import getBootstrapPath from '@bitsy-ui/bootstrap/lib/Selectors/getBootstrapPath';
+import doBootstrapHandler from '@bitsy-ui/bootstrap/lib/Handlers/doBootstrapHandler';
 import type BitsyUiLogger from './Types/BitsyUiLogger';
+import type BitsyUIConfig from '@bitsy-ui/config/lib/Types/BitsyUIConfig';
 
 const createBitsyUI = ({
   config,

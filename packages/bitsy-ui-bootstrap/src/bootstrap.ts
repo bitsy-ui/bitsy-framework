@@ -1,6 +1,6 @@
-import doLoadScript from './doLoadScript';
-import getMicroUILoadedEvent from './getMicroUILoadedEvent';
-import getMicroUIErrorEvent from './getMicroUIErrorEvent';
+import doLoadScript from './Scripts/doLoadScript';
+import getMicroUILoadedEvent from './Events/getMicroUILoadedEvent';
+import getMicroUIErrorEvent from './Events/getMicroUIErrorEvent';
 import getCombinedURL from '@bitsy-ui/common/lib/Helpers/getCombinedURL';
 
 // Tokens to be replaced by the express endpoint

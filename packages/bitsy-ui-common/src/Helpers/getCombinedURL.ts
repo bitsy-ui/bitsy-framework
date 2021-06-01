@@ -4,6 +4,7 @@ const getCombinedURL = (...segments) =>
     .map((s) => (s || '').replace(/^\/|\/$/g, ''))
     .join('/')
     .replace(/([^:]\/)\/+/g, '$1')
-    .replace(':/', '://');
+    .replace(':/', '://')
+    .replace(':///', '://');
 
 export default getCombinedURL;

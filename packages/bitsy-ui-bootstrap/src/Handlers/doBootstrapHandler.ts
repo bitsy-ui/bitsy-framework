@@ -1,7 +1,8 @@
 import fs from 'fs';
-import { BitsyUIConfig } from '../Types';
-import getBootstrapAsset from '../Selectors/getBootstrapAsset';
+import BitsyUIConfig from '@bitsy-ui/config/lib/Types/BitsyUIConfig';
 import getCombinedURL from '@bitsy-ui/common/lib/Helpers/getCombinedURL';
+import getBootstrapAsset from '../Selectors/getBootstrapAsset';
+import getBootstrapEnv from '../Helpers/getBootstrapEnv';
 
 type DoBootstrapHandler = (config: BitsyUIConfig) => (request: any, reply: any) => Promise<void>;
 
@@ -14,16 +15,10 @@ type DoBootstrapHandler = (config: BitsyUIConfig) => (request: any, reply: any) 
 const doBootstrapHandler: DoBootstrapHandler = (config) => async (request, reply) => {
   // Deconstruct the important values from the bitsy ui config
   const {
-    name,
-    settings: { bootstrap, ui, api },
+    settings: { bootstrap, ui },
   } = config;
   // Retrieve the manifest file contents
   const manifestData = fs.readFileSync(ui.manifest, 'utf8');
-  // Determine the request protocol
-  const protocol = `${request.protocol}://`;
-  // Determine URL via request object
-  // We do this to allow bitsyui to be hosted within multiple URLs
-  const hostname = request.hostname;
   // Replace the bootstrap JS placeholder tokens with permitted environment variables
   // This will be used by bootstrap and communicated within the window space to the built micro UI assets
   const contents = fs
@@ -33,38 +28,7 @@ const doBootstrapHandler: DoBootstrapHandler = (config) => async (request, reply
     // replace the manifest token with the manifest data
     .replace(/__MANIFEST__/g, manifestData)
     // replace the env token with the env data
-    .replace(
-      /__ENV__/g,
-      JSON.stringify({
-        name,
-        bootstrap: {
-          host: bootstrap.hostname ? bootstrap.hostname : protocol + hostname,
-          path: bootstrap.publicPath,
-          url: bootstrap.hostname
-            ? getCombinedURL(bootstrap.hostname, bootstrap.publicPath, 'bootstrap.js')
-            : getCombinedURL(protocol, hostname, bootstrap.publicPath, 'bootstrap.js'),
-          options: bootstrap.options || {},
-        },
-        api: {
-          host: api.hostname ? api.hostname : protocol + hostname,
-          path: api.publicPath,
-          url: api.hostname
-            ? getCombinedURL(api.hostname, api.publicPath)
-            : getCombinedURL(protocol, hostname, api.publicPath),
-          options: api.options || {},
-        },
-        ui: {
-          host: ui.hostname ? ui.hostname : protocol + hostname,
-          path: ui.publicPath,
-          url: ui.hostname
-            ? getCombinedURL(ui.hostname, ui.publicPath)
-            : getCombinedURL(protocol, hostname, ui.publicPath),
-          script: ui.script,
-          env: ui.env || {},
-          options: ui.options || {},
-        },
-      }),
-    );
+    .replace(/__ENV__/g, JSON.stringify(getBootstrapEnv(request, config)));
   // Determine the correct api and asset values based on
   // Inject any additional headers
   Object.entries(bootstrap?.headers || {}).forEach(([key, value]) => {

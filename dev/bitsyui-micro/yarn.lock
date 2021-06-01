@@ -993,8 +993,8 @@
 
 "@bitsy-ui/bootstrap@^0.1.4":
   version "0.1.4"
-  resolved "http://localhost:4873/@bitsy-ui%2fbootstrap/-/bootstrap-0.1.4.tgz#39cd316f1858e92e03a3e25c9b4c9c5493c633f7"
-  integrity sha512-wsYrBa8Id3bHS7NS6WrmBbTTExqLxN5WcrQ2Y1zWh48ynw0IRGQ4XrWPNkCFyMsfg2ragzOlmrF7x4bljRrZeQ==
+  resolved "http://localhost:4873/@bitsy-ui%2fbootstrap/-/bootstrap-0.1.4.tgz#c1016c24cf0113360a10828cd7bfe30af576fe95"
+  integrity sha512-djTkfjW5i7GoO9/ZV1plNtX4oHgPZj20t9nfbRkqQctyk/sp6nLIiLS6fynC+mv+3EoTH+nmgtOMr9qJ3ednow==
   dependencies:
     "@bitsy-ui/common" "^0.0.1"
     "@bitsy-ui/config" "^0.0.1"
@@ -1039,8 +1039,8 @@
 
 "@bitsy-ui/common@^0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@bitsy-ui%2fcommon/-/common-0.0.1.tgz#be4e89bf7559709d18763ae71cdf83951f103637"
-  integrity sha512-9T40gH1o2M1MQ9w/NyDlkbyuKVxxQijN2g2CAxsUMp8nhkj35ybDNZDbRjOJ4dsSS8jVhKtTe0q59Afa6w1ymg==
+  resolved "http://localhost:4873/@bitsy-ui%2fcommon/-/common-0.0.1.tgz#91c574dbfd19e3a853158c33dc88d2fa24b81a0b"
+  integrity sha512-ufaMIMHz47DQ1hzLTpnKClhwyepkKgW5ChLw4XgvkCxFkpjZApEOuMUQykCslIc2E8n18nbi8zRSqub1GNrzyw==
 
 "@bitsy-ui/config@^0.0.1":
   version "0.0.1"
@@ -1049,8 +1049,8 @@
 
 "@bitsy-ui/core@^0.3.3":
   version "0.3.3"
-  resolved "http://localhost:4873/@bitsy-ui%2fcore/-/core-0.3.3.tgz#b7d6b7d31f655fc6660340e28b3c1822690117dd"
-  integrity sha512-7KRW8XxCWA92vE4r3SRjt4oSMozXiFWTe8Ns8PGyzYd6H51eNJA/jIn6B8bbKxDxDjVDRCowXolh0ySBjmgY0A==
+  resolved "http://localhost:4873/@bitsy-ui%2fcore/-/core-0.3.3.tgz#a3b4a09788237849531fbe9128802050287a575a"
+  integrity sha512-WJFa7SgRtkxDM39VPCqTqFGFxDN2p22//r7AC8KQ9mP2If2akeGaGnCg0mazzu/PIDP+SJ/beilVUEEgzC0poQ==
   dependencies:
     "@bitsy-ui/bootstrap" "^0.1.4"
     "@bitsy-ui/common" "^0.0.1"
@@ -1143,9 +1143,9 @@
     "@types/estree" "*"
 
 "@types/eslint@*":
-  version "7.2.12"
-  resolved "http://localhost:4873/@types%2feslint/-/eslint-7.2.12.tgz#fefaa48a4db2415b621fe315e4baeedde525927e"
-  integrity sha512-HjikV/jX6e0Pg4DcB+rtOBKSrG6w5IaxWpmi3efL/eLxMz5lZTK+W1DKERrX5a+mNzL78axfsDNXu7JHFP4uLg==
+  version "7.2.13"
+  resolved "http://localhost:4873/@types%2feslint/-/eslint-7.2.13.tgz#e0ca7219ba5ded402062ad6f926d491ebb29dd53"
+  integrity sha512-LKmQCWAlnVHvvXq4oasNUMTJJb2GwSyTY8+1C7OH5ILR8mPLaljv1jxL1bXW3xB3jFbQxTKxJAvI8PyjB09aBg==
   dependencies:
     "@types/estree" "*"
     "@types/json-schema" "*"
@@ -4018,22 +4018,17 @@ micromatch@^4.0.0, micromatch@^4.0.2:
     braces "^3.0.1"
     picomatch "^2.2.3"
 
-mime-db@1.47.0:
-  version "1.47.0"
-  resolved "http://localhost:4873/mime-db/-/mime-db-1.47.0.tgz#8cb313e59965d3c05cfbf898915a267af46a335c"
-  integrity sha512-QBmA/G2y+IfeS4oktet3qRZ+P5kPhCKRXxXnQEudYqUaEioAU1/Lq2us3D/t1Jfo4hE9REQPrbB7K5sOczJVIw==
-
-"mime-db@>= 1.43.0 < 2", mime-db@^1.45.0:
+mime-db@1.48.0, "mime-db@>= 1.43.0 < 2", mime-db@^1.45.0:
   version "1.48.0"
   resolved "http://localhost:4873/mime-db/-/mime-db-1.48.0.tgz#e35b31045dd7eada3aaad537ed88a33afbef2d1d"
   integrity sha512-FM3QwxV+TnZYQ2aRqhlKBMHxk10lTbMt3bBkMAp54ddrNeVSfcQYOOKuGuy3Ddrm38I04If834fOUSq1yzslJQ==
 
 mime-types@^2.1.27, mime-types@~2.1.17, mime-types@~2.1.24:
-  version "2.1.30"
-  resolved "http://localhost:4873/mime-types/-/mime-types-2.1.30.tgz#6e7be8b4c479825f85ed6326695db73f9305d62d"
-  integrity sha512-crmjA4bLtR8m9qLpHvgxSChT+XoSlZi8J4n/aIdn3z92e/U47Z0V/yl+Wh9W046GgFVAmoNR/fmdbZYcSSIUeg==
+  version "2.1.31"
+  resolved "http://localhost:4873/mime-types/-/mime-types-2.1.31.tgz#a00d76b74317c61f9c2db2218b8e9f8e9c5c9e6b"
+  integrity sha512-XGZnNzm3QvgKxa8dpzyhFTHmpP3l5YNusmne07VUOXxou9CqUqYa/HBy124RqtVh/O2pECas/MOcsDgpilPOPg==
   dependencies:
-    mime-db "1.47.0"
+    mime-db "1.48.0"
 
 mime@1.6.0:
   version "1.6.0"
@@ -6151,9 +6146,9 @@ wrappy@1:
   integrity sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
 
 ws@^6.2.1:
-  version "6.2.1"
-  resolved "http://localhost:4873/ws/-/ws-6.2.1.tgz#442fdf0a47ed64f59b6a5d8ff130f4748ed524fb"
-  integrity sha512-GIyAXC2cB7LjvpgMt9EKS2ldqr0MTrORaleiOno6TweZ6r3TKtoFQWay/2PceJ3RuBasOHzXNn5Lrw1X0bEjqA==
+  version "6.2.2"
+  resolved "http://localhost:4873/ws/-/ws-6.2.2.tgz#dd5cdbd57a9979916097652d78f1cc5faea0c32e"
+  integrity sha512-zmhltoSR8u1cnDsD43TX59mzoMZsLKqUweyYBAIvTngR3shc0W6aOZylZmq/7hqyVxPdi+5Ud2QInblgyE72fw==
   dependencies:
     async-limiter "~1.0.0"
 

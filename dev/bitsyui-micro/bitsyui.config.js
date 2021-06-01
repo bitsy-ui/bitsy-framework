@@ -10,6 +10,9 @@ module.exports = {
       webpackPort: 9087,
       // Use this to explicitly define the bootstrap URL
       hostname: 'http://localhost:9087',
+      env: {
+        catName: 'bruce',
+      },
     },
   },
 };

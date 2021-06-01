@@ -3,7 +3,6 @@ const getBitsyConfig = require('@bitsy-ui/config/lib/getBitsyConfig').default;
 
 // MICRO FRONTEND CONFIG
 const bitsyUiConfig = getBitsyConfig();
-
 // Determine the assets public path
 const publicPath = bitsyUiConfig.settings.bootstrap.publicPath;
 // Determine the assets folder
@@ -19,8 +18,7 @@ const extensions = bitsyUiConfig.settings.bootstrap.fileExtensions;
 
 module.exports = {
   entry: entryFile,
-  devtool: 'source-map',
-  mode: 'production',
+  devtool: false,
   output: {
     filename: outputFile,
     publicPath: publicPath,

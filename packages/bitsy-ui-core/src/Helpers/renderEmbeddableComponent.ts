@@ -13,8 +13,6 @@ type RenderEmbeddableComponent = (
 const embedComponent: RenderEmbeddableComponent = (name, protocol, hostname, config, props, el) => {
   // Determine the correct api and asset values based on
   const { bootstrap, api, ui } = config.settings;
-
-  console.log('---->', ui.hostname);
   // Construct the props to be passed to the rendered component
   const _props = {
     // Add the frontend safe micro ui vars as env to pass into the micro ui component
