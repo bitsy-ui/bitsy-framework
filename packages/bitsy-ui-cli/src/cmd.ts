@@ -32,7 +32,7 @@ program
     // First build the assets as is
     // BuildBitsyUICommand(config, options);
     // Next start the local service
-    ServeAndWatchBitsyUICommand(config, options);
+    // ServeAndWatchBitsyUICommand(config, options);
     // Next, if things change then execute UI updates
     BuildAndWatchBitsyUICommand(config, options);
   });

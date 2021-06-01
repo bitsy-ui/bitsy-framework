@@ -36,9 +36,6 @@ module.exports = {
   output: {
     filename: outputFile,
     globalObject: `(typeof self !== 'undefined' ? self : this)`,
-    umdNamedDefine: true,
-    library: bitsyUiConfig.name,
-    libraryTarget: 'umd',
     publicPath: publicPath,
     path: publishDir,
     pathinfo: true,

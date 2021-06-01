@@ -1,14 +1,11 @@
 import React, { FunctionComponent } from 'react';
-import type { Renderer } from 'react-dom';
+import { render } from 'react-dom';
 
-type RenderComponent = (
-  render: Renderer,
-  components: {
-    [key: string]: FunctionComponent;
-  },
-) => (containerEl: HTMLElement, name: string, props: any) => void;
+type RenderComponent = (components: {
+  [key: string]: FunctionComponent;
+}) => (containerEl: HTMLElement, name: string, props: any) => void;
 
-const renderComponent: RenderComponent = (render, components) => (containerEl, name, props) => {
+const renderComponent: RenderComponent = (components) => (containerEl, name, props) => {
   const Comp = components[name];
   render(<Comp {...props} />, containerEl);
 };

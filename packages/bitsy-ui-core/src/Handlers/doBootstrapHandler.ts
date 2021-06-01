@@ -42,7 +42,7 @@ const doBootstrapHandler: DoBootstrapHandler = (config) => async (request, reply
           path: bootstrap.publicPath,
           url: bootstrap.hostname
             ? getCombinedURL(bootstrap.hostname, bootstrap.publicPath, 'bootstrap.js')
-            : protocol + getCombinedURL(hostname, bootstrap.publicPath, 'bootstrap.js'),
+            : getCombinedURL(protocol, hostname, bootstrap.publicPath, 'bootstrap.js'),
           options: bootstrap.options || {},
         },
         api: {
@@ -50,7 +50,7 @@ const doBootstrapHandler: DoBootstrapHandler = (config) => async (request, reply
           path: api.publicPath,
           url: api.hostname
             ? getCombinedURL(api.hostname, api.publicPath)
-            : protocol + getCombinedURL(hostname, api.publicPath),
+            : getCombinedURL(protocol, hostname, api.publicPath),
           options: api.options || {},
         },
         ui: {
@@ -58,7 +58,7 @@ const doBootstrapHandler: DoBootstrapHandler = (config) => async (request, reply
           path: ui.publicPath,
           url: ui.hostname
             ? getCombinedURL(ui.hostname, ui.publicPath)
-            : protocol + getCombinedURL(hostname, ui.publicPath),
+            : getCombinedURL(protocol, hostname, ui.publicPath),
           script: ui.script,
           env: ui.env || {},
           options: ui.options || {},

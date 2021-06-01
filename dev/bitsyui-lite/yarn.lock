@@ -993,16 +993,16 @@
 
 "@bitsy-ui/bootstrap@^0.1.4":
   version "0.1.4"
-  resolved "http://localhost:4873/@bitsy-ui%2fbootstrap/-/bootstrap-0.1.4.tgz#94db1e55ae7e4cfc9c92793943e04b6390bb59b1"
-  integrity sha512-BF30hh/HOJpMoelSgcox0Y3S82TYOm8eLSUofN8QoOgBwc9mNJdpu+9IvjEzftBmaT3gKQFAUDCYfNq2MyFTPg==
+  resolved "http://localhost:4873/@bitsy-ui%2fbootstrap/-/bootstrap-0.1.4.tgz#aba2f2b17d8e1688c29eed1a534f9025879859d7"
+  integrity sha512-aNgv+H15WwatYst++87NifgHFPw19BpyaMgQqV88SNAoDShvmaYw1gkd4/HzUBEgLKMvl9lt36w4voI5hyxtkg==
   dependencies:
     "@bitsy-ui/config" "^0.0.1"
     react-dev-utils "^11.0.4"
 
 "@bitsy-ui/cli@^0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@bitsy-ui%2fcli/-/cli-0.0.1.tgz#1082fe195ce04dcdfd843433e8624f25b4d482dd"
-  integrity sha512-dxHr51FArB/Yuq/ToQoMxEpYUwkz96gJjoUMCgKETucB30ZG9M3AzNGOx7KgsqdHGdSK3MgmGNa4AoQ1eWsIeg==
+  resolved "http://localhost:4873/@bitsy-ui%2fcli/-/cli-0.0.1.tgz#2b5ff99af138071e565ab06a02f92844c0d3c649"
+  integrity sha512-JaA1ljH8RdBgqdDMTlFvkP0ogdfHlP1jv6SNwj51EMJ3E/GxV7ZphifslYdgf2V9yHN4WrnVvOjSGFP8C7CvIw==
   dependencies:
     "@babel/cli" "^7.6.2"
     "@babel/core" "^7.9.0"
@@ -1038,13 +1038,13 @@
 
 "@bitsy-ui/config@^0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@bitsy-ui%2fconfig/-/config-0.0.1.tgz#a86a187cdbce4679c208d416334d3ddb18c7a2de"
-  integrity sha512-ethOx2ZygNGc2anoXNE4r1a/6LSQ68e7SDL0rPNdMKBPxFX9tQLRXuy8s6zAufRpv8sArmk5Ldd9/HflbvVgcg==
+  resolved "http://localhost:4873/@bitsy-ui%2fconfig/-/config-0.0.1.tgz#e35407546c8f14d7a90f66f771f1446c2127ac66"
+  integrity sha512-d0JBJv+taz/PSWplTuCdIgoYa4gcvgmYQ4mmamHE07o+Ol7HT9ZUkoMD7i3hsz3h/F/+/RMk9Jv2Lre2Y+WBpw==
 
 "@bitsy-ui/core@^0.3.3":
   version "0.3.3"
-  resolved "http://localhost:4873/@bitsy-ui%2fcore/-/core-0.3.3.tgz#64ce1ba5a352d4c52b109d92bac73c881127af49"
-  integrity sha512-aGj813SoPLoNCeiJTfW6sqw21gVBetYBDDmxWztAo/bnlr8YVdhWZ76p0UP6Slk5aPtoxIrwjAag7zjmvgRAwg==
+  resolved "http://localhost:4873/@bitsy-ui%2fcore/-/core-0.3.3.tgz#6efa173c61957fe1d9157dd59f32b413c16e71be"
+  integrity sha512-SfWV6H95yxTSteKg+U7c8bzGfFuISVUQAmCc6rDRcqhJ6zbxxdQcS3Cc3KMgN4SlX+w16McLyWyfi0BXYqDb8Q==
   dependencies:
     "@bitsy-ui/bootstrap" "^0.1.4"
     "@bitsy-ui/config" "^0.0.1"
@@ -1830,9 +1830,9 @@ camelcase@^5.0.0:
   integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
 
 caniuse-lite@^1.0.30001125, caniuse-lite@^1.0.30001219:
-  version "1.0.30001230"
-  resolved "http://localhost:4873/caniuse-lite/-/caniuse-lite-1.0.30001230.tgz#8135c57459854b2240b57a4a6786044bdc5a9f71"
-  integrity sha512-5yBd5nWCBS+jWKTcHOzXwo5xzcj4ePE/yjtkZyUV1BTUmrBaA9MRGC+e7mxnqXSA90CmCA8L3eKLaSUkt099IQ==
+  version "1.0.30001232"
+  resolved "http://localhost:4873/caniuse-lite/-/caniuse-lite-1.0.30001232.tgz#2ebc8b6a77656fd772ab44a82a332a26a17e9527"
+  integrity sha512-e4Gyp7P8vqC2qV2iHA+cJNf/yqUKOShXQOJHQt81OHxlIZl/j/j3soEA0adAQi8CPUQgvOdDENyQ5kd6a6mNSg==
 
 chainsaw@~0.1.0:
   version "0.1.0"
@@ -2355,9 +2355,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.564, electron-to-chromium@^1.3.723:
-  version "1.3.742"
-  resolved "http://localhost:4873/electron-to-chromium/-/electron-to-chromium-1.3.742.tgz#7223215acbbd3a5284962ebcb6df85d88b95f200"
-  integrity sha512-ihL14knI9FikJmH2XUIDdZFWJxvr14rPSdOhJ7PpS27xbz8qmaRwCwyg/bmFwjWKmWK9QyamiCZVCvXm5CH//Q==
+  version "1.3.743"
+  resolved "http://localhost:4873/electron-to-chromium/-/electron-to-chromium-1.3.743.tgz#fcec24d6d647cb84fd796b42caa1b4039a180894"
+  integrity sha512-K2wXfo9iZQzNJNx67+Pld0DRF+9bYinj62gXCdgPhcu1vidwVuLPHQPPFnCdO55njWigXXpfBiT90jGUPbw8Zg==
 
 emoji-regex@^7.0.1:
   version "7.0.3"
@@ -2919,10 +2919,10 @@ fork-ts-checker-webpack-plugin@4.1.6:
     tapable "^1.0.0"
     worker-rpc "^0.1.0"
 
-forwarded@~0.1.2:
-  version "0.1.2"
-  resolved "http://localhost:4873/forwarded/-/forwarded-0.1.2.tgz#98c23dab1175657b8c0573e8ceccd91b0ff18c84"
-  integrity sha1-mMI9qxF1ZXuMBXPozszZGw/xjIQ=
+forwarded@0.2.0:
+  version "0.2.0"
+  resolved "http://localhost:4873/forwarded/-/forwarded-0.2.0.tgz#2269936428aad4c15c7ebe9779a84bf0b2a81811"
+  integrity sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==
 
 fragment-cache@^0.2.1:
   version "0.2.1"
@@ -3706,7 +3706,7 @@ isobject@^3.0.0, isobject@^3.0.1:
   resolved "http://localhost:4873/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
   integrity sha1-TkMekrEalzFjaqH5yNHMvP2reN8=
 
-jest-worker@^26.5.0, jest-worker@^26.6.2:
+jest-worker@^26.5.0:
   version "26.6.2"
   resolved "http://localhost:4873/jest-worker/-/jest-worker-26.6.2.tgz#7f72cbc4d643c365e27b9fd775f9d0eaa9c7a8ed"
   integrity sha512-KWYVV1c4i+jbMpaBC+U++4Va0cp8OisU185o73T1vo99hqi7w8tSJfUXYswwqqrjzwxa6KpRK54WhPvwf5w6PQ==
@@ -3714,6 +3714,15 @@ jest-worker@^26.5.0, jest-worker@^26.6.2:
     "@types/node" "*"
     merge-stream "^2.0.0"
     supports-color "^7.0.0"
+
+jest-worker@^27.0.2:
+  version "27.0.2"
+  resolved "http://localhost:4873/jest-worker/-/jest-worker-27.0.2.tgz#4ebeb56cef48b3e7514552f80d0d80c0129f0b05"
+  integrity sha512-EoBdilOTTyOgmHXtw/cPc+ZrCA0KJMrkXzkrPGNwLmnvvlN1nj7MPrxpT7m+otSv2e1TLaVffzDnE/LB14zJMg==
+  dependencies:
+    "@types/node" "*"
+    merge-stream "^2.0.0"
+    supports-color "^8.0.0"
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
@@ -4645,11 +4654,11 @@ prompts@2.4.0:
     sisteransi "^1.0.5"
 
 proxy-addr@~2.0.5:
-  version "2.0.6"
-  resolved "http://localhost:4873/proxy-addr/-/proxy-addr-2.0.6.tgz#fdc2336505447d3f2f2c638ed272caf614bbb2bf"
-  integrity sha512-dh/frvCBVmSsDYzw6n926jv974gddhkFPfiN8hPOi30Wax25QZyZEGveluCgliBnqmuM+UJmBErbAUFIoDbjOw==
+  version "2.0.7"
+  resolved "http://localhost:4873/proxy-addr/-/proxy-addr-2.0.7.tgz#f19fe69ceab311eeb94b42e70e8c2070f9ba1025"
+  integrity sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg==
   dependencies:
-    forwarded "~0.1.2"
+    forwarded "0.2.0"
     ipaddr.js "1.9.1"
 
 prr@~1.0.1:
@@ -5555,6 +5564,13 @@ supports-color@^7.0.0, supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
+supports-color@^8.0.0:
+  version "8.1.1"
+  resolved "http://localhost:4873/supports-color/-/supports-color-8.1.1.tgz#cd6fc17e28500cff56c1b86c0a7fd4a54a73005c"
+  integrity sha512-MpUEN2OodtUzxvKQl72cUF7RQ5EiHsGvSsVG0ia9c5RbWGL2CI4C7EpPS8UTBIplnlzZiNuV56w+FuNxy3ty2Q==
+  dependencies:
+    has-flag "^4.0.0"
+
 tapable@^1.0.0:
   version "1.1.3"
   resolved "http://localhost:4873/tapable/-/tapable-1.1.3.tgz#a1fccc06b58db61fd7a45da2da44f5f3a3e67ba2"
@@ -5593,11 +5609,11 @@ terser-webpack-plugin@^4.1.0:
     webpack-sources "^1.4.3"
 
 terser-webpack-plugin@^5.1.1:
-  version "5.1.2"
-  resolved "http://localhost:4873/terser-webpack-plugin/-/terser-webpack-plugin-5.1.2.tgz#51d295eb7cc56785a67a372575fdc46e42d5c20c"
-  integrity sha512-6QhDaAiVHIQr5Ab3XUWZyDmrIPCHMiqJVljMF91YKyqwKkL5QHnYMkrMBy96v9Z7ev1hGhSEw1HQZc2p/s5Z8Q==
+  version "5.1.3"
+  resolved "http://localhost:4873/terser-webpack-plugin/-/terser-webpack-plugin-5.1.3.tgz#30033e955ca28b55664f1e4b30a1347e61aa23af"
+  integrity sha512-cxGbMqr6+A2hrIB5ehFIF+F/iST5ZOxvOmy9zih9ySbP1C2oEWQSOUS+2SNBTjzx5xLKO4xnod9eywdfq1Nb9A==
   dependencies:
-    jest-worker "^26.6.2"
+    jest-worker "^27.0.2"
     p-limit "^3.1.0"
     schema-utils "^3.0.0"
     serialize-javascript "^5.0.1"

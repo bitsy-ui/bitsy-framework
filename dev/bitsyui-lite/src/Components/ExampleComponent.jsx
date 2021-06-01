@@ -3,11 +3,11 @@ import React, { useCallback, useState } from 'react';
 const ExampleComponent = (props) => {
   const [message, setMessage] = useState('Hello');
   const doClick = useCallback(() => {
-    setMessage('Welcome to rahly');
+    setMessage('Welcome to to the example micro frontend');
   }, [setMessage]);
   return (
     <div onClick={doClick}>
-      {message} {props?.rah} Blah Me
+      {message} {props?.rah} Thingy Hello Ryan
     </div>
   );
 };

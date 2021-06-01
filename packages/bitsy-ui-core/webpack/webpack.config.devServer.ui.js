@@ -38,9 +38,6 @@ module.exports = {
   output: {
     filename: outputFile,
     globalObject: `(typeof self !== 'undefined' ? self : this)`,
-    umdNamedDefine: true,
-    library: bitsyUiConfig.name,
-    libraryTarget: 'umd',
     publicPath: publicPath,
     path: publishDir,
     pathinfo: true,
@@ -59,8 +56,16 @@ module.exports = {
   devServer: {
     contentBase: publishDir,
     compress: true,
+    writeToDisk: true,
     port: port,
     hot: true,
+    inline: true,
+    injectClient: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+      'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization',
+    },
   },
   module: {
     strictExportPresence: true,
