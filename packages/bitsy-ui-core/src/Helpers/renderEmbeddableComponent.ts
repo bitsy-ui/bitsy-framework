@@ -1,5 +1,5 @@
-import { BitsyUIConfig } from '../Types';
 import getCombinedURL from '@bitsy-ui/common/lib/Helpers/getCombinedURL';
+import BitsyUIConfig from '@bitsy-ui/config/lib/Types/BitsyUIConfig';
 
 type RenderEmbeddableComponent = (
   name: string,

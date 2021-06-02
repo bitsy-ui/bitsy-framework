@@ -1,11 +1,11 @@
 import { createElement } from 'react';
 import ReactDOMServer from 'react-dom/server';
-import type BitsyUIConfig from '../Types/BitsyUIConfig';
-import type BitsyUiLogger from '../Types/BitsyUiLogger';
 import renderStaticComponent from '../Helpers/renderStaticComponent';
 import renderEmbeddableComponent from '../Helpers/renderEmbeddableComponent';
+import type BitsyUIConfig from '@bitsy-ui/config/lib/Types/BitsyUIConfig';
+import type BitsyUiLogger from '@bitsy-ui/common/lib/Types/BitsyUiLogger';
 
-const doStrapHandler =
+const doComponentHandler =
   ({
     name,
     component,
@@ -67,4 +67,4 @@ const doStrapHandler =
     }
   };
 
-export default doStrapHandler;
+export default doComponentHandler;

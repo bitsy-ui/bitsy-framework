@@ -25,12 +25,10 @@
     "deploy": "yarn run build && npm unpublish --force --registry http://localhost:4873 @bitsy-ui/hooks && npm publish --registry http://localhost:4873"
   },
   "peerDependencies": {
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0"
+    "react": "^16.11.0"
   },
   "devDependencies": {
     "@types/react": "^17.0.3",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react": "^17.0.1"
   }
 }

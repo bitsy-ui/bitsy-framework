@@ -6,9 +6,9 @@ import getBitsyConfig from '@bitsy-ui/config/lib/getBitsyConfig';
 
 const config = getBitsyConfig();
 
-const { boot, strap } = createBitsyUI({ config });
+const { boot, component } = createBitsyUI({ config });
 
-strap('ExampleComponent', ExampleComponent);
+component('ExampleComponent', ExampleComponent);
 
 boot((req, res) => {
   res.send({ notFound: true });

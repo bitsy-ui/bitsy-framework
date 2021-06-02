@@ -993,8 +993,8 @@
 
 "@bitsy-ui/bootstrap@^0.1.4":
   version "0.1.4"
-  resolved "http://localhost:4873/@bitsy-ui%2fbootstrap/-/bootstrap-0.1.4.tgz#c1016c24cf0113360a10828cd7bfe30af576fe95"
-  integrity sha512-djTkfjW5i7GoO9/ZV1plNtX4oHgPZj20t9nfbRkqQctyk/sp6nLIiLS6fynC+mv+3EoTH+nmgtOMr9qJ3ednow==
+  resolved "http://localhost:4873/@bitsy-ui%2fbootstrap/-/bootstrap-0.1.4.tgz#31cafaf9ca5264fe351b9ce5d523f734e21c013f"
+  integrity sha512-zWF20UA+P8Dr4K2S7C+6Z7WLB9ifkOtxLzMq4UnfgTHhGbAznILNSVRJExvuwBzXWLXvjnTmqxsTWu4W6g821w==
   dependencies:
     "@bitsy-ui/common" "^0.0.1"
     "@bitsy-ui/config" "^0.0.1"
@@ -1002,8 +1002,8 @@
 
 "@bitsy-ui/cli@^0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@bitsy-ui%2fcli/-/cli-0.0.1.tgz#2b5ff99af138071e565ab06a02f92844c0d3c649"
-  integrity sha512-JaA1ljH8RdBgqdDMTlFvkP0ogdfHlP1jv6SNwj51EMJ3E/GxV7ZphifslYdgf2V9yHN4WrnVvOjSGFP8C7CvIw==
+  resolved "http://localhost:4873/@bitsy-ui%2fcli/-/cli-0.0.1.tgz#fcf2fc726f40346556e6eb0445139e14864a4676"
+  integrity sha512-1xiIb7PmD415mJYG699hfsBk0NtHzRxvQFA6hKMMonek9njLPhY/t9kQpFZMMWzVpKeRxtdel96qhBFPmZLW0Q==
   dependencies:
     "@babel/cli" "^7.6.2"
     "@babel/core" "^7.9.0"
@@ -1039,8 +1039,8 @@
 
 "@bitsy-ui/common@^0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@bitsy-ui%2fcommon/-/common-0.0.1.tgz#91c574dbfd19e3a853158c33dc88d2fa24b81a0b"
-  integrity sha512-ufaMIMHz47DQ1hzLTpnKClhwyepkKgW5ChLw4XgvkCxFkpjZApEOuMUQykCslIc2E8n18nbi8zRSqub1GNrzyw==
+  resolved "http://localhost:4873/@bitsy-ui%2fcommon/-/common-0.0.1.tgz#ef1c1c3e3b9ebcadab10a63d74a9c8a0ad55633e"
+  integrity sha512-g29Z1wu97KUvEjpAqLEkWof6I+HUp4o+EgK2jvPxYyM6765sXA7tlKZcrimKcOCsyGvQ/xyicBkFEaq3F5uWsg==
 
 "@bitsy-ui/config@^0.0.1":
   version "0.0.1"
@@ -1049,13 +1049,12 @@
 
 "@bitsy-ui/core@^0.3.3":
   version "0.3.3"
-  resolved "http://localhost:4873/@bitsy-ui%2fcore/-/core-0.3.3.tgz#a3b4a09788237849531fbe9128802050287a575a"
-  integrity sha512-WJFa7SgRtkxDM39VPCqTqFGFxDN2p22//r7AC8KQ9mP2If2akeGaGnCg0mazzu/PIDP+SJ/beilVUEEgzC0poQ==
+  resolved "http://localhost:4873/@bitsy-ui%2fcore/-/core-0.3.3.tgz#4bece26a7a64c55fde085c9a095fcd3c098f7071"
+  integrity sha512-KuDogbbZJfCDoQFDqACnQ0ZUFlyO8BGIe6XLCwEX3EKcgb6CctcbAiwcyB/KC3NAvs3xVpzz7k93stbbXNLmSA==
   dependencies:
     "@bitsy-ui/bootstrap" "^0.1.4"
     "@bitsy-ui/common" "^0.0.1"
     "@bitsy-ui/config" "^0.0.1"
-    compression-webpack-plugin "^7.1.2"
     core-js "^3.9.1"
     fastify "^3.15.1"
     fastify-compress "^3.5.0"
@@ -1150,7 +1149,12 @@
     "@types/estree" "*"
     "@types/json-schema" "*"
 
-"@types/estree@*", "@types/estree@^0.0.47":
+"@types/estree@*":
+  version "0.0.48"
+  resolved "http://localhost:4873/@types%2festree/-/estree-0.0.48.tgz#18dc8091b285df90db2f25aa7d906cfc394b7f74"
+  integrity sha512-LfZwXoGUDo0C3me81HXgkBg5CTQYb6xzEl+fNmbO4JdRiSKQ8A0GD1OBBvKAIsbCUgoyAty7m99GqqMQe784ew==
+
+"@types/estree@^0.0.47":
   version "0.0.47"
   resolved "http://localhost:4873/@types%2festree/-/estree-0.0.47.tgz#d7a51db20f0650efec24cd04994f523d93172ed4"
   integrity sha512-c5ciR06jK8u9BstrmJyO97m+klJrrhCf9u3rLu3DEAJBirxRqSCvDQoYKmxuYwQI5SZChAWu+tq9oVlGRuzPAg==
@@ -1837,9 +1841,9 @@ camelcase@^5.0.0:
   integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
 
 caniuse-lite@^1.0.30001125, caniuse-lite@^1.0.30001219:
-  version "1.0.30001232"
-  resolved "http://localhost:4873/caniuse-lite/-/caniuse-lite-1.0.30001232.tgz#2ebc8b6a77656fd772ab44a82a332a26a17e9527"
-  integrity sha512-e4Gyp7P8vqC2qV2iHA+cJNf/yqUKOShXQOJHQt81OHxlIZl/j/j3soEA0adAQi8CPUQgvOdDENyQ5kd6a6mNSg==
+  version "1.0.30001233"
+  resolved "http://localhost:4873/caniuse-lite/-/caniuse-lite-1.0.30001233.tgz#b7cb4a377a4b12ed240d2fa5c792951a06e5f2c4"
+  integrity sha512-BmkbxLfStqiPA7IEzQpIk0UFZFf3A4E6fzjPJ6OR+bFC2L8ES9J8zGA/asoi47p8XDVkev+WJo2I2Nc8c/34Yg==
 
 chainsaw@~0.1.0:
   version "0.1.0"
@@ -2037,14 +2041,6 @@ compressible@~2.0.16:
   integrity sha512-AF3r7P5dWxL8MxyITRMlORQNaOA2IkAFaTr4k7BUumjPtRpGDTZpl0Pb1XCO6JeDCBdp126Cgs9sMxqSjgYyRg==
   dependencies:
     mime-db ">= 1.43.0 < 2"
-
-compression-webpack-plugin@^7.1.2:
-  version "7.1.2"
-  resolved "http://localhost:4873/compression-webpack-plugin/-/compression-webpack-plugin-7.1.2.tgz#f9a1ba84d4879693e29726f6884b382940876597"
-  integrity sha512-9DKNW6ILLjx+bNBoviHDgLx6swBhWWH9ApClC9sTH2NoFfQM47BapQfovCm9zjD9v1uZwInF5a925FB9ErGQeQ==
-  dependencies:
-    schema-utils "^3.0.0"
-    serialize-javascript "^5.0.1"
 
 compression@^1.7.4:
   version "1.7.4"

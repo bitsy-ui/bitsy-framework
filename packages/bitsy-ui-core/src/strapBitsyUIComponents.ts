@@ -1,14 +1,14 @@
-import hydrateComponent from './Helpers/hydrateComponent';
-import renderComponent from './Helpers/renderComponent';
-import childComponent from './Helpers/childComponent';
+import doRenderComponent from './Components/doRenderComponent';
+import doHydrateComponent from './Components/doHydrateComponent';
+import doChildComponent from './Components/doChildComponent';
 
 const strapBitsyUIComponents = (components) => {
   // @ts-ignore
   window[__BITSYUI__.library] = {
     // @ts-ignore
-    Hydrate: hydrateComponent(components),
-    Render: renderComponent(components),
-    Child: childComponent(components),
+    Hydrate: doHydrateComponent(components),
+    Render: doRenderComponent(components),
+    Child: doChildComponent(components),
   };
 };
 

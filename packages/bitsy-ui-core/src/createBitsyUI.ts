@@ -2,15 +2,15 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import fastify from 'fastify';
 import fastifyStatic from 'fastify-static';
-import addRouteControl from './Controls/addRouteControl';
-import addStrapControl from './Controls/addStrapControl';
-import doBootControl from './Controls/doBootControl';
-import getUiPublishPath from './Selectors/getUiPublishPath';
-import getUiPublicPath from './Selectors/getUiPublicPath';
-import getBootstrapPath from '@bitsy-ui/bootstrap/lib/Selectors/getBootstrapPath';
+import addEndpoint from './Controls/addEndpoint';
+import addComponent from './Controls/addComponent';
+import addBoot from './Controls/addBoot';
+import getUiPublishDirSelector from './Selectors/getUiPublishDirSelector';
+import getUiPublicPathSelector from './Selectors/getUiPublicPathSelector';
+import getBootstrapPathSelector from '@bitsy-ui/bootstrap/lib/Selectors/getBootstrapPathSelector';
 import doBootstrapHandler from '@bitsy-ui/bootstrap/lib/Handlers/doBootstrapHandler';
-import type BitsyUiLogger from './Types/BitsyUiLogger';
 import type BitsyUIConfig from '@bitsy-ui/config/lib/Types/BitsyUIConfig';
+import type BitsyUiLogger from '@bitsy-ui/common/lib/Types/BitsyUiLogger';
 
 const createBitsyUI = ({
   config,
@@ -29,21 +29,21 @@ const createBitsyUI = ({
     const api = fastify();
     // Set up the ability to serve static assets
     api.register(fastifyStatic, {
-      root: getUiPublishPath(config),
-      prefix: getUiPublicPath(config),
+      root: getUiPublishDirSelector(config),
+      prefix: getUiPublicPathSelector(config),
       preCompressed: true,
     });
     // Setting up middlewares
     // api.use(cors(config.settings.api.cors));
     // Hydrate and output the bootstrapper script
     // @TODO should we somehow cache this after the first request
-    api.get(getBootstrapPath(config), doBootstrapHandler(config));
+    api.get(getBootstrapPathSelector(config), doBootstrapHandler(config));
     // Returns the instance of the server, the strapper the booter, the config and the logger
     return {
       api,
-      strap: addStrapControl(api, config, logger),
-      route: addRouteControl(api, config, logger),
-      boot: doBootControl(api, config, logger),
+      component: addComponent(api, config, logger),
+      endpoint: addEndpoint(api, config, logger),
+      boot: addBoot(api, config, logger),
       config,
       logger,
       fastify,

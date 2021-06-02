@@ -1,4 +1,4 @@
-const addRouteControl = (api, config, logger) => (path, method, handler) => {
+const addEndpoint = (api, config, logger) => (path, method, handler) => {
   // Retrieve the method
   const _method = method.toLowerCase();
   // Retrieve the api prefix
@@ -11,4 +11,4 @@ const addRouteControl = (api, config, logger) => (path, method, handler) => {
   );
 };
 
-export default addRouteControl;
+export default addEndpoint;

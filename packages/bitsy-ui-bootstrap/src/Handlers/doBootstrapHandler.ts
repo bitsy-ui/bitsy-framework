@@ -1,7 +1,6 @@
 import fs from 'fs';
 import BitsyUIConfig from '@bitsy-ui/config/lib/Types/BitsyUIConfig';
-import getCombinedURL from '@bitsy-ui/common/lib/Helpers/getCombinedURL';
-import getBootstrapAsset from '../Selectors/getBootstrapAsset';
+import getBootstrapAssetSelector from '../Selectors/getBootstrapAssetSelector';
 import getBootstrapEnv from '../Helpers/getBootstrapEnv';
 
 type DoBootstrapHandler = (config: BitsyUIConfig) => (request: any, reply: any) => Promise<void>;
@@ -24,7 +23,7 @@ const doBootstrapHandler: DoBootstrapHandler = (config) => async (request, reply
   const contents = fs
     // Read the contents of the bootstrap js file
     // this would have been built within the bootstrap library
-    .readFileSync(getBootstrapAsset(config), 'utf8')
+    .readFileSync(getBootstrapAssetSelector(config), 'utf8')
     // replace the manifest token with the manifest data
     .replace(/__MANIFEST__/g, manifestData)
     // replace the env token with the env data

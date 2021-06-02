@@ -1,2 +1,2 @@
-export { default as getBootstrapAsset } from './getBootstrapAsset';
-export { default as getBootstrapPath } from './getBootstrapPath';
+export { default as getBootstrapAssetSelector } from './getBootstrapAssetSelector';
+export { default as getBootstrapPathSelector } from './getBootstrapPathSelector';

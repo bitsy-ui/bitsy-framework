@@ -3,10 +3,12 @@
 import process from 'process';
 import program from 'commander';
 import getBitsyConfig from '@bitsy-ui/config/lib/getBitsyConfig';
-import ServeAndWatchBitsyUICommand from './Commands/ServeAndWatchBitsyUICommand';
-import BuildBitsyUICommand from './Commands/BuildBitsyUICommand';
-import BuildAndWatchBitsyUICommand from './Commands/BuildAndWatchBitsyUICommand';
-import ServeBitsyUICommand from './Commands/ServeBitsyUICommand';
+import doBuildBootstrap from './Helpers/doBuildBootstrap';
+import doBuildAndWatchAPI from './Helpers/doBuildAndWatchAPI';
+import doBuildAndWatchUI from './Helpers/doBuildAndWatchUI';
+import doBuildAPI from './Helpers/doBuildAPI';
+import doBuildUI from './Helpers/doBuildUI';
+import doServeAPI from './Helpers/doServeAPI';
 
 // MICRO FRONTEND CONFIG
 // Determine the location of the bitsyui config
@@ -15,12 +17,15 @@ const config = getBitsyConfig();
 program
   .command('build')
   .description('builds a bitsy ui')
-  .option('-w, --watch', 'watch for changes and automatically recompile')
   .option('-p, --production', 'builds bitsy ui in production mode')
   .option('-d, --development', 'builds bitsy ui in development mode')
   .action((options) => {
-    if (options.watch) BuildAndWatchBitsyUICommand(config, options);
-    else BuildBitsyUICommand(config, options);
+    // First build the assets as is
+    doBuildBootstrap(config, options);
+    // Attempt to build the API assets
+    doBuildAPI(config, options);
+    // Attempt to build the UI assets
+    doBuildUI(config, options);
   });
 
 program
@@ -30,11 +35,11 @@ program
   .option('-d, --development', 'builds bitsy ui in development mode')
   .action((options) => {
     // First build the assets as is
-    // BuildBitsyUICommand(config, options);
+    doBuildBootstrap(config, options);
     // Next start the local service
-    // ServeAndWatchBitsyUICommand(config, options);
+    doBuildAndWatchAPI(config, options);
     // Next, if things change then execute UI updates
-    BuildAndWatchBitsyUICommand(config, options);
+    doBuildAndWatchUI(config, options);
   });
 
 program
@@ -43,7 +48,7 @@ program
   .option('-p, --production', 'builds bitsy ui in production mode')
   .option('-d, --development', 'builds bitsy ui in development mode')
   .action((options) => {
-    ServeBitsyUICommand(config, options);
+    doServeAPI(config, options);
   });
 
 program.parse(process.argv);

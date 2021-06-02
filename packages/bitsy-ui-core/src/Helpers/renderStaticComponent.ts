@@ -1,4 +1,4 @@
-import { BitsyUIConfig } from '../Types';
+import BitsyUIConfig from '@bitsy-ui/config/lib/Types/BitsyUIConfig';
 
 type RenderStaticComponent = (name: string, config: BitsyUIConfig, props: any, el: string) => string;
 
