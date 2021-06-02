@@ -1,9 +1,10 @@
 import { createElement } from 'react';
 import ReactDOMServer from 'react-dom/server';
-import renderStaticComponent from '../Helpers/renderStaticComponent';
-import renderEmbeddableComponent from '../Helpers/renderEmbeddableComponent';
+import doRenderMarkupComponent from '../Render/doRenderMarkupComponent';
+import doRenderEmbeddableComponent from '../Render/doRenderEmbeddableComponent';
 import type BitsyUIConfig from '@bitsy-ui/config/lib/Types/BitsyUIConfig';
 import type BitsyUiLogger from '@bitsy-ui/common/lib/Types/BitsyUiLogger';
+import getBootstrapEnv from '@bitsy-ui/bootstrap/lib/Helpers/getBootstrapEnv';
 
 const doComponentHandler =
   ({
@@ -34,17 +35,21 @@ const doComponentHandler =
       const protocol = `${request.protocol}://`;
       // We do this to allow bitsyui to be hosted within multiple URLs
       const hostname = request.hostname;
+      // Prepare the bootstrap level env
+      const env = getBootstrapEnv(config, { protocol, hostname });
+      // Update the props with the bootstrap env vars
+      props = { ...props, env };
       // If the component has a SSR props helper
       if (component.getSSRProps) props = await component.getSSRProps(props);
       // Create the react element
       const el = createElement(component, props);
       // Attempt to render the component's HTML using react's ReactDOMServer
       const rendered = ReactDOMServer.renderToString(el);
-      // If htmlOnly props has been passed we want to return only the HTML
+      // If markup props has been passed we want to return only the generated markup
       // otherwise we wanted to return the embeddable component
-      const html = props.htmlOnly
-        ? renderStaticComponent(name, config, props, rendered)
-        : renderEmbeddableComponent(name, protocol, hostname, config, props, rendered);
+      const html = props.markup
+        ? doRenderMarkupComponent(name, config, props, rendered)
+        : doRenderEmbeddableComponent(name, config, props, rendered);
       // Set express to return the component as the response body
       reply.header('Content-Type', 'text/html');
       // Inject any additional headers

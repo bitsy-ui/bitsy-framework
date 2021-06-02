@@ -993,8 +993,8 @@
 
 "@bitsy-ui/bootstrap@^0.1.4":
   version "0.1.4"
-  resolved "http://localhost:4873/@bitsy-ui%2fbootstrap/-/bootstrap-0.1.4.tgz#31cafaf9ca5264fe351b9ce5d523f734e21c013f"
-  integrity sha512-zWF20UA+P8Dr4K2S7C+6Z7WLB9ifkOtxLzMq4UnfgTHhGbAznILNSVRJExvuwBzXWLXvjnTmqxsTWu4W6g821w==
+  resolved "http://localhost:4873/@bitsy-ui%2fbootstrap/-/bootstrap-0.1.4.tgz#0f6cace37f5553998279b951b17226fc56fc01a3"
+  integrity sha512-LPQLcnSEr7JzjN9heRQvWbXoWx7JXY+ts56RXpv2ikeIRHvQIBguOSQYke1Hl/A+bPPXAzJH1VKrost3nkfiiQ==
   dependencies:
     "@bitsy-ui/common" "^0.0.1"
     "@bitsy-ui/config" "^0.0.1"
@@ -1039,18 +1039,20 @@
 
 "@bitsy-ui/common@^0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@bitsy-ui%2fcommon/-/common-0.0.1.tgz#ef1c1c3e3b9ebcadab10a63d74a9c8a0ad55633e"
-  integrity sha512-g29Z1wu97KUvEjpAqLEkWof6I+HUp4o+EgK2jvPxYyM6765sXA7tlKZcrimKcOCsyGvQ/xyicBkFEaq3F5uWsg==
+  resolved "http://localhost:4873/@bitsy-ui%2fcommon/-/common-0.0.1.tgz#69ab066c584bafceaeda727332087d650fdf583b"
+  integrity sha512-trqSlram7MAQ6U91fRq9+i7NA/CYrE+fEM5eaK7JCINHw647xxBhxU30gb+YUiOrM9Jp4Lqq8xM3UjKsCXAzBQ==
+  dependencies:
+    normalize-url "^6.0.1"
 
 "@bitsy-ui/config@^0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@bitsy-ui%2fconfig/-/config-0.0.1.tgz#e35407546c8f14d7a90f66f771f1446c2127ac66"
-  integrity sha512-d0JBJv+taz/PSWplTuCdIgoYa4gcvgmYQ4mmamHE07o+Ol7HT9ZUkoMD7i3hsz3h/F/+/RMk9Jv2Lre2Y+WBpw==
+  resolved "http://localhost:4873/@bitsy-ui%2fconfig/-/config-0.0.1.tgz#a86a187cdbce4679c208d416334d3ddb18c7a2de"
+  integrity sha512-ethOx2ZygNGc2anoXNE4r1a/6LSQ68e7SDL0rPNdMKBPxFX9tQLRXuy8s6zAufRpv8sArmk5Ldd9/HflbvVgcg==
 
 "@bitsy-ui/core@^0.3.3":
   version "0.3.3"
-  resolved "http://localhost:4873/@bitsy-ui%2fcore/-/core-0.3.3.tgz#4bece26a7a64c55fde085c9a095fcd3c098f7071"
-  integrity sha512-KuDogbbZJfCDoQFDqACnQ0ZUFlyO8BGIe6XLCwEX3EKcgb6CctcbAiwcyB/KC3NAvs3xVpzz7k93stbbXNLmSA==
+  resolved "http://localhost:4873/@bitsy-ui%2fcore/-/core-0.3.3.tgz#9bcd26ffb5e68880f3200587dc53e84ee056007c"
+  integrity sha512-U1NB9/VOr4s5VkmSV65cEYwPHhf3ng3xPT8Z3ED+8xiq7rIxaEDdJeAjAtPLQkMcJqDtFm0ZQ8Z8mKFEuat6ag==
   dependencies:
     "@bitsy-ui/bootstrap" "^0.1.4"
     "@bitsy-ui/common" "^0.0.1"
@@ -1178,9 +1180,9 @@
   integrity sha512-1z8k4wzFnNjVK/tlxvrWuK5WMt6mydWWP7+zvH5eFep4oj+UkrfiJTRtjCeBXNpwaA/FYqqtb4/QS4ianFpIRA==
 
 "@types/node@*":
-  version "15.6.1"
-  resolved "http://localhost:4873/@types%2fnode/-/node-15.6.1.tgz#32d43390d5c62c5b6ec486a9bc9c59544de39a08"
-  integrity sha512-7EIraBEyRHEe7CH+Fm1XvgqU6uwZN8Q7jppJGcqjROMT29qhAuuOxYB1uEY5UMYQKEmA5D+5tBnhdaPXSsLONA==
+  version "15.9.0"
+  resolved "http://localhost:4873/@types%2fnode/-/node-15.9.0.tgz#0b7f6c33ca5618fe329a9d832b478b4964d325a8"
+  integrity sha512-AR1Vq1Ei1GaA5FjKL5PBqblTZsL5M+monvGSZwe6sSIdGiuu7Xr/pNwWJY+0ZQuN8AapD/XMB5IzBAyYRFbocA==
 
 "@webassemblyjs/ast@1.11.0":
   version "1.11.0"
@@ -2358,9 +2360,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.564, electron-to-chromium@^1.3.723:
-  version "1.3.743"
-  resolved "http://localhost:4873/electron-to-chromium/-/electron-to-chromium-1.3.743.tgz#fcec24d6d647cb84fd796b42caa1b4039a180894"
-  integrity sha512-K2wXfo9iZQzNJNx67+Pld0DRF+9bYinj62gXCdgPhcu1vidwVuLPHQPPFnCdO55njWigXXpfBiT90jGUPbw8Zg==
+  version "1.3.744"
+  resolved "http://localhost:4873/electron-to-chromium/-/electron-to-chromium-1.3.744.tgz#34e0da7babb325e18b50d3a0214504b12045ca85"
+  integrity sha512-o/vep/PvSXg+7buwCbVJXHY3zbjYVmFPwnMMnchESXgAzrfcasvbX/hQZHCFGG7YdZgdtwt1KTMyK9CyBxPbLA==
 
 emoji-regex@^7.0.1:
   version "7.0.3"
@@ -2545,9 +2547,9 @@ execa@^1.0.0:
     strip-eof "^1.0.0"
 
 execa@^5.0.0:
-  version "5.0.1"
-  resolved "http://localhost:4873/execa/-/execa-5.0.1.tgz#aee63b871c9b2cb56bc9addcd3c70a785c6bf0d1"
-  integrity sha512-4hFTjFbFzQa3aCLobpbPJR/U+VoL1wdV5ozOWjeet0AWDeYr9UFGM1eUFWHX+VtOWFq4p0xXUXfW1YxUaP4fpw==
+  version "5.1.0"
+  resolved "http://localhost:4873/execa/-/execa-5.1.0.tgz#3ea50ee863d226bfa323528cce1684e7481dfe46"
+  integrity sha512-CkdUB7s2y6S+d4y+OM/+ZtQcJCiKUCth4cNImGMqrt2zEVtW2rfHGspQBE1GDo6LjeNIQmTPKXqTCKjqFKyu3A==
   dependencies:
     cross-spawn "^7.0.3"
     get-stream "^6.0.0"
@@ -4223,6 +4225,11 @@ normalize-path@^3.0.0, normalize-path@~3.0.0:
   version "3.0.0"
   resolved "http://localhost:4873/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
   integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
+
+normalize-url@^6.0.1:
+  version "6.0.1"
+  resolved "http://localhost:4873/normalize-url/-/normalize-url-6.0.1.tgz#a4f27f58cf8c7b287b440b8a8201f42d0b00d256"
+  integrity sha512-VU4pzAuh7Kip71XEmO9aNREYAdMHFGTVj/i+CaTImS8x0i1d3jUZkXhqluy/PRgjPLMgsLQulYY3PJ/aSbSjpQ==
 
 npm-run-path@^2.0.0:
   version "2.0.2"

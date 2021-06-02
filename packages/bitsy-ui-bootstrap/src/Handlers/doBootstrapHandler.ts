@@ -27,7 +27,10 @@ const doBootstrapHandler: DoBootstrapHandler = (config) => async (request, reply
     // replace the manifest token with the manifest data
     .replace(/__MANIFEST__/g, manifestData)
     // replace the env token with the env data
-    .replace(/__ENV__/g, JSON.stringify(getBootstrapEnv(request, config)));
+    .replace(
+      /__ENV__/g,
+      JSON.stringify(getBootstrapEnv(config, { protocol: request.protocol, hostname: request.hostname })),
+    );
   // Determine the correct api and asset values based on
   // Inject any additional headers
   Object.entries(bootstrap?.headers || {}).forEach(([key, value]) => {

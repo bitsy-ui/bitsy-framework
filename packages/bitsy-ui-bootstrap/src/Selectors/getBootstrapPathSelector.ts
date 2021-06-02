@@ -1,7 +1,7 @@
 import BitsyUIConfig from '@bitsy-ui/config/lib/Types/BitsyUIConfig';
-import getCombinedURL from '@bitsy-ui/common/lib/Helpers/getCombinedURL';
+import getCombinedPath from '@bitsy-ui/common/lib/Helpers/getCombinedPath';
 
 const getBootstrapPathSelector = (config: BitsyUIConfig) =>
-  getCombinedURL(config.settings.bootstrap.publicPath, '/bootstrap.js');
+  getCombinedPath(config.settings.bootstrap.publicPath, '/bootstrap.js');
 
 export default getBootstrapPathSelector;

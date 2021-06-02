@@ -27,5 +27,8 @@
   "peerDependencies": {
     "@bitsy-ui/bootstrap": "^0.1.4",
     "@bitsy-ui/core": "^0.3.3"
+  },
+  "dependencies": {
+    "normalize-url": "^6.0.1"
   }
 }

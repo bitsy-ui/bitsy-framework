@@ -1,11 +1,6 @@
 import getCombinedURL from '@bitsy-ui/common/lib/Helpers/getCombinedURL';
 
-const getBootstrapEnv = (request, config) => {
-  // Determine the request protocol
-  const protocol = `${request.protocol}://`;
-  // Determine URL via request object
-  // We do this to allow bitsyui to be hosted within multiple URLs
-  const hostname = request.hostname;
+const getBootstrapEnv = (config, { protocol, hostname }) => {
   // Deconstruct the important values from the bitsy ui config
   const {
     name,
