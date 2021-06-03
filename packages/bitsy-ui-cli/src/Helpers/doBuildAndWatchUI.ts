@@ -25,7 +25,7 @@ const doBuildAndWatchUI = (config, options) => {
     console.log(`${data}`);
   });
   // Notify the results of the ui assets build
-  build.stdout.on('error', (error) => {
+  build.stderr.on('data', (error) => {
     console.log(`${error}`);
   });
   // Do something when app is closing

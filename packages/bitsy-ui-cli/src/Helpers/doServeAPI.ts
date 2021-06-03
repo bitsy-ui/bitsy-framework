@@ -12,7 +12,7 @@ const doServeAPI = (config, options) => {
     console.log(`${data}`);
   });
   // Notify the results of the bootstrap assets build
-  thread.stderr.on('error', (error) => {
+  thread.stderr.on('data', (error) => {
     console.log(`${error}`);
   });
 };

@@ -7,7 +7,7 @@ const addEndpoint = (api, config, logger) => (path, method, handler) => {
   api[_method](
     `${_prefix}${path}`,
     // Execute the provided route handler
-    (req: Request, res: Response) => handler({ req, res, logger, config, method }),
+    (req, res) => handler({ req, res, logger, config, method }),
   );
 };
 
