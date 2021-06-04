@@ -16,13 +16,10 @@ export const BitsyUIComponent = (props: BitsyUIProps) => {
   // Invoke the custom micro UI hook to retrieve the mounting callback and the loading state
   // It does not matter if we have several components attempting to load the same micro UI, it will only load the assets once
   const [render, loaded] = useBitsyUI(url, library);
-
-  console.log({ url, library, name });
   // Once we have a ref and the micro ui reports as loaded then proceed to load in our component
   if (el.current && loaded) {
     // Retrieve the current env setting for this micro UI
     const env = getBitsyUIEnv(library);
-    console.log('env', env);
     // Pass in our container ref, the name of the exported micro UI component we want to render and the props for that component
     // @ts-ignore as current will not be null by the time we get here
     render(el.current, name, { ...props, env });

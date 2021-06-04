@@ -16,6 +16,11 @@ const doBootstrapHandler: DoBootstrapHandler = (config) => async (request, reply
   const {
     settings: { bootstrap, ui },
   } = config;
+  // Determine URL via request object
+  // Determine the request protocol
+  const protocol = `${request.protocol}://`;
+  // We do this to allow bitsyui to be hosted within multiple URLs
+  const hostname = request.hostname;
   // Retrieve the manifest file contents
   const manifestData = fs.readFileSync(ui.manifest, 'utf8');
   // Replace the bootstrap JS placeholder tokens with permitted environment variables
@@ -27,10 +32,7 @@ const doBootstrapHandler: DoBootstrapHandler = (config) => async (request, reply
     // replace the manifest token with the manifest data
     .replace(/__MANIFEST__/g, manifestData)
     // replace the env token with the env data
-    .replace(
-      /__ENV__/g,
-      JSON.stringify(getBootstrapEnv(config, { protocol: request.protocol, hostname: request.hostname })),
-    );
+    .replace(/__ENV__/g, JSON.stringify(getBootstrapEnv(config, { protocol, hostname })));
   // Determine the correct api and asset values based on
   // Inject any additional headers
   Object.entries(bootstrap?.headers || {}).forEach(([key, value]) => {

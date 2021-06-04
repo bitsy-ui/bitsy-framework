@@ -2,6 +2,7 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import fastify from 'fastify';
 import fastifyStatic from 'fastify-static';
+import fastifyCors from 'fastify-cors';
 import addEndpoint from './Controls/addEndpoint';
 import addComponent from './Controls/addComponent';
 import addBoot from './Controls/addBoot';
@@ -34,6 +35,7 @@ const createBitsyUI = ({
       preCompressed: true,
     });
     // Setting up middlewares
+    api.register(fastifyCors, config.settings.api.cors);
     // api.use(cors(config.settings.api.cors));
     // Hydrate and output the bootstrapper script
     // @TODO should we somehow cache this after the first request

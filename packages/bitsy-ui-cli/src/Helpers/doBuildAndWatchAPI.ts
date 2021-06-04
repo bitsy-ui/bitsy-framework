@@ -17,8 +17,8 @@ const doBuildAndWatchAPI = (config, options) => {
   const apiWatcher = watch(apiBuildDir, { ignored: /^\./, persistent: true, awaitWriteFinish: true });
   // Place to store the current thread
   let apiThread;
-
-  const apiBuilder = () => {
+  // The builder worker callback
+  const doApiBuilderWorker = () => {
     // Alert the world as to what we are doing
     console.log(chalk.blue('Building Bitsy API Assets'));
     // Attempt to build the files
@@ -57,9 +57,10 @@ const doBuildAndWatchAPI = (config, options) => {
       apiThread.kill();
     });
   };
-  apiBuilder();
+  // Trigger the first round build
+  doApiBuilderWorker();
   // When changes have been detected we have to restart the server
-  apiWatcher.on('change', _.debounce(apiBuilder));
+  apiWatcher.on('change', _.debounce(doApiBuilderWorker));
 };
 
 export default doBuildAndWatchAPI;

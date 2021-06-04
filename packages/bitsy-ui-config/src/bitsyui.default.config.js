@@ -8,6 +8,7 @@ module.exports = {
   settings: {
     bootstrap: {
       // Build config files
+      webpack: (webpackConfig, config, options) => webpackConfig,
       webpackConfig: path.resolve(bootstrapLibDir, 'webpack', 'webpack.config.js'),
       babelConfig: path.resolve(bootstrapLibDir, 'babel', 'babel.config.json'),
       // Build files and configuration
@@ -35,6 +36,8 @@ module.exports = {
     ui: {
       // Build config files
       babelConfig: path.resolve(coreLibDir, 'babel', 'babel.config.ui.js'),
+      webpack: (webpackConfig, config, options) => webpackConfig,
+      webpackServer: (serverConfig, config, webpackConfig, options) => serverConfig,
       webpackConfig: path.resolve(coreLibDir, 'webpack', 'webpack.config.ui.js'),
       webpackPort: 9087,
       buildEntry: path.join(process.cwd(), 'src', 'ui.js'),

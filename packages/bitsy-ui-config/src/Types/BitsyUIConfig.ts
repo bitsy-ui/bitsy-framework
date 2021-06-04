@@ -2,6 +2,11 @@ type BitsyUIConfig = {
   name: string;
   settings: {
     bootstrap: {
+      webpack: (
+        webpackConfig: { [k: string]: any },
+        config: BitsyUIConfig,
+        options: { [k: string]: any },
+      ) => { [k: string]: any };
       webpackConfig: string;
       babelConfig: string;
       filePattern: string;
@@ -21,6 +26,17 @@ type BitsyUIConfig = {
       manifest: string;
       publishDir: string;
       babelConfig: string;
+      webpack: (
+        webpackConfig: { [k: string]: any },
+        config: BitsyUIConfig,
+        options: { [k: string]: any },
+      ) => { [k: string]: any };
+      webpackServer: (
+        serverConfig: { [k: string]: any },
+        config: BitsyUIConfig,
+        webpackConfig: { [k: string]: any },
+        options: { [k: string]: any },
+      ) => { [k: string]: any };
       webpackConfig: string;
       webpackPort: boolean;
       buildEntry: string;

@@ -993,8 +993,8 @@
 
 "@bitsy-ui/bootstrap@^0.1.4":
   version "0.1.4"
-  resolved "http://localhost:4873/@bitsy-ui%2fbootstrap/-/bootstrap-0.1.4.tgz#0f6cace37f5553998279b951b17226fc56fc01a3"
-  integrity sha512-LPQLcnSEr7JzjN9heRQvWbXoWx7JXY+ts56RXpv2ikeIRHvQIBguOSQYke1Hl/A+bPPXAzJH1VKrost3nkfiiQ==
+  resolved "http://localhost:4873/@bitsy-ui%2fbootstrap/-/bootstrap-0.1.4.tgz#35ef5ca52c55c8cdab8d2b714ec87ef514ee22b5"
+  integrity sha512-j7v8VfABoTkn75/JkSlRpiWfwIMMoNF2ZEnCgDZ48uYnccw+c+6qWCYHwGUZwrikP7fCulIAjjjCTdknMPqclA==
   dependencies:
     "@bitsy-ui/common" "^0.0.1"
     "@bitsy-ui/config" "^0.0.1"
@@ -1002,8 +1002,8 @@
 
 "@bitsy-ui/cli@^0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@bitsy-ui%2fcli/-/cli-0.0.1.tgz#fcf2fc726f40346556e6eb0445139e14864a4676"
-  integrity sha512-1xiIb7PmD415mJYG699hfsBk0NtHzRxvQFA6hKMMonek9njLPhY/t9kQpFZMMWzVpKeRxtdel96qhBFPmZLW0Q==
+  resolved "http://localhost:4873/@bitsy-ui%2fcli/-/cli-0.0.1.tgz#eb9bb8418b5b2f47cc00ab232c49fc9ab24bd1eb"
+  integrity sha512-TfZmbgE+PE1GgUe1dCX5cKJT8kNQVfFXlJw3lYNq0NzVDXjprWaM0I4SYQicqCRy5vPY/jpC4cEV8WzAAaF/Rw==
   dependencies:
     "@babel/cli" "^7.6.2"
     "@babel/core" "^7.9.0"
@@ -1046,8 +1046,8 @@
 
 "@bitsy-ui/config@^0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@bitsy-ui%2fconfig/-/config-0.0.1.tgz#a86a187cdbce4679c208d416334d3ddb18c7a2de"
-  integrity sha512-ethOx2ZygNGc2anoXNE4r1a/6LSQ68e7SDL0rPNdMKBPxFX9tQLRXuy8s6zAufRpv8sArmk5Ldd9/HflbvVgcg==
+  resolved "http://localhost:4873/@bitsy-ui%2fconfig/-/config-0.0.1.tgz#c5a73cec723ddab04779f81df839cec1e01bbb77"
+  integrity sha512-BjU6AfAon38gMRDc+Sa4hpTzraR2VQYFU9wqRo6tJcrkiqag6BmIsP2i6lNTNOK0VmJJ3podQLWlgMcAI7D1AA==
 
 "@bitsy-ui/core@^0.3.3":
   version "0.3.3"
@@ -1180,9 +1180,9 @@
   integrity sha512-1z8k4wzFnNjVK/tlxvrWuK5WMt6mydWWP7+zvH5eFep4oj+UkrfiJTRtjCeBXNpwaA/FYqqtb4/QS4ianFpIRA==
 
 "@types/node@*":
-  version "15.9.0"
-  resolved "http://localhost:4873/@types%2fnode/-/node-15.9.0.tgz#0b7f6c33ca5618fe329a9d832b478b4964d325a8"
-  integrity sha512-AR1Vq1Ei1GaA5FjKL5PBqblTZsL5M+monvGSZwe6sSIdGiuu7Xr/pNwWJY+0ZQuN8AapD/XMB5IzBAyYRFbocA==
+  version "15.12.0"
+  resolved "http://localhost:4873/@types%2fnode/-/node-15.12.0.tgz#6a459d261450a300e6865faeddb5af01c3389bb3"
+  integrity sha512-+aHJvoCsVhO2ZCuT4o5JtcPrCPyDE3+1nvbDprYes+pPkEsbjH7AGUCNtjMOXS0fqH14t+B7yLzaqSz92FPWyw==
 
 "@webassemblyjs/ast@1.11.0":
   version "1.11.0"
@@ -2360,9 +2360,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.564, electron-to-chromium@^1.3.723:
-  version "1.3.744"
-  resolved "http://localhost:4873/electron-to-chromium/-/electron-to-chromium-1.3.744.tgz#34e0da7babb325e18b50d3a0214504b12045ca85"
-  integrity sha512-o/vep/PvSXg+7buwCbVJXHY3zbjYVmFPwnMMnchESXgAzrfcasvbX/hQZHCFGG7YdZgdtwt1KTMyK9CyBxPbLA==
+  version "1.3.747"
+  resolved "http://localhost:4873/electron-to-chromium/-/electron-to-chromium-1.3.747.tgz#c8d6bc625fe783f506aee7710772adab47b0bf29"
+  integrity sha512-+K1vnBc08GNYxCWwdRe9o3Ml30DhsNyK/qIl/NE1Dic+qCy9ZREcqGNiV4jiLiAdALK1DUG3pakJHGkJUd9QQw==
 
 emoji-regex@^7.0.1:
   version "7.0.3"

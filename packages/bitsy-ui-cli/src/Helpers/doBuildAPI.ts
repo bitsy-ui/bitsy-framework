@@ -7,6 +7,7 @@ const doBuildAPI = (config, options) => {
   const mode = options.development || !options.production ? 'development' : 'production';
   // API ASSETS BUILD
   const apiBabel = config.settings.api.babelConfig;
+  const apiBuildDir = config.settings.api.buildDir;
   const apiPublishDir = config.settings.api.publishDir;
   const apiExtensions = config.settings.api.fileExtensions;
   // Attempt to build the micro UI api

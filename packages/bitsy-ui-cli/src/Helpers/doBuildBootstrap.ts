@@ -1,27 +1,40 @@
 import chalk from 'chalk';
-import { spawnSync } from 'child_process';
+import webpack from 'webpack';
 
 const doBuildBootstrap = (config, options) => {
   // Determine the current build mode
   // We will default to development unless production is supplied
   const mode = options.development || !options.production ? 'development' : 'production';
   // BOOTSTRAP ASSETS BUILD
-  // Determine the webpack config to use
-  const bootWebpack = config.settings.bootstrap.webpackConfig;
+  // Retrieve the webpack config override
+  const webpackMutator = config.settings.bootstrap.webpack;
+  // Retrieve the current webpack config
+  const webpackUiConfig = webpackMutator(require(config.settings.bootstrap.webpackConfig));
   // Alert the world as to what we are doing
   console.log(chalk.blue('Building Bitsy Boostrap Assets'));
-  // Attempt to build the micro UI
-  // If we are not building within watch mode then build in async mode
   // Attempt to build the files
-  const bootBuild = spawnSync('npx', ['webpack', '--mode', mode, '--config', bootWebpack], {
-    shell: true,
-    stdio: 'inherit',
-    encoding: 'utf-8',
-    env: process.env,
+  // If we are using ui async we will be watching for changes
+  // This should be used when building within a pipeline
+  webpack({ mode, ...webpackUiConfig }, (error, stats) => {
+    // If we encountered an error we need to report it
+    if (error) {
+      // Alert the world as to what we are doing
+      console.log(chalk.red('Bitsy Boostrap Build Failed!'));
+      // Return the error to the console
+      console.error(error);
+      // Return out
+      return;
+    }
+    // retrieve the string version of the stats
+    const report = stats.toString({
+      chunks: false,
+      colors: true,
+    });
+    // Console log out the build result
+    console.log(report);
+    // Alert the world as to what we are doing
+    console.log(chalk.blue('Bitsy Boostrap Build Completed!'));
   });
-  // Notify the results of the bootstrap assets build
-  console.log(bootBuild.stdout);
-  console.log(bootBuild.stderr);
 };
 
 export default doBuildBootstrap;
